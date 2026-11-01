@@ -37,7 +37,9 @@ Kunci jawaban asisten tidak pernah masuk repo ini. Di laptop utama, kunci ada di
 
 ## Akhir sesi
 
-Perbarui `PROGRESS.md` (bagian "Lanjut dari sini" dan baris log harian: tanggal, topik, durasi, yang dikerjakan, macet di mana), lalu commit dan push.
+1. Perbarui bagian "Lanjut dari sini" di `PROGRESS.md` secara manual.
+2. Tanyakan durasi belajar hari ini dan bagian yang membuat macet, lalu jalankan `npm run selesai -- --durasi "<durasi>" --macet "<topik macet>"`. Script `scripts/progres.js` mengisi baris log hari ini (topik dan kegiatan dideteksi dari file yang berubah), mencentang checklist dari isi `Jawaban/` dan nilai di `FEEDBACK.md`, lalu commit `progress: <tanggal>` dan push.
+3. Jalankan script ini juga setelah menulis FEEDBACK, supaya nilai langsung tercatat.
 
 ## Membuat topik baru
 

@@ -2,5 +2,8 @@
   "name": "progress-belajar-typescript",
   "private": true,
   "type": "module",
-  "description": "Praktikum mandiri JavaScript dan TypeScript"
+  "description": "Praktikum mandiri JavaScript dan TypeScript",
+  "scripts": {
+    "selesai": "node scripts/progres.js"
+  }
 }

@@ -9,7 +9,7 @@ Alur setiap topik:
 2. Kerjakan soal Beginner, Intermediate, Advanced. Simpan kode di folder `Jawaban/`.
 3. Buat laporan PDF (kode, screenshot output, analisis) di `Jawaban/`.
 4. Minta asisten mengecek. Nilai dan feedback masuk `Diskusi/FEEDBACK.md`.
-5. Isi log harian di bawah, commit, push.
+5. Akhiri sesi dengan `npm run selesai -- --durasi "2 jam" --macet "..."`. Log harian dan checklist terisi otomatis, lalu di-commit dan di-push.
 
 ## Checklist
 
