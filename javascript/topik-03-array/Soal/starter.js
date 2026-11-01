@@ -2,8 +2,43 @@
 // 1. Salin file ini ke folder Jawaban/ (contoh: Jawaban/soal-js3.js).
 // 2. Lengkapi setiap fungsi bertanda TODO dan perbaiki fungsi milik "temanmu".
 //    Jawaban soal (jelaskan) ditulis sebagai komentar di bawah baris "// JAWABAN ...".
-// 3. Jalankan: node Jawaban/soal-js3.js
+// 3. Jalankan soal: node Jawaban/soal-js3.js
 // 4. Bandingkan output dengan Contoh Output di PDF soal.
+
+// ===== Coba Sendiri (dari HO) =====
+// Tulis tebakan sebagai komentar di ujung setiap baris console.log SEBELUM menjalankan.
+// Jalankan bagian ini saja: node Jawaban/soal-js3.js coba
+function cobaSendiri() {
+  const pasien = [
+    { nama: "Budi", umur: 40, poli: "Umum" },
+    { nama: "Sari", umur: 7, poli: "Anak" },
+    { nama: "Joko", umur: 65, poli: "Umum" },
+  ];
+
+  const angka = [5, 25, 100, 1];
+  console.log(angka.sort());
+  console.log(angka);
+  console.log(pasien.map((p) => p.umur > 18));
+  console.log(pasien.filter((p) => p.umur > 18).length);
+  console.log(pasien.find((p) => p.umur > 18).nama);
+  console.log([].reduce((a, b) => a + b, 0));
+  const hasil = pasien.forEach((p) => p.nama);
+  console.log(hasil);
+}
+
+// JAWABAN Coba Sendiri 1:
+// 
+// JAWABAN Coba Sendiri 2:
+// 
+// JAWABAN Coba Sendiri 3:
+// 
+// JAWABAN Coba Sendiri 4:
+// 
+
+if (process.argv[2] === "coba") {
+  cobaSendiri();
+  process.exit(0);
+}
 
 // ===== DATA (JANGAN DIUBAH) =====
 const produk = [

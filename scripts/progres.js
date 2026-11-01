@@ -37,12 +37,13 @@ function statusTopik(dir) {
   const nilai = existsSync(feedback)
     ? readFileSync(feedback, "utf8").match(/Total:\s*(\d+)/)?.[1]
     : undefined;
-  // soal dianggap selesai jika file soal-* ada dan tidak ada lagi penanda TODO dari starter
+  // soal dianggap selesai jika file soal-* ada dan tidak ada lagi penanda TODO dari starter;
+  // Coba Sendiri dianggap selesai jika minimal satu baris "// JAWABAN Coba Sendiri" sudah diisi
   const fileSoal = isi.filter((f) => /^soal-.*\.(js|ts|html)$/.test(f));
+  const teksSoal = fileSoal.map((f) => readFileSync(join(jawaban, f), "utf8"));
   return {
-    coba: isi.some((f) => /^coba.*\.(js|ts|html)$/.test(f)),
-    soal: fileSoal.length > 0 &&
-      fileSoal.every((f) => !readFileSync(join(jawaban, f), "utf8").includes("// TODO")),
+    coba: teksSoal.some((t) => /\/\/ JAWABAN Coba Sendiri[^\n]*\r?\n\/\/[ \t]*\S/.test(t)),
+    soal: teksSoal.length > 0 && teksSoal.every((t) => !t.includes("// TODO")),
     nilai,
   };
 }
@@ -61,7 +62,6 @@ function ringkasKegiatan(topik, berubah) {
     const f = berubah.filter((x) => x.startsWith(prefixDir));
     if (f.length === 0) continue;
     const jenis = [];
-    if (f.some((x) => /\/Jawaban\/coba.*\.(js|ts|html)$/.test(x))) jenis.push("coba sendiri");
     if (f.some((x) => /\/Jawaban\/soal-.*\.(js|ts|html)$/.test(x))) jenis.push("soal");
     // file diskusi/feedback kosong ikut dibuat bersama materi, jadi hanya dihitung jika sudah berisi
     const diskusi = join(t.dir, "Diskusi", "DISKUSI.md");

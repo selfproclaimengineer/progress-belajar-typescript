@@ -128,6 +128,6 @@ GAGAL: keranjang kosong
 
 #perhatian[
   - Kode soal: `Jawaban/soal-js3.js`. Jawaban *(jelaskan)* ditulis sebagai komentar di bawah baris `// JAWABAN ...` yang sesuai.
-  - Coba Sendiri: `Jawaban/coba3.js`. Tebakan ditulis sebagai komentar di ujung setiap baris, jawaban pertanyaan sebagai komentar di bawah file.
+  - Coba Sendiri dari HO dikerjakan di fungsi `cobaSendiri()` pada file yang sama. Jalankan dengan `node Jawaban/soal-js3.js coba`.
   - Jalankan `npm run selesai -- --durasi "..." --macet "..."`, lalu minta asisten memeriksa.
 ]

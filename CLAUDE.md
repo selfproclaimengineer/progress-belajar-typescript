@@ -26,7 +26,7 @@ HO, soal, feedback, dan jawaban ke Dion memakai bahasa Indonesia. Istilah teknis
 
 ## Saat Dion minta jawabannya diperiksa
 
-1. Baca `Jawaban/cobaN.js` dan `Jawaban/soal-jsN.js`. Jawaban *(jelaskan)* ada di komentar di bawah baris `// JAWABAN ...`; tebakan Coba Sendiri ada di komentar ujung baris. Jalankan kedua file.
+1. Baca `Jawaban/soal-jsN.js`. Semua jawaban ada di file ini: Coba Sendiri di fungsi `cobaSendiri()` (tebakan di komentar ujung baris), jawaban *(jelaskan)* di komentar di bawah baris `// JAWABAN ...`. Jalankan `node Jawaban/soal-jsN.js` dan `node Jawaban/soal-jsN.js coba`.
 2. Bandingkan dengan Contoh Output dan kunci jawaban asisten.
 3. Tulis di `Diskusi/FEEDBACK.md`: nilai per bagian (Beginner 0.3, Intermediate 0.3, Advanced 0.4, total 0–100), yang sudah benar, yang salah dan alasannya, dan satu pertanyaan "mengapa" untuk latihan diskusi live coding. Tulis nilai akhir dalam satu baris persis `Total: NN`, karena `scripts/progres.js` membaca baris itu.
 4. Jalankan `npm run selesai` agar kolom Nilai di `PROGRESS.md` terisi.

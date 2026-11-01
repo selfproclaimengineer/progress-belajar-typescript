@@ -2,8 +2,39 @@
 // 1. Salin file ini ke folder Jawaban/ (contoh: Jawaban/soal-js2.js).
 // 2. Lengkapi setiap fungsi bertanda TODO dan perbaiki fungsi milik "temanmu".
 //    Jawaban soal (jelaskan) ditulis sebagai komentar di bawah baris "// JAWABAN ...".
-// 3. Jalankan: node Jawaban/soal-js2.js
+// 3. Jalankan soal: node Jawaban/soal-js2.js
 // 4. Bandingkan output dengan Contoh Output di PDF soal.
+
+// ===== Coba Sendiri (dari HO) =====
+// Tulis tebakan sebagai komentar di ujung setiap baris console.log SEBELUM menjalankan.
+// Jalankan bagian ini saja: node Jawaban/soal-js2.js coba
+function cobaSendiri() {
+  const nilai = [10, 20, 30];
+  for (const i in nilai) console.log(i, typeof i);
+  for (const v of nilai) console.log(v, typeof v);
+
+  let jumlah = 0;
+  for (let i = 0; i <= nilai.length; i++) jumlah += nilai[i];
+  console.log(jumlah);
+
+  const kali2 = (x) => { x * 2 };
+  console.log(kali2(5));
+
+  console.log(sapa("Dion"));
+  function sapa(nama) { return `Halo ${nama}`; }
+}
+
+// JAWABAN Coba Sendiri 1:
+// 
+// JAWABAN Coba Sendiri 2:
+// 
+// JAWABAN Coba Sendiri 3:
+// 
+
+if (process.argv[2] === "coba") {
+  cobaSendiri();
+  process.exit(0);
+}
 
 // ===== Beginner 1 =====
 function saldoAkhir(saldoAwal, mutasi) {

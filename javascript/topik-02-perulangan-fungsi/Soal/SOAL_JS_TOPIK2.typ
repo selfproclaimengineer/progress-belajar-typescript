@@ -98,6 +98,6 @@ TIDAK AKAN LUNAS
 
 #perhatian[
   - Kode soal: `Jawaban/soal-js2.js`. Jawaban *(jelaskan)* ditulis sebagai komentar di bawah baris `// JAWABAN ...` yang sesuai.
-  - Coba Sendiri: `Jawaban/coba2.js`. Tebakan ditulis sebagai komentar di ujung setiap baris, jawaban pertanyaan sebagai komentar di bawah file.
+  - Coba Sendiri dari HO dikerjakan di fungsi `cobaSendiri()` pada file yang sama. Jalankan dengan `node Jawaban/soal-js2.js coba`.
   - Jalankan `npm run selesai -- --durasi "..." --macet "..."`, lalu minta asisten memeriksa.
 ]

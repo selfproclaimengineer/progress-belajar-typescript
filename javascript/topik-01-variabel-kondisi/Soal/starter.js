@@ -2,8 +2,38 @@
 // 1. Salin file ini ke folder Jawaban/ (contoh: Jawaban/soal-js1.js).
 // 2. Lengkapi setiap fungsi bertanda TODO dan perbaiki fungsi milik "temanmu".
 //    Jawaban soal (jelaskan) ditulis sebagai komentar di bawah baris "// JAWABAN ...".
-// 3. Jalankan: node Jawaban/soal-js1.js
+// 3. Jalankan soal: node Jawaban/soal-js1.js
 // 4. Bandingkan output dengan Contoh Output di PDF soal.
+
+// ===== Coba Sendiri (dari HO) =====
+// Tulis tebakan sebagai komentar di ujung setiap baris console.log SEBELUM menjalankan.
+// Jalankan bagian ini saja: node Jawaban/soal-js1.js coba
+function cobaSendiri() {
+  const keranjang = ["sabun"];
+  keranjang.push("sikat gigi");
+  console.log(keranjang.length);
+
+  console.log("10" === 10, "10" == 10);
+  console.log(null ?? "default", 0 ?? "default", "" || "default");
+  console.log(Boolean("0"), Boolean(""), Boolean([]));
+  console.log(Math.round(4.5), Math.floor(-4.5), Math.ceil(4.01));
+  console.log(0.1 + 0.2 === 0.3);
+
+  for (var i = 0; i < 3; i++) {}
+  console.log(i);
+}
+
+// JAWABAN Coba Sendiri 1:
+// 
+// JAWABAN Coba Sendiri 2:
+// 
+// JAWABAN Coba Sendiri 3:
+// 
+
+if (process.argv[2] === "coba") {
+  cobaSendiri();
+  process.exit(0);
+}
 
 const LIMIT_HARIAN = 5000000;
 const MINIMAL_TRANSFER = 10000;

@@ -5,9 +5,9 @@
 **JS-1 Variabel dan kondisi.** Baca `javascript/topik-01-variabel-kondisi/HO/HO_JS_TOPIK1.pdf`, kerjakan Coba Sendiri, lalu soal.
 
 Alur setiap topik:
-1. Baca HO dan kerjakan Coba Sendiri di `Jawaban/cobaN.js`.
-2. Salin `Soal/starter.js` ke `Jawaban/soal-jsN.js`, lalu kerjakan soal Beginner, Intermediate, Advanced.
-3. Tulis jawaban *(jelaskan)* sebagai komentar di bawah baris `// JAWABAN ...` di file soal.
+1. Salin `Soal/starter.js` ke `Jawaban/soal-jsN.js`.
+2. Baca HO. Kerjakan Coba Sendiri di fungsi `cobaSendiri()` pada file itu, jalankan dengan `node Jawaban/soal-jsN.js coba`.
+3. Kerjakan soal Beginner, Intermediate, Advanced di file yang sama. Jawaban *(jelaskan)* ditulis sebagai komentar di bawah baris `// JAWABAN ...`.
 4. Minta asisten memeriksa. Nilai dan feedback masuk `Diskusi/FEEDBACK.md`.
 5. Akhiri sesi dengan `npm run selesai -- --durasi "2 jam" --macet "..."`. Log harian dan checklist terisi otomatis, lalu di-commit dan di-push.
 

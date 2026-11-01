@@ -88,7 +88,7 @@ HO (PDF, dibuat dengan Typst):
 1. Tujuan Praktikum (daftar kemampuan).
 2. Dasar Teori singkat, banyak contoh kode bernomor ("Listing n").
 3. Kotak "Catatan" (info tambahan) dan "Perhatian" (jebakan umum, sering dengan contoh salah vs benar).
-4. "Coba Sendiri" di dalam HO: latihan kecil yang dikerjakan di `Jawaban/cobaN.js`.
+4. "Coba Sendiri" di dalam HO: latihan kecil yang dikerjakan di fungsi `cobaSendiri()` pada file soal.
 5. Panjang 5–8 halaman.
 
 Soal (PDF, Typst):
@@ -99,7 +99,7 @@ Soal (PDF, Typst):
 
 Tampilan: meniru modul Praktikum Database System CE 613 (permintaan Dion, 2026-11-01): Arial untuk teks, Consolas untuk kode, judul besar di tengah, kotak Catatan biru, Perhatian merah, Coba Sendiri hijau dengan header berwarna, caption "Listing n" di tengah, footer bergaris dengan nomor halaman.
 
-Jawaban (diubah Dion pada 2026-11-01, menggantikan laporan PDF): kode di `Jawaban/soal-jsN.js`; jawaban *(jelaskan)* sebagai komentar di bawah baris `// JAWABAN ...` yang sudah disiapkan di starter; Coba Sendiri di `Jawaban/cobaN.js` dengan tebakan sebagai komentar. File kode jawaban juga di-commit agar asisten bisa menjalankannya.
+Jawaban (diubah Dion pada 2026-11-01, menggantikan laporan PDF): kode di `Jawaban/soal-jsN.js`; jawaban *(jelaskan)* sebagai komentar di bawah baris `// JAWABAN ...` yang sudah disiapkan di starter; Coba Sendiri di fungsi `cobaSendiri()` pada file soal yang sama (dijalankan dengan argumen `coba`), tebakan sebagai komentar. File kode jawaban juga di-commit agar asisten bisa menjalankannya.
 
 ## 7. Struktur repo
 
@@ -114,7 +114,7 @@ progress-belajar-typescript/
     topik-01-variabel-kondisi/
       HO/            HO_JS_TOPIK1.typ + .pdf
       Soal/          SOAL_JS_TOPIK1.typ + .pdf + file starter
-      Jawaban/       cobaN.js + soal-jsN.js (jawaban penjelasan di komentar)
+      Jawaban/       soal-jsN.js (Coba Sendiri + soal + jawaban penjelasan di komentar)
       Diskusi/       DISKUSI.md (log tanya jawab) + FEEDBACK.md
     ...
   typescript/

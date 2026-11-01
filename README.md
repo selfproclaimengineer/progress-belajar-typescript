@@ -11,7 +11,7 @@ Praktikum mandiri JavaScript dan TypeScript untuk persiapan live coding. Formatn
 javascript/topik-XX-nama/
   HO/        handout (PDF + sumber Typst)
   Soal/      soal (PDF + sumber Typst) dan file starter
-  Jawaban/   cobaN.js dan soal-jsN.js (jawaban penjelasan ditulis sebagai komentar)
+  Jawaban/   soal-jsN.js: Coba Sendiri, soal, dan jawaban penjelasan (komentar)
   Diskusi/   log tanya jawab dengan asisten dan feedback
 typescript/  pola yang sama
 tugas-rancang/
