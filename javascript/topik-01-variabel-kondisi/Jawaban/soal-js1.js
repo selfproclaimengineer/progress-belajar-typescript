@@ -45,7 +45,6 @@ if (process.argv[2] === "coba") {
 
 // ===== Beginner 1 =====
 function kategoriTriase(skorNyeri, sadar) {
-  // TODO
   if(!Number.isInteger(skorNyeri) || skorNyeri<0 || skorNyeri>10){
     return "INVALID";
   }
@@ -72,7 +71,6 @@ function kategoriTriase(skorNyeri, sadar) {
 
 // ===== Beginner 3 =====
 function hitungDiskon(totalBelanja, isMember) {
-  // TODO
   if(!isMember){
     // let diskon = 0;
     if(totalBelanja>=200000){
@@ -103,7 +101,6 @@ function hitungDiskon(totalBelanja, isMember) {
 // 3 itu number "3" itu baru string,
 
 function hitungBiayaRawat(kelas, malam, punyaBPJS) {
-  // TODO
   if(!Number.isInteger(malam) || malam < 1){
     return -1;
   }
@@ -180,7 +177,6 @@ const LIMIT_HARIAN = 5000000;
 const MINIMAL_TRANSFER = 10000;
 
 function cekTransfer(saldo, nominal, pinBenar, sudahTransferHariIni) {
-  // TODO
   if(!Number.isInteger(nominal) || nominal < 0){
     return "GAGAL: nominal tidak valid";
   }
@@ -206,7 +202,6 @@ function cekTransfer(saldo, nominal, pinBenar, sudahTransferHariIni) {
 // kasus A & B : tarif = isPremium = true ? tarif = 0 : tarif=tarif
 // kasus C : tarif = isPremium = true ? tarif = tarif/2 : tarif=tarif
 function hitungOngkir(beratGram, zona, isPremium) {
-  // TODO
   if(typeof beratGram !== "number" || beratGram > 30000 || beratGram <=0){
     return -1;
   }

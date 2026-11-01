@@ -2,7 +2,11 @@
 
 ## Lanjut dari sini
 
-**JS-1 Variabel dan kondisi.** Baca `javascript/topik-01-variabel-kondisi/HO/HO_JS_TOPIK1.pdf`, kerjakan Coba Sendiri, lalu soal.
+**JS-3 Array.** Baca `javascript/topik-03-array/HO/`, kerjakan Coba Sendiri, lalu soal.
+
+JS-2 selesai dengan nilai 81. Sisa catatan ada di `javascript/topik-02-perulangan-fungsi/Diskusi/FEEDBACK.md` (Revisi 2): label Masuk/Keluar di Beginner 2 tertukar, `totalTagihan` belum diperbaiki, dan pertanyaan diskusi `bulanMencapaiTarget(0, 0, 6, 1000000)` belum dijawab. Penjelasan bagian lain ada di `DISKUSI.md`.
+
+JS-1 selesai dengan nilai 86.
 
 Alur setiap topik:
 1. Salin `Soal/starter.js` ke `Jawaban/soal-jsN.js`.
@@ -15,8 +19,8 @@ Alur setiap topik:
 
 | Topik | Coba Sendiri | Soal | Diperiksa | Nilai |
 |---|---|---|---|---|
-| JS-1 Variabel dan kondisi | [x] | [ ] | [x] | 86 |
-| JS-2 Perulangan dan fungsi | [ ] | [ ] | [ ] | |
+| JS-1 Variabel dan kondisi | [x] | [x] | [x] | 86 |
+| JS-2 Perulangan dan fungsi | [x] | [x] | [x] | 81 |
 | JS-3 Array | [ ] | [ ] | [ ] | |
 | JS-4 String dan object | [ ] | [ ] | [ ] | |
 | JS-5 OOP | [ ] | [ ] | [ ] | |
@@ -37,3 +41,4 @@ Alur setiap topik:
 | Tanggal | Topik | Durasi | Yang dikerjakan | Macet di |
 |---|---|---|---|---|
 | 2026-11-01 | JS-1 | 4 jam (disambi rapat) | JS-1: soal, tanya jawab, feedback | baca soal berulang |
+| 2026-11-02 | JS-1, JS-2 | 4 jam | JS-1: soal; JS-2: soal, tanya jawab, feedback | begadang, kurang tidur |

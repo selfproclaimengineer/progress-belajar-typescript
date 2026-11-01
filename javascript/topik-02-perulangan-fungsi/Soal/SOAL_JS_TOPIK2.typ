@@ -41,7 +41,7 @@ Kamu membantu tim IT sebuah bank digital dan sebuah rumah sakit. Data mutasi rek
 
 + *Target tabungan.*
   - Fungsi: `bulanMencapaiTarget(saldoAwal, setoranBulanan, bungaPersenTahunan, target)`.
-  - Input: semua number bulat, tidak negatif. `bungaPersenTahunan` bernilai `6` berarti 6% per tahun.
+  - Input: semua number bulat, tidak negatif. `bungaPersenTahunan` bernilai `6` berarti 6% per tahun, dibagi 12 untuk setiap bulan.
   - Output: number, jumlah bulan sampai saldo *minimal* sama dengan `target`.
   - Cek sebelum perulangan:
     + `saldoAwal` sudah minimal `target`: kembalikan `0`.
@@ -49,6 +49,7 @@ Kamu membantu tim IT sebuah bank digital dan sebuah rumah sakit. Data mutasi rek
   - Setiap bulan, berurutan:
     + Tambahkan `setoranBulanan` ke saldo.
     + Hitung `bunga = Math.floor(saldo * bungaPersenTahunan / 100 / 12)`, lalu tambahkan ke saldo.
+    Setoran masuk di awal bulan, bunga di akhir bulan, jadi setoran bulan itu ikut berbunga. Bunga majemuk bulanan: bunga bulan depan ikut dihitung dari bunga bulan ini.
   - *(jelaskan)* Kondisi apa yang membuat target tidak pernah tercapai? Apa yang terjadi pada program jika kondisi itu tidak dicek?
 
 + *Kode temanmu: `totalTagihan(biaya)`.*
