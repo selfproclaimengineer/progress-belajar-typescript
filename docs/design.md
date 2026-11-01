@@ -97,7 +97,7 @@ Soal (PDF, Typst):
 - Jenis butir soal: tulis fungsi dengan "Contoh Output"; "kode temanmu berjalan tanpa error tetapi salah, jelaskan dan perbaiki"; "mengapa hasilnya begini"; "tulis ulang dengan cara lain dengan hasil sama".
 - Bobot setara Database topik 5: sekitar 10–14 butir.
 
-Tampilan: halaman putih, satu font untuk semua teks termasuk kode, teks minimal 12pt, satu palet triadic tenang dengan peran tetap (struktur, Catatan, Perhatian). Header "Praktikum JavaScript & TypeScript", footer nomor halaman.
+Tampilan: meniru modul Praktikum Database System CE 613 (permintaan Dion, 2026-11-01): Arial untuk teks, Consolas untuk kode, judul besar di tengah, kotak Catatan biru, Perhatian merah, Coba Sendiri hijau dengan header berwarna, caption "Listing n" di tengah, footer bergaris dengan nomor halaman.
 
 Laporan (dibuat Dion, PDF): hasil Coba Sendiri dan jawaban soal, berisi kode, screenshot output, dan analisis. Format sama seperti laporan kuliah. File kode jawaban juga di-commit agar asisten bisa menjalankannya.
 

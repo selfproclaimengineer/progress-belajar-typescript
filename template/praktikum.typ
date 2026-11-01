@@ -1,80 +1,99 @@
-// Template bersama untuk HO dan Soal praktikum JS/TS.
-// Satu font untuk semua teks (DejaVu Sans Mono dibundel Typst, jadi sama di semua device).
+// Template bersama HO dan Soal, meniru tampilan modul Praktikum Database System (CE 613).
+// Font Arial + Consolas (bawaan Windows), ikon dari Segoe UI Symbol.
 
-#let biru = rgb("#3d6a99")   // struktur: judul, heading, Coba Sendiri
-#let hijau = rgb("#5f8a3a")  // Catatan
-#let merah = rgb("#a8507a")  // Perhatian
-#let abu = rgb("#f4f5f7")
+#let biru = rgb("#0969da")   // Catatan, link
+#let merah = rgb("#cf222e")  // Perhatian
+#let hijau = rgb("#1a7f37")  // Coba Sendiri
+#let abu-kode = rgb("#f6f8fa")
+#let garis-kode = rgb("#d0d7de")
+#let abu-teks = rgb("#57606a")
+
+#let ikon(c) = text(font: "Segoe UI Symbol", c)
 
 #let praktikum(judul: "", modul: "", body) = {
   set document(title: modul + " - " + judul)
   set page(
     paper: "a4",
-    margin: (x: 2.2cm, top: 2.4cm, bottom: 2.2cm),
-    header: context {
-      if counter(page).get().first() > 1 [
-        #set text(size: 12pt, fill: biru)
-        Praktikum JavaScript & TypeScript #h(1fr) #modul
-        #v(-6pt) #line(length: 100%, stroke: 0.5pt + biru)
-      ]
+    margin: (x: 2cm, top: 2.2cm, bottom: 2.4cm),
+    footer: context {
+      line(length: 100%, stroke: 0.4pt + luma(200))
+      v(-4pt)
+      set text(size: 8pt, fill: abu-teks)
+      grid(
+        columns: (1fr, auto),
+        [*JS & TS* --- Praktikum JavaScript & TypeScript \ Belajar Mandiri, November 2026],
+        counter(page).display("1 / 1", both: true),
+      )
     },
-    footer: context [
-      #set text(size: 12pt, fill: luma(90))
-      Praktikum JavaScript & TypeScript #h(1fr)
-      #counter(page).display("1/1", both: true)
-    ],
   )
-  set text(font: "DejaVu Sans Mono", size: 12pt, lang: "id")
-  set par(justify: false, leading: 0.7em, spacing: 1.1em)
+  set text(font: "Arial", size: 10.5pt, lang: "id")
+  set par(justify: true, leading: 0.55em, spacing: 0.9em)
   set heading(numbering: "1.1.")
-  show heading: set text(fill: biru, size: 13pt)
-  show heading.where(level: 1): set block(above: 1.6em, below: 0.9em)
-  show raw: set text(font: "DejaVu Sans Mono", size: 12pt)
-  // font sama dengan prosa, jadi kode inline dibedakan lewat latar dan warna
+  show heading: set text(fill: black)
+  show heading.where(level: 1): set text(size: 15pt)
+  show heading.where(level: 1): set block(above: 1.5em, below: 0.6em)
+  show heading.where(level: 2): set text(size: 12pt)
+  show heading.where(level: 2): set block(above: 1.2em, below: 0.6em)
+  show heading.where(level: 3): set text(size: 10.5pt)
+  show heading.where(level: 3): set block(above: 1.1em, below: 0.6em)
+
+  show raw: set text(font: "Consolas", size: 8.5pt)
   show raw.where(block: false): it => box(
-    fill: abu, inset: (x: 2pt), outset: (y: 2.5pt), radius: 2pt,
-    text(fill: rgb("#2b4f75"), it),
+    fill: rgb("#eff2f6"), inset: (x: 3pt), outset: (y: 2.5pt), radius: 2pt, it,
   )
-  show raw.where(block: true): block.with(
-    fill: abu, inset: 9pt, radius: 3pt, width: 100%,
+  show raw.where(block: true): it => block(
+    width: 100%, fill: abu-kode, stroke: 0.5pt + garis-kode, radius: 4pt,
+    inset: (x: 9pt, y: 8pt), it,
   )
-  show figure.where(kind: raw): set figure.caption(position: bottom)
+
+  show figure.where(kind: raw): set figure(supplement: "Listing")
   show figure.where(kind: raw): set align(left)
-  show figure.caption: set text(size: 12pt, style: "italic", fill: luma(70))
-  set list(indent: 0.6em)
-  set enum(indent: 0.6em)
+  show figure.caption: it => align(center, text(size: 8.5pt)[
+    #text(weight: "bold")[#it.supplement #context it.counter.display(it.numbering)]#it.separator#it.body
+  ])
+  set figure.caption(separator: ": ")
+  show figure: set block(above: 1em, below: 1em)
+
+  set list(marker: [•], indent: 0.2em, body-indent: 0.5em)
+  set enum(numbering: "1.a.", indent: 0.2em, body-indent: 0.5em)
+  set table(stroke: 0.5pt + luma(190), inset: 6pt, fill: (_, y) => if y == 0 { luma(242) })
 
   align(center)[
-    #text(size: 14pt, weight: "bold", fill: biru)[Praktikum JavaScript & TypeScript]
-    #v(2pt)
-    #text(size: 14pt, weight: "bold")[#modul -- #judul]
+    #v(0.6em)
+    #text(size: 22pt, weight: "bold")[Praktikum JavaScript & TypeScript]
+    #v(0.5em)
+    #text(size: 13pt)[#modul - #judul]
   ]
-  v(0.8em)
+  v(1.4em)
   body
 }
 
-#let kotak(warna, label, isi) = block(
-  width: 100%, inset: (left: 12pt, rest: 9pt), radius: 2pt,
-  stroke: (left: 3pt + warna), fill: warna.lighten(92%),
-  breakable: true,
+#let kotak(warna, simbol, label, isi) = block(
+  width: 100%, stroke: 0.8pt + warna, radius: 4pt, clip: true, breakable: true,
+  above: 1.1em, below: 1.1em,
 )[
-  #text(weight: "bold", fill: warna)[#label] \
-  #isi
+  #stack(
+    block(
+      width: 100%, fill: warna.lighten(88%), inset: (x: 9pt, y: 6pt),
+      stroke: (bottom: 0.5pt + warna.lighten(40%)),
+    )[#text(fill: warna, weight: "bold")[#ikon(simbol) #label]],
+    block(width: 100%, inset: (x: 9pt, top: 7pt, bottom: 8pt))[#isi],
+  )
 ]
 
-#let catatan(isi) = kotak(hijau, "Catatan", isi)
-#let perhatian(isi) = kotak(merah, "Perhatian", isi)
-#let coba-sendiri(isi) = kotak(biru, "Coba Sendiri", isi)
+#let catatan(isi) = kotak(biru, "✎", "Catatan", isi)
+#let perhatian(isi) = kotak(merah, "⚠", "Perhatian", isi)
+#let coba-sendiri(isi) = kotak(hijau, "💡", "Coba Sendiri", isi)
 
 // Listing bernomor: #listing("contoh if")[```js ... ```]
-#let listing(caption, kode) = figure(kode, caption: caption, supplement: "Listing", kind: raw)
+#let listing(caption, kode) = figure(kode, caption: caption, kind: raw)
 
-// Judul level soal: #level("Beginner", "0.3")
-#let level(nama, bobot) = block(above: 1.4em, below: 0.8em)[
-  #text(weight: "bold", fill: biru, size: 13pt)[#nama (#bobot)]
-]
+// Subbab level soal: #level("Beginner", "0.3") menjadi "1.1. Beginner (0.3)"
+#let level(nama, bobot) = heading(level: 2)[#nama (#bobot)]
 
 // Contoh Output: teks persis yang harus dicetak program
-#let output(isi) = block(
-  width: 100%, inset: 9pt, radius: 3pt, stroke: 0.6pt + luma(150),
-)[#text(size: 12pt, fill: luma(80))[Contoh Output] \ #isi]
+#let output(isi) = block(width: 100%, above: 1em, below: 1em)[
+  #text(size: 8.5pt, weight: "bold", fill: abu-teks)[Contoh Output]
+  #v(-0.5em)
+  #isi
+]

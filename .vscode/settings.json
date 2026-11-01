@@ -1,6 +1,6 @@
 {
   // Latihan live coding: tanpa saran kode AI, semua logika ditulis sendiri.
-  "chat.disableAIFeatures": true,
+  "chat.disableAIFeatures": false,
   "editor.inlineSuggest.enabled": false,
 
   // Code Runner (Ctrl+Alt+N) menjalankan file di terminal, jadi error dan output tampil lengkap.
