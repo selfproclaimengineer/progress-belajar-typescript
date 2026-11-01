@@ -15,7 +15,7 @@ Alur setiap topik:
 
 | Topik | Coba Sendiri | Soal | Diperiksa | Nilai |
 |---|---|---|---|---|
-| JS-1 Variabel dan kondisi | [ ] | [ ] | [ ] | |
+| JS-1 Variabel dan kondisi | [x] | [ ] | [x] | 86 |
 | JS-2 Perulangan dan fungsi | [ ] | [ ] | [ ] | |
 | JS-3 Array | [ ] | [ ] | [ ] | |
 | JS-4 String dan object | [ ] | [ ] | [ ] | |
@@ -36,4 +36,4 @@ Alur setiap topik:
 
 | Tanggal | Topik | Durasi | Yang dikerjakan | Macet di |
 |---|---|---|---|---|
-| 2026-11-01 | - | - | Repo, silabus, dan materi JS-1 sampai JS-3 disiapkan | - |
+| 2026-11-01 | JS-1 | 4 jam (disambi rapat) | JS-1: soal, tanya jawab, feedback | baca soal berulang |

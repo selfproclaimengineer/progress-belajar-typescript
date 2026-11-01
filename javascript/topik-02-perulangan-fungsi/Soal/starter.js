@@ -4,6 +4,9 @@
 //    Jawaban soal (jelaskan) ditulis sebagai komentar di bawah baris "// JAWABAN ...".
 // 3. Jalankan soal: node Jawaban/soal-js2.js
 // 4. Bandingkan output dengan Contoh Output di PDF soal.
+// Tipe parameter ditulis gaya TypeScript di komentar atas setiap fungsi:
+//   number[] = array berisi number; string | null = string atau null.
+//   Semua number adalah bilangan bulat, kecuali ditulis desimal.
 
 // ===== Coba Sendiri (dari HO) =====
 // Tulis tebakan sebagai komentar di ujung setiap baris console.log SEBELUM menjalankan.
@@ -37,11 +40,13 @@ if (process.argv[2] === "coba") {
 }
 
 // ===== Beginner 1 =====
+// saldoAkhir(saldoAwal: number, mutasi: number[]): number
 function saldoAkhir(saldoAwal, mutasi) {
   // TODO: pakai for klasik
 }
 
 // ===== Beginner 2 =====
+// ringkasMutasi(mutasi: number[]): string
 function ringkasMutasi(mutasi) {
   // TODO: pakai for...of
 }
@@ -51,11 +56,13 @@ function ringkasMutasi(mutasi) {
 // 
 // JAWABAN Beginner 3b (cara perbaikan yang tidak dipakai di kode):
 // 
+// hitungPPN(harga: number): number
 const hitungPPN = (harga) => { harga * 11 / 100 };
 
 // ===== Intermediate 1 =====
 // JAWABAN Intermediate 1 (kondisi yang membuat target tidak tercapai):
 // 
+// bulanMencapaiTarget(saldoAwal: number, setoranBulanan: number, bungaPersenTahunan: number, target: number): number
 function bulanMencapaiTarget(saldoAwal, setoranBulanan, bungaPersenTahunan, target) {
   // TODO
 }
@@ -65,6 +72,7 @@ function bulanMencapaiTarget(saldoAwal, setoranBulanan, bungaPersenTahunan, targ
 // 
 // JAWABAN Intermediate 2b (mengapa for...of aman):
 // 
+// totalTagihan(biaya: number[]): number
 function totalTagihan(biaya) {
   let total = 0;
   for (let i = 1; i <= biaya.length; i++) total += biaya[i];
@@ -74,6 +82,7 @@ function totalTagihan(biaya) {
 // ===== Intermediate 3 =====
 // JAWABAN Intermediate 3:
 // 
+// posisiPertama(antrean: string[], kodePoli: string): number
 function posisiPertama(antrean, kodePoli) {
   // TODO
 }
@@ -81,6 +90,7 @@ function posisiPertama(antrean, kodePoli) {
 // ===== Advanced 1 =====
 // JAWABAN Advanced 1b:
 // 
+// jadwalCicilan(pokok: number, bungaPersenPerBulan: number, cicilanPerBulan: number): string[]
 function jadwalCicilan(pokok, bungaPersenPerBulan, cicilanPerBulan) {
   // TODO: kembalikan array berisi string per bulan
   return [];
@@ -92,10 +102,12 @@ function jadwalCicilan(pokok, bungaPersenPerBulan, cicilanPerBulan) {
 const biayaFlat = (nominal) => 2500;
 const biayaPersen = (nominal) => Math.ceil((nominal * 5) / 1000);
 
+// biayaBertingkat(nominal: number): number
 function biayaBertingkat(nominal) {
   // TODO
 }
 
+// totalBiayaAdmin(mutasi: number[], aturanBiaya: (nominal: number) => number): number
 function totalBiayaAdmin(mutasi, aturanBiaya) {
   // TODO
 }

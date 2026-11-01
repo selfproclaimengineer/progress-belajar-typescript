@@ -23,6 +23,8 @@ Kamu bergabung dengan tim backend sebuah marketplace sembako. Data `produk` dan 
   caption: [Data `produk`],
 )
 
+Tipe kolom: `id`, `nama`, `kategori` string; `harga`, `stok`, `terjual` number; `rating` number desimal. Setiap item `keranjang` berisi `idProduk` (string) dan `qty` (number).
+
 Isi `keranjang`: P01 sebanyak 1, P07 sebanyak 10, P03 sebanyak 2, P06 sebanyak 1.
 
 #perhatian[
@@ -31,48 +33,83 @@ Isi `keranjang`: P01 sebanyak 1, P07 sebanyak 10, P03 sebanyak 2, P06 sebanyak 1
   3. Jalankan `node Jawaban/soal-js3.js`. Output harus sama persis dengan Contoh Output.
   4. Soal bertanda *(jelaskan)* dijawab sebagai komentar di file jawaban, di bawah baris `// JAWABAN ...`.
   5. Kecuali disebut lain, pakai method array (`map`, `filter`, `find`, `some`, `every`, `includes`, `reduce`). Jangan mengubah array `produk` dan `keranjang`.
+  6. Setiap fungsi punya baris Input dan Output. Semua number adalah bilangan bulat, kecuali disebut desimal. Tipe parameter juga ditulis di komentar atas setiap fungsi di starter.
 ]
 
 #level("Beginner", "0.3")
 
-+ Lengkapi `namaProdukTersedia(produk)`: kembalikan array berisi *nama* produk yang stoknya lebih dari 0, dengan urutan sesuai data. Tulis dengan chaining.
++ *Produk tersedia.*
+  - Fungsi: `namaProdukTersedia(produk)`.
+  - Output: array string, berisi `nama` produk yang `stok`-nya lebih dari 0, urut sesuai data.
+  - Wajib memakai chaining.
 
-+ Lengkapi `totalStok(produk)` memakai `reduce`.
++ *Total stok.*
+  - Fungsi: `totalStok(produk)`.
+  - Output: number, jumlah `stok` semua produk.
+  - Wajib memakai `reduce`.
 
-+ Lengkapi `adaKategori(produk, kategori)` dan `semuaRatingDiAtas(produk, batas)`. Fungsi pertama mengecek apakah *ada* produk dalam kategori itu. Fungsi kedua mengecek apakah *semua* produk punya rating minimal `batas`.
++ *Cek kategori dan rating.*
+  - `adaKategori(produk, kategori)`. Input `kategori` string. Output boolean: `true` jika *ada* produk dalam kategori itu.
+  - `semuaRatingDiAtas(produk, batas)`. Input `batas` number desimal. Output boolean: `true` jika *semua* produk punya `rating` minimal `batas`.
 
 + *(jelaskan)* Temanmu menulis kode berikut dan mendapat error.
   ```js
   const kategoriAktif = ["Sembako", "Minuman"];
   console.log(kategoriAktif.contains("Minuman"));
   ```
-  Tulis pesan error lengkapnya, jelaskan penyebabnya, lalu tulis versi yang benar. Di mana nama `contains()` benar-benar ada?
+  - Tulis pesan error lengkapnya dan penyebabnya.
+  - Tulis versi yang benar.
+  - Di mana nama `contains()` benar-benar ada?
 
 #level("Intermediate", "0.3")
 
-+ *Rincian checkout.* Lengkapi `rincianCheckout(keranjang, produk)` yang mengembalikan array string dengan format `Nama xQty = Subtotal`, satu per item keranjang. Lengkapi juga `totalCheckout(keranjang, produk)`. Untuk setiap item keranjang, cari data produknya berdasarkan `idProduk`.
++ *Rincian checkout.*
+  - `rincianCheckout(keranjang, produk)`. Output: array string, satu per item keranjang, format persis `Nama xQty = Subtotal`.
+  - `totalCheckout(keranjang, produk)`. Output: number, jumlah semua subtotal.
+  - Untuk setiap item keranjang, cari produknya dengan `idProduk` yang sama dengan `id` produk. Subtotal = `harga × qty`.
 
-+ *Kode temanmu.* `totalTerjual` seharusnya menjumlahkan kolom `terjual` semua produk, tetapi outputnya `[object Object]410150...`. *(jelaskan)* mengapa hasilnya string aneh, bukan angka dan bukan error. Lalu perbaiki.
++ *Kode temanmu: `totalTerjual(produk)`.*
+  - Output yang benar: number, jumlah `terjual` semua produk.
+  - Masalah: outputnya `[object Object]410150...`.
+  - *(jelaskan)* Mengapa hasilnya string aneh, bukan angka dan bukan error? Lalu perbaiki.
 
-+ *Kode temanmu.* `urutHargaTermurah` dipakai untuk menampilkan tiga produk termurah. Hasilnya benar, tetapi setelah fungsi dipanggil, `produk[0]` berubah menjadi "Mi Instan Goreng". *(jelaskan)* mengapa data asli ikut berubah, dan mengapa hal ini berbahaya di aplikasi nyata. Lalu perbaiki agar data asli tidak berubah.
++ *Kode temanmu: `urutHargaTermurah(produk)`.*
+  - Output yang benar: array produk urut dari harga termurah. Array `produk` asli tidak boleh berubah.
+  - Masalah: hasilnya benar, tetapi setelah dipanggil, `produk[0]` berubah menjadi "Mi Instan Goreng".
+  - *(jelaskan)* Mengapa data asli ikut berubah? Mengapa hal ini berbahaya di aplikasi nyata? Lalu perbaiki.
 
-+ *Kode temanmu.* `cariProdukHabis` seharusnya mengembalikan nama produk *pertama* (urutan data) yang stoknya 0, atau `null` jika tidak ada. Kerjakan soal ini *setelah* nomor 3 diperbaiki.
++ *Kode temanmu: `cariProdukHabis(produk)`.* Kerjakan *setelah* nomor 3 diperbaiki.
+  - Output yang benar: string `nama` produk *pertama* (urutan data) yang `stok`-nya 0, atau `null` jika tidak ada.
   + *(jelaskan)* Setelah nomor 3 diperbaiki, fungsi ini mengembalikan "Susu UHT 1L", bukan "Minyak Goreng 2L". Mengapa `return` di dalam `forEach` tidak menghentikan perulangan?
   + *(jelaskan)* Sebelum nomor 3 diperbaiki, fungsi ini justru menghasilkan "Minyak Goreng 2L". Mengapa bisa kebetulan benar?
   + Perbaiki fungsi dengan method yang tepat, tanpa `forEach` dan tanpa `for`.
 
 #level("Advanced", "0.4")
 
-+ *Laporan per kategori.* Lengkapi `laporanKategori(produk)` yang mengembalikan satu string per kategori, dengan urutan kategori sesuai kemunculan pertamanya di data. Format: `Kategori: N produk, stok S, omzet O`, dengan omzet = jumlah dari `harga × terjual`. Jangan menulis nama kategori secara langsung di kode; daftar kategori harus didapat dari data. Boleh memakai `for...of` untuk mengumpulkan daftar kategori.
++ *Laporan per kategori.*
+  - Fungsi: `laporanKategori(produk)`.
+  - Output: array string, satu per kategori, format persis `Kategori: N produk, stok S, omzet O`.
+    - `N`: banyak produk dalam kategori.
+    - `S`: jumlah `stok`.
+    - `O`: jumlah `harga × terjual`.
+  - Urutan kategori sesuai kemunculan pertamanya di data.
+  - Daftar kategori harus didapat dari data, bukan ditulis langsung di kode. Boleh memakai `for...of` untuk mengumpulkannya.
 
 + *Checkout lengkap.*
-  + Lengkapi `checkout(keranjang, produk, kodePromo)`. Fungsi mengembalikan string. Cek secara berurutan:
-    + Keranjang kosong: `GAGAL: keranjang kosong`
-    + Untuk setiap item, sesuai urutan keranjang: produk tidak ada di data: `GAGAL: produk ID tidak ditemukan`; qty melebihi stok: `GAGAL: stok NAMA tidak cukup (sisa S)`
-    + `kodePromo` bukan `null`, `"HEMAT10"`, atau `"GRATIS-ONGKIR"`: `GAGAL: kode promo tidak valid`
-    Jika semua lolos, hitung:
-    - `HEMAT10`: diskon 10% dari subtotal, dibulatkan ke bawah, maksimal Rp 20.000.
-    - Ongkir Rp 15.000 jika subtotal di bawah Rp 100.000, selain itu gratis. Kode `GRATIS-ONGKIR` membuat ongkir selalu 0.
+  + Lengkapi `checkout(keranjang, produk, kodePromo)`.
+    - Input: `kodePromo` string atau `null`.
+    - Output: string.
+    - Cek berurutan, kembalikan pesan pertama yang cocok:
+      + Keranjang kosong: `GAGAL: keranjang kosong`
+      + Untuk setiap item, sesuai urutan keranjang:
+        - produk tidak ada di data: `GAGAL: produk ID tidak ditemukan`
+        - `qty` melebihi `stok`: `GAGAL: stok NAMA tidak cukup (sisa S)`
+      + `kodePromo` bukan `null`, `"HEMAT10"`, atau `"GRATIS-ONGKIR"`: `GAGAL: kode promo tidak valid`
+    - Jika semua lolos, hitung:
+      - Subtotal: jumlah `harga × qty` semua item.
+      - Diskon: `HEMAT10` memberi 10% dari subtotal, dibulatkan ke bawah, maksimal Rp 20.000. Selain itu 0.
+      - Ongkir: Rp 15.000 jika subtotal di bawah Rp 100.000, selain itu 0. `GRATIS-ONGKIR` membuat ongkir selalu 0.
+      - Total: subtotal − diskon + ongkir.
     - Kembalikan `Subtotal: X, Diskon: D, Ongkir: O, Total: T`.
   + *(jelaskan)* Untuk mencari produk, mengapa `find` lebih tepat daripada `filter(...)[0]`? Jika keranjang berisi 50 item dan data berisi 10.000 produk, kira-kira berapa kali perbandingan id dilakukan? Usulkan cara agar pencarian lebih cepat. Tidak perlu ditulis kodenya; konsep ini muncul lagi di Modul 6.
 

@@ -4,6 +4,9 @@
 //    Jawaban soal (jelaskan) ditulis sebagai komentar di bawah baris "// JAWABAN ...".
 // 3. Jalankan soal: node Jawaban/soal-js3.js
 // 4. Bandingkan output dengan Contoh Output di PDF soal.
+// Tipe parameter ditulis gaya TypeScript di komentar atas setiap fungsi:
+//   number[] = array berisi number; string | null = string atau null.
+//   Semua number adalah bilangan bulat, kecuali ditulis desimal.
 
 // ===== Coba Sendiri (dari HO) =====
 // Tulis tebakan sebagai komentar di ujung setiap baris console.log SEBELUM menjalankan.
@@ -41,6 +44,9 @@ if (process.argv[2] === "coba") {
 }
 
 // ===== DATA (JANGAN DIUBAH) =====
+// Produk = { id: string, nama: string, kategori: string, harga: number,
+//            stok: number, rating: number desimal, terjual: number }
+// Item   = { idProduk: string, qty: number }
 const produk = [
   { id: "P01", nama: "Beras Premium 5kg", kategori: "Sembako", harga: 78000, stok: 25, rating: 4.7, terjual: 320 },
   { id: "P02", nama: "Minyak Goreng 2L", kategori: "Sembako", harga: 36000, stok: 0, rating: 4.5, terjual: 410 },
@@ -60,21 +66,25 @@ const keranjang = [
 ];
 
 // ===== Beginner 1 =====
+// namaProdukTersedia(produk: Produk[]): string[]
 function namaProdukTersedia(produk) {
   // TODO
   return [];
 }
 
 // ===== Beginner 2 =====
+// totalStok(produk: Produk[]): number
 function totalStok(produk) {
   // TODO
 }
 
 // ===== Beginner 3 =====
+// adaKategori(produk: Produk[], kategori: string): boolean
 function adaKategori(produk, kategori) {
   // TODO
 }
 
+// semuaRatingDiAtas(produk: Produk[], batas: number desimal): boolean
 function semuaRatingDiAtas(produk, batas) {
   // TODO
 }
@@ -84,11 +94,13 @@ function semuaRatingDiAtas(produk, batas) {
 // 
 
 // ===== Intermediate 1 =====
+// rincianCheckout(keranjang: Item[], produk: Produk[]): string[]
 function rincianCheckout(keranjang, produk) {
   // TODO: kembalikan array of string
   return [];
 }
 
+// totalCheckout(keranjang: Item[], produk: Produk[]): number
 function totalCheckout(keranjang, produk) {
   // TODO
 }
@@ -96,6 +108,7 @@ function totalCheckout(keranjang, produk) {
 // ===== Intermediate 2 (kode temanmu, perbaiki) =====
 // JAWABAN Intermediate 2:
 // 
+// totalTerjual(produk: Produk[]): number
 function totalTerjual(produk) {
   return produk.reduce((acc, p) => acc + p.terjual);
 }
@@ -103,6 +116,7 @@ function totalTerjual(produk) {
 // ===== Intermediate 3 (kode temanmu, perbaiki) =====
 // JAWABAN Intermediate 3:
 // 
+// urutHargaTermurah(produk: Produk[]): Produk[]  (produk asli tidak boleh berubah)
 function urutHargaTermurah(produk) {
   return produk.sort((a, b) => a.harga - b.harga);
 }
@@ -112,6 +126,7 @@ function urutHargaTermurah(produk) {
 // 
 // JAWABAN Intermediate 4b:
 // 
+// cariProdukHabis(produk: Produk[]): string | null
 function cariProdukHabis(produk) {
   let hasil = null;
   produk.forEach((p) => {
@@ -124,6 +139,7 @@ function cariProdukHabis(produk) {
 }
 
 // ===== Advanced 1 =====
+// laporanKategori(produk: Produk[]): string[]
 function laporanKategori(produk) {
   // TODO: kembalikan array of string
   return [];
@@ -132,6 +148,7 @@ function laporanKategori(produk) {
 // ===== Advanced 2 =====
 // JAWABAN Advanced 2b:
 // 
+// checkout(keranjang: Item[], produk: Produk[], kodePromo: string | null): string
 function checkout(keranjang, produk, kodePromo) {
   // TODO
 }

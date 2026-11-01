@@ -11,44 +11,86 @@ Kamu membantu tim IT sebuah bank digital dan sebuah rumah sakit. Data mutasi rek
   3. Jalankan `node Jawaban/soal-js2.js`. Output harus sama persis dengan Contoh Output.
   4. Soal bertanda *(jelaskan)* dijawab sebagai komentar di file jawaban, di bawah baris `// JAWABAN ...`.
   5. Method array selain `push` dan `length` (misalnya `map`, `reduce`, `forEach`) belum boleh dipakai. Semua perulangan ditulis manual.
+  6. Setiap fungsi punya baris Input dan Output. Semua number adalah bilangan bulat, kecuali disebut desimal. Tipe parameter juga ditulis di komentar atas setiap fungsi di starter.
 ]
 
 #level("Beginner", "0.3")
 
-+ *Saldo akhir.* Lengkapi `saldoAkhir(saldoAwal, mutasi)` memakai `for` klasik. Fungsi mengembalikan saldo setelah semua mutasi diterapkan.
++ *Saldo akhir.*
+  - Fungsi: `saldoAkhir(saldoAwal, mutasi)`.
+  - Input: `saldoAwal` number. `mutasi` array number (positif masuk, negatif keluar).
+  - Output: number, saldo setelah semua mutasi ditambahkan.
+  - Wajib memakai `for` klasik.
 
-+ *Ringkasan mutasi.* Lengkapi `ringkasMutasi(mutasi)` memakai `for...of`. Fungsi mengembalikan string dengan format persis `Masuk: X, Keluar: Y, Transaksi: Z`. `Keluar` ditulis sebagai angka positif.
++ *Ringkasan mutasi.*
+  - Fungsi: `ringkasMutasi(mutasi)`.
+  - Input: `mutasi` array number.
+  - Output: string persis `Masuk: X, Keluar: Y, Transaksi: Z`.
+    - `X`: jumlah semua mutasi positif.
+    - `Y`: jumlah semua mutasi negatif, ditulis sebagai angka positif.
+    - `Z`: banyaknya mutasi.
+  - Wajib memakai `for...of`.
 
-+ *Kode temanmu.* Fungsi `hitungPPN` di starter selalu mengembalikan `undefined`.
++ *Kode temanmu: `hitungPPN(harga)`.*
+  - Input: `harga` number. Output yang benar: number, 11% dari `harga`.
+  - Masalah: fungsi selalu mengembalikan `undefined`.
   + *(jelaskan)* Mengapa?
-  + Perbaiki dengan *dua* cara berbeda. Tulis cara yang tidak dipakai di komentar, dan pakai salah satunya di kode.
+  + Perbaiki dengan *dua* cara berbeda. Pakai satu cara di kode, tulis cara lainnya di komentar.
 
 #level("Intermediate", "0.3")
 
-+ *Target tabungan.* Lengkapi `bulanMencapaiTarget(saldoAwal, setoranBulanan, bungaPersenTahunan, target)`. Setiap bulan, setoran ditambahkan dulu, lalu bunga bulan itu dihitung dari saldo baru: `bunga = Math.floor(saldo * bungaPersenTahunan / 100 / 12)`. Fungsi mengembalikan jumlah bulan sampai saldo *minimal* sama dengan target.
-  - Jika saldo awal sudah mencapai target, kembalikan `0`.
-  - Jika target tidak akan pernah tercapai, kembalikan `-1`. *(jelaskan)* Kondisi apa yang membuat target tidak pernah tercapai, dan apa yang terjadi pada program jika kondisi ini tidak dicek?
++ *Target tabungan.*
+  - Fungsi: `bulanMencapaiTarget(saldoAwal, setoranBulanan, bungaPersenTahunan, target)`.
+  - Input: semua number bulat, tidak negatif. `bungaPersenTahunan` bernilai `6` berarti 6% per tahun.
+  - Output: number, jumlah bulan sampai saldo *minimal* sama dengan `target`.
+  - Cek sebelum perulangan:
+    + `saldoAwal` sudah minimal `target`: kembalikan `0`.
+    + Target tidak akan pernah tercapai: kembalikan `-1`.
+  - Setiap bulan, berurutan:
+    + Tambahkan `setoranBulanan` ke saldo.
+    + Hitung `bunga = Math.floor(saldo * bungaPersenTahunan / 100 / 12)`, lalu tambahkan ke saldo.
+  - *(jelaskan)* Kondisi apa yang membuat target tidak pernah tercapai? Apa yang terjadi pada program jika kondisi itu tidak dicek?
 
-+ *Kode temanmu.* Fungsi `totalTagihan` menjumlahkan biaya perawatan pasien, tetapi hasilnya `NaN`.
-  + *(jelaskan)* Ada *dua* kesalahan di perulangannya. Sebutkan keduanya dan jelaskan mengapa hasilnya `NaN`, bukan error.
++ *Kode temanmu: `totalTagihan(biaya)`.*
+  - Input: `biaya` array number. Output yang benar: number, jumlah semua biaya. Array kosong menghasilkan `0`.
+  - Masalah: hasilnya `NaN`.
+  + *(jelaskan)* Ada *dua* kesalahan di perulangannya. Sebutkan keduanya. Mengapa hasilnya `NaN`, bukan error?
   + Tulis ulang fungsi memakai `for...of`. *(jelaskan)* Mengapa versi `for...of` tidak bisa terkena kesalahan yang sama?
 
-+ *Antrean poli.* Lengkapi `posisiPertama(antrean, kodePoli)`. Fungsi mengembalikan posisi pertama (mulai dari 1) pasien dengan kode poli tersebut, atau `-1` jika tidak ada. Perulangan harus berhenti begitu data ditemukan. *(jelaskan)* Mengapa `for...of` kurang cocok untuk soal ini dibandingkan `for` klasik?
++ *Antrean poli.*
+  - Fungsi: `posisiPertama(antrean, kodePoli)`.
+  - Input: `antrean` array string berisi kode poli satu huruf, misalnya `"A"`. `kodePoli` string.
+  - Output: number, posisi pertama pasien dengan kode itu (mulai dari 1). Jika tidak ada, `-1`.
+  - Perulangan harus berhenti begitu data ditemukan.
+  - *(jelaskan)* Mengapa `for...of` kurang cocok untuk soal ini dibandingkan `for` klasik?
 
 #level("Advanced", "0.4")
 
 + *Jadwal cicilan pinjaman.*
-  + Lengkapi `jadwalCicilan(pokok, bungaPersenPerBulan, cicilanPerBulan)`. Fungsi mengembalikan *array of string*, satu string per bulan, dengan format `Bulan N: bunga B, bayar P, sisa S`. Aturan setiap bulan:
-    + `bunga = Math.floor(sisa * bungaPersenPerBulan / 100)`, lalu bunga ditambahkan ke sisa.
-    + Pembayaran sebesar `cicilanPerBulan`. Jika sisa lebih kecil dari cicilan, bayar sebesar sisa saja.
-    + Ulangi sampai sisa menjadi 0.
-    Jika cicilan bulan pertama tidak lebih besar dari bunga bulan pertama, pinjaman tidak akan pernah lunas. Kembalikan `["TIDAK AKAN LUNAS"]`.
+  + Lengkapi `jadwalCicilan(pokok, bungaPersenPerBulan, cicilanPerBulan)`.
+    - Input: semua number bulat lebih dari 0.
+    - Output: array string, satu string per bulan, format persis `Bulan N: bunga B, bayar P, sisa S`.
+    - Sisa awal sama dengan `pokok`. Setiap bulan, berurutan:
+      + Hitung `bunga = Math.floor(sisa * bungaPersenPerBulan / 100)`, lalu tambahkan ke sisa.
+      + Bayar sebesar `cicilanPerBulan`. Jika sisa lebih kecil dari cicilan, bayar sebesar sisa.
+      + Kurangi sisa dengan pembayaran.
+      + Ulangi sampai sisa 0.
+    - Jika `cicilanPerBulan` tidak lebih besar dari bunga bulan pertama, kembalikan `["TIDAK AKAN LUNAS"]`.
   + *(jelaskan)* Mengapa fungsi ini mengembalikan array string, bukan langsung `console.log` di dalam fungsi? Sebutkan minimal dua keuntungannya.
 
 + *Biaya admin penarikan.*
-  + Lengkapi `biayaBertingkat(nominal)`: penarikan sampai Rp 100.000 gratis, sampai Rp 1.000.000 biayanya Rp 2.500, di atas itu Rp 5.000.
-  + Lengkapi `totalBiayaAdmin(mutasi, aturanBiaya)`. Fungsi menjumlahkan biaya admin untuk setiap mutasi *keluar* saja. Parameter `aturanBiaya` adalah fungsi yang menerima nominal penarikan (positif) dan mengembalikan biayanya. Tiga aturan (`biayaFlat`, `biayaPersen`, `biayaBertingkat`) dipakai bergantian di bagian `PEMANGGILAN`.
-  + *(jelaskan)* Temanmu mengusulkan versi lain: `totalBiayaAdmin(mutasi, jenis)` dengan `jenis` berupa string `"flat"`, `"persen"`, atau `"bertingkat"`, lalu `if` di dalam fungsi. Bank lalu menambah aturan baru "gratis untuk nasabah prioritas". Bandingkan berapa banyak kode yang harus diubah pada versimu dan versi temanmu.
+  + Lengkapi `biayaBertingkat(nominal)`.
+    - Input: `nominal` number positif.
+    - Output: number.
+      - Sampai Rp 100.000: `0`
+      - Sampai Rp 1.000.000: `2500`
+      - Di atas Rp 1.000.000: `5000`
+  + Lengkapi `totalBiayaAdmin(mutasi, aturanBiaya)`.
+    - Input: `mutasi` array number. `aturanBiaya` fungsi yang menerima nominal positif dan mengembalikan biayanya. Contohnya `biayaFlat`, `biayaPersen`, `biayaBertingkat` di starter.
+    - Output: number, jumlah biaya admin.
+    - Hanya mutasi *keluar* (negatif) yang dikenai biaya.
+    - Kirim nominal ke `aturanBiaya` sebagai angka positif.
+  + *(jelaskan)* Temanmu mengusulkan `totalBiayaAdmin(mutasi, jenis)` dengan `jenis` berupa string `"flat"`, `"persen"`, atau `"bertingkat"`, lalu memakai `if` di dalam fungsi. Bank menambah aturan baru "gratis untuk nasabah prioritas". Bandingkan berapa banyak kode yang harus diubah pada versimu dan versi temanmu.
 
 = Contoh Output
 

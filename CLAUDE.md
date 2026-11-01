@@ -30,6 +30,7 @@ HO, soal, feedback, dan jawaban ke Dion memakai bahasa Indonesia. Istilah teknis
 2. Bandingkan dengan Contoh Output dan kunci jawaban asisten.
 3. Tulis di `Diskusi/FEEDBACK.md`: nilai per bagian (Beginner 0.3, Intermediate 0.3, Advanced 0.4, total 0–100), yang sudah benar, yang salah dan alasannya, dan satu pertanyaan "mengapa" untuk latihan diskusi live coding. Tulis nilai akhir dalam satu baris persis `Total: NN`, karena `scripts/progres.js` membaca baris itu.
 4. Jalankan `npm run selesai` agar kolom Nilai di `PROGRESS.md` terisi.
+5. Jawaban *(jelaskan)* dinilai dari pemahaman konsep. Jangan mengurangi nilai hanya karena contoh konkret tidak ditulis (misalnya diminta menulis argumen fungsi satu per satu). Kesalahan konsep tetap ditandai. Feedback dan permintaan revisi ditulis singkat. Saat membuat soal baru, hindari *(jelaskan)* yang hanya meminta contoh mekanis.
 
 ## Kunci jawaban
 
@@ -45,5 +46,6 @@ Kunci jawaban asisten tidak pernah masuk repo ini. Di laptop utama, kunci ada di
 
 - Topik berikutnya dibuat setelah topik sebelumnya dikerjakan. Sesuaikan isinya dengan kelemahan yang terlihat di FEEDBACK.
 - Ikuti pola HO dan soal yang sudah ada (template `template/praktikum.typ`).
+- Format soal (contoh: Soal JS-2 dan JS-3): setiap fungsi ditulis per poin, bukan paragraf. Urutannya baris `Fungsi`, `Input` (tipe setiap parameter), `Output` (tipe dan format persis), lalu aturan sebagai daftar bernomor jika urutan cek penting. Starter memberi komentar tipe gaya TypeScript di atas setiap fungsi, misalnya `// saldoAkhir(saldoAwal: number, mutasi: number[]): number`. Targetnya: soal cukup dibaca sekali.
 - Setiap Contoh Output wajib diverifikasi dengan kunci jawaban yang dijalankan.
 - Compile PDF: `typst compile --root . <file.typ>` dari root repo.
