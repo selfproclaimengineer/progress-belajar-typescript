@@ -9,7 +9,7 @@ Kamu membantu tim IT sebuah bank digital dan sebuah rumah sakit. Data mutasi rek
   1. Salin `Soal/starter.js` ke folder `Jawaban/`, misalnya `Jawaban/soal-js2.js`.
   2. Lengkapi fungsi bertanda `TODO`. Jangan mengubah bagian `PEMANGGILAN`.
   3. Jalankan `node Jawaban/soal-js2.js`. Output harus sama persis dengan Contoh Output.
-  4. Soal bertanda *(jelaskan)* dijawab di laporan.
+  4. Soal bertanda *(jelaskan)* dijawab sebagai komentar di file jawaban, di bawah baris `// JAWABAN ...`.
   5. Method array selain `push` dan `length` (misalnya `map`, `reduce`, `forEach`) belum boleh dipakai. Semua perulangan ditulis manual.
 ]
 
@@ -21,7 +21,7 @@ Kamu membantu tim IT sebuah bank digital dan sebuah rumah sakit. Data mutasi rek
 
 + *Kode temanmu.* Fungsi `hitungPPN` di starter selalu mengembalikan `undefined`.
   + *(jelaskan)* Mengapa?
-  + Perbaiki dengan *dua* cara berbeda. Tulis keduanya di laporan, dan pakai salah satunya di kode.
+  + Perbaiki dengan *dua* cara berbeda. Tulis cara yang tidak dipakai di komentar, dan pakai salah satunya di kode.
 
 #level("Intermediate", "0.3")
 
@@ -94,10 +94,10 @@ TIDAK AKAN LUNAS
 ```
 ]
 
-= Laporan
+= Pengumpulan
 
 #perhatian[
-  - Laporan PDF disimpan di `Jawaban/` dengan nama `NAMA_JS_TOPIK2.pdf`.
-  - Isi laporan: hasil Coba Sendiri dari HO, kode setiap fungsi, screenshot output, dan jawaban semua soal *(jelaskan)*.
-  - Catat waktu mulai dan selesai di halaman pertama laporan.
+  - Kode soal: `Jawaban/soal-js2.js`. Jawaban *(jelaskan)* ditulis sebagai komentar di bawah baris `// JAWABAN ...` yang sesuai.
+  - Coba Sendiri: `Jawaban/coba2.js`. Tebakan ditulis sebagai komentar di ujung setiap baris, jawaban pertanyaan sebagai komentar di bawah file.
+  - Jalankan `npm run selesai -- --durasi "..." --macet "..."`, lalu minta asisten memeriksa.
 ]

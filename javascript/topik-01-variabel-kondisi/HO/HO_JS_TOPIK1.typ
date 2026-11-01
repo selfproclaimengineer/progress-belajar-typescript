@@ -219,7 +219,7 @@ const label = umur >= 60 ? "Lansia" : "Bukan lansia";
 Hindari ternary bersarang. Jika butuh lebih dari dua cabang, pakai `if/else`.
 
 #coba-sendiri[
-  Buat file `coba1.js`. Sebelum menjalankan, *tulis tebakanmu* untuk setiap baris di laporan. Setelah itu jalankan, lalu bandingkan.
+  Buat file `Jawaban/coba1.js`. Sebelum menjalankan, *tulis tebakanmu* sebagai komentar di ujung setiap baris `console.log`. Setelah itu jalankan, lalu bandingkan.
 
   ```js
   const keranjang = ["sabun"];
@@ -240,5 +240,5 @@ Hindari ternary bersarang. Jika butuh lebih dari dua cabang, pakai `if/else`.
   2. Mengapa `keranjang.push(...)` tidak error padahal `keranjang` dibuat dengan `const`?
   3. Ganti `var` di baris terakhir menjadi `let`. Apa yang terjadi, dan mengapa?
 
-  Sertakan screenshot hasil tiap langkah.
+  Jawab pertanyaan di atas sebagai komentar di bagian bawah `coba1.js`.
 ]

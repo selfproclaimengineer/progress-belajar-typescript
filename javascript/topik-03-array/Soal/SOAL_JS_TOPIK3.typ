@@ -29,7 +29,7 @@ Isi `keranjang`: P01 sebanyak 1, P07 sebanyak 10, P03 sebanyak 2, P06 sebanyak 1
   1. Salin `Soal/starter.js` ke folder `Jawaban/`, misalnya `Jawaban/soal-js3.js`.
   2. Lengkapi fungsi bertanda `TODO`. Jangan mengubah bagian `DATA` dan `PEMANGGILAN`.
   3. Jalankan `node Jawaban/soal-js3.js`. Output harus sama persis dengan Contoh Output.
-  4. Soal bertanda *(jelaskan)* dijawab di laporan.
+  4. Soal bertanda *(jelaskan)* dijawab sebagai komentar di file jawaban, di bawah baris `// JAWABAN ...`.
   5. Kecuali disebut lain, pakai method array (`map`, `filter`, `find`, `some`, `every`, `includes`, `reduce`). Jangan mengubah array `produk` dan `keranjang`.
 ]
 
@@ -124,10 +124,10 @@ GAGAL: keranjang kosong
 ```
 ]
 
-= Laporan
+= Pengumpulan
 
 #perhatian[
-  - Laporan PDF disimpan di `Jawaban/` dengan nama `NAMA_JS_TOPIK3.pdf`.
-  - Isi laporan: hasil Coba Sendiri dari HO, kode setiap fungsi, screenshot output, dan jawaban semua soal *(jelaskan)*.
-  - Catat waktu mulai dan selesai di halaman pertama laporan.
+  - Kode soal: `Jawaban/soal-js3.js`. Jawaban *(jelaskan)* ditulis sebagai komentar di bawah baris `// JAWABAN ...` yang sesuai.
+  - Coba Sendiri: `Jawaban/coba3.js`. Tebakan ditulis sebagai komentar di ujung setiap baris, jawaban pertanyaan sebagai komentar di bawah file.
+  - Jalankan `npm run selesai -- --durasi "..." --macet "..."`, lalu minta asisten memeriksa.
 ]

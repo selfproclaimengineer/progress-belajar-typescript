@@ -1,6 +1,6 @@
 # Progress Belajar TypeScript
 
-Praktikum mandiri JavaScript dan TypeScript untuk persiapan live coding. Formatnya meniru praktikum kuliah: setiap topik punya handout (HO), soal bertingkat (Beginner, Intermediate, Advanced), laporan, dan catatan diskusi.
+Praktikum mandiri JavaScript dan TypeScript untuk persiapan live coding. Formatnya meniru praktikum kuliah: setiap topik punya handout (HO), soal bertingkat (Beginner, Intermediate, Advanced), jawaban di kode, dan catatan diskusi.
 
 - Jadwal dan daftar topik: [SILABUS.md](SILABUS.md)
 - Progres harian dan nilai: [PROGRESS.md](PROGRESS.md)
@@ -11,7 +11,7 @@ Praktikum mandiri JavaScript dan TypeScript untuk persiapan live coding. Formatn
 javascript/topik-XX-nama/
   HO/        handout (PDF + sumber Typst)
   Soal/      soal (PDF + sumber Typst) dan file starter
-  Jawaban/   kode jawaban dan laporan PDF
+  Jawaban/   cobaN.js dan soal-jsN.js (jawaban penjelasan ditulis sebagai komentar)
   Diskusi/   log tanya jawab dengan asisten dan feedback
 typescript/  pola yang sama
 tugas-rancang/

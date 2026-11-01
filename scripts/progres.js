@@ -37,9 +37,12 @@ function statusTopik(dir) {
   const nilai = existsSync(feedback)
     ? readFileSync(feedback, "utf8").match(/Total:\s*(\d+)/)?.[1]
     : undefined;
+  // soal dianggap selesai jika file soal-* ada dan tidak ada lagi penanda TODO dari starter
+  const fileSoal = isi.filter((f) => /^soal-.*\.(js|ts|html)$/.test(f));
   return {
-    soal: isi.some((f) => /\.(js|ts|html)$/.test(f)),
-    laporan: isi.some((f) => f.toLowerCase().endsWith(".pdf")),
+    coba: isi.some((f) => /^coba.*\.(js|ts|html)$/.test(f)),
+    soal: fileSoal.length > 0 &&
+      fileSoal.every((f) => !readFileSync(join(jawaban, f), "utf8").includes("// TODO")),
     nilai,
   };
 }
@@ -58,8 +61,8 @@ function ringkasKegiatan(topik, berubah) {
     const f = berubah.filter((x) => x.startsWith(prefixDir));
     if (f.length === 0) continue;
     const jenis = [];
-    if (f.some((x) => x.includes("/Jawaban/") && /\.(js|ts|html)$/.test(x))) jenis.push("kode jawaban");
-    if (f.some((x) => x.includes("/Jawaban/") && x.toLowerCase().endsWith(".pdf"))) jenis.push("laporan");
+    if (f.some((x) => /\/Jawaban\/coba.*\.(js|ts|html)$/.test(x))) jenis.push("coba sendiri");
+    if (f.some((x) => /\/Jawaban\/soal-.*\.(js|ts|html)$/.test(x))) jenis.push("soal");
     // file diskusi/feedback kosong ikut dibuat bersama materi, jadi hanya dihitung jika sudah berisi
     const diskusi = join(t.dir, "Diskusi", "DISKUSI.md");
     const feedback = join(t.dir, "Diskusi", "FEEDBACK.md");
@@ -81,11 +84,11 @@ function perbaruiChecklist(teks, topik) {
       const t = topik.find((x) => baris.startsWith(`| ${x.kode} `));
       if (!t) return baris;
       const kolom = baris.split("|");
-      // kolom: ["", topik, HO, Soal, Laporan, Nilai, ""]
+      // kolom: ["", topik, Coba Sendiri, Soal, Diperiksa, Nilai, ""]
       const s = statusTopik(t.dir);
-      if (s.laporan) kolom[2] = " [x] "; // laporan memuat Coba Sendiri dari HO
+      if (s.coba) kolom[2] = " [x] ";
       if (s.soal) kolom[3] = " [x] ";
-      if (s.laporan) kolom[4] = " [x] ";
+      if (s.nilai) kolom[4] = " [x] ";
       if (s.nilai) kolom[5] = ` ${s.nilai} `;
       return kolom.join("|");
     })

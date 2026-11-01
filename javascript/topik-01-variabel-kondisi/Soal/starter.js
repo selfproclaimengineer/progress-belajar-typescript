@@ -1,6 +1,7 @@
 // Praktikum JS Modul 1 — file starter
 // 1. Salin file ini ke folder Jawaban/ (contoh: Jawaban/soal-js1.js).
 // 2. Lengkapi setiap fungsi bertanda TODO dan perbaiki fungsi milik "temanmu".
+//    Jawaban soal (jelaskan) ditulis sebagai komentar di bawah baris "// JAWABAN ...".
 // 3. Jalankan: node Jawaban/soal-js1.js
 // 4. Bandingkan output dengan Contoh Output di PDF soal.
 
@@ -12,23 +13,35 @@ function kategoriTriase(skorNyeri, sadar) {
   // TODO
 }
 
+// ===== Beginner 2 (jelaskan) =====
+// JAWABAN Beginner 2a:
+// 
+// JAWABAN Beginner 2b:
+// 
+
 // ===== Beginner 3 =====
 function hitungDiskon(totalBelanja, isMember) {
   // TODO
 }
 
 // ===== Intermediate 1 =====
+// JAWABAN Intermediate 1b:
+// 
 function hitungBiayaRawat(kelas, malam, punyaBPJS) {
   // TODO
 }
 
 // ===== Intermediate 2a (kode temanmu, perbaiki) =====
+// JAWABAN Intermediate 2a:
+// 
 function infoStok(namaBarang, stok) {
   const tampil = stok || "tidak diketahui";
   return `${namaBarang}: ${tampil}`;
 }
 
 // ===== Intermediate 2b (kode temanmu, perbaiki) =====
+// JAWABAN Intermediate 2b (termasuk dua cara perbaikan):
+// 
 function labelBMI(bmi) {
   if (bmi >= 18.5) {
     return "Normal";
@@ -42,11 +55,15 @@ function labelBMI(bmi) {
 }
 
 // ===== Advanced 1 =====
+// JAWABAN Advanced 1b:
+// 
 function cekTransfer(saldo, nominal, pinBenar, sudahTransferHariIni) {
   // TODO
 }
 
 // ===== Advanced 2 =====
+// JAWABAN Advanced 2b (termasuk versi ternary):
+// 
 function hitungOngkir(beratGram, zona, isPremium) {
   // TODO
 }

@@ -88,7 +88,7 @@ HO (PDF, dibuat dengan Typst):
 1. Tujuan Praktikum (daftar kemampuan).
 2. Dasar Teori singkat, banyak contoh kode bernomor ("Listing n").
 3. Kotak "Catatan" (info tambahan) dan "Perhatian" (jebakan umum, sering dengan contoh salah vs benar).
-4. "Coba Sendiri" di dalam HO: latihan kecil yang hasilnya masuk laporan.
+4. "Coba Sendiri" di dalam HO: latihan kecil yang dikerjakan di `Jawaban/cobaN.js`.
 5. Panjang 5–8 halaman.
 
 Soal (PDF, Typst):
@@ -99,7 +99,7 @@ Soal (PDF, Typst):
 
 Tampilan: meniru modul Praktikum Database System CE 613 (permintaan Dion, 2026-11-01): Arial untuk teks, Consolas untuk kode, judul besar di tengah, kotak Catatan biru, Perhatian merah, Coba Sendiri hijau dengan header berwarna, caption "Listing n" di tengah, footer bergaris dengan nomor halaman.
 
-Laporan (dibuat Dion, PDF): hasil Coba Sendiri dan jawaban soal, berisi kode, screenshot output, dan analisis. Format sama seperti laporan kuliah. File kode jawaban juga di-commit agar asisten bisa menjalankannya.
+Jawaban (diubah Dion pada 2026-11-01, menggantikan laporan PDF): kode di `Jawaban/soal-jsN.js`; jawaban *(jelaskan)* sebagai komentar di bawah baris `// JAWABAN ...` yang sudah disiapkan di starter; Coba Sendiri di `Jawaban/cobaN.js` dengan tebakan sebagai komentar. File kode jawaban juga di-commit agar asisten bisa menjalankannya.
 
 ## 7. Struktur repo
 
@@ -114,7 +114,7 @@ progress-belajar-typescript/
     topik-01-variabel-kondisi/
       HO/            HO_JS_TOPIK1.typ + .pdf
       Soal/          SOAL_JS_TOPIK1.typ + .pdf + file starter
-      Jawaban/       kode Dion + laporan PDF
+      Jawaban/       cobaN.js + soal-jsN.js (jawaban penjelasan di komentar)
       Diskusi/       DISKUSI.md (log tanya jawab) + FEEDBACK.md
     ...
   typescript/
@@ -129,7 +129,7 @@ progress-belajar-typescript/
 - Tidak pernah memberi jawaban langsung untuk soal atau Coba Sendiri.
 - Tangga hint: (1) logika atau konsep yang relevan, (2) nama method atau fitur yang bisa dipakai, (3) pseudocode atau langkah, (4) potongan sintaks kecil yang bukan solusi utuh. Level 4 hanya jika Dion sudah buntu setelah level 3.
 - Setiap pertanyaan dan jawaban dicatat di `Diskusi/DISKUSI.md` topik itu: tanggal, butir soal, pertanyaan, level hint, ringkasan jawaban.
-- Saat laporan masuk: jalankan kode Dion, cek terhadap Contoh Output, beri nilai per bagian (Beginner/Intermediate/Advanced) dan feedback di `Diskusi/FEEDBACK.md`. Feedback memuat yang sudah benar, yang salah, dan satu pertanyaan "mengapa" untuk latihan diskusi.
+- Saat jawaban siap diperiksa: jalankan kode Dion, cek terhadap Contoh Output, beri nilai per bagian (Beginner/Intermediate/Advanced) dan feedback di `Diskusi/FEEDBACK.md`. Feedback memuat yang sudah benar, yang salah, dan satu pertanyaan "mengapa" untuk latihan diskusi.
 - Setiap akhir sesi: perbarui log harian di `PROGRESS.md` (tanggal, topik, durasi, macet di mana), lalu commit dan push.
 - Topik berikutnya dibuat setelah topik sebelumnya dikerjakan, supaya isi bisa disesuaikan dengan kelemahan yang terlihat. Untuk akhir pekan, tiga topik dibuat sekaligus di awal hari.
 

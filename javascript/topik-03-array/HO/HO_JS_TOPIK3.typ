@@ -188,7 +188,7 @@ Baca rantai seperti kalimat: saring pasien umum, ambil biayanya, lalu jumlahkan.
 ]
 
 #coba-sendiri[
-  Buat file `coba3.js` berisi array `pasien` dari Listing 1. Tulis tebakanmu di laporan sebelum menjalankan.
+  Buat file `Jawaban/coba3.js` berisi array `pasien` dari Listing 1. Tulis tebakanmu sebagai komentar di ujung setiap baris sebelum menjalankan.
 
   ```js
   const angka = [5, 25, 100, 1];
@@ -207,5 +207,5 @@ Baca rantai seperti kalimat: saring pasien umum, ambil biayanya, lalu jumlahkan.
   3. Hapus `, 0` pada baris `reduce`, lalu jalankan. Catat error-nya dan jelaskan.
   4. Dengan chaining, tampilkan nama pasien poli Umum dalam satu string dipisah koma: `Budi, Joko`. Petunjuk: method `join(", ")`.
 
-  Sertakan screenshot hasil tiap langkah.
+  Jawab pertanyaan di atas sebagai komentar di bagian bawah `coba3.js`.
 ]

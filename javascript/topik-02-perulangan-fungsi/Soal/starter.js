@@ -1,6 +1,7 @@
 // Praktikum JS Modul 2 — file starter
 // 1. Salin file ini ke folder Jawaban/ (contoh: Jawaban/soal-js2.js).
 // 2. Lengkapi setiap fungsi bertanda TODO dan perbaiki fungsi milik "temanmu".
+//    Jawaban soal (jelaskan) ditulis sebagai komentar di bawah baris "// JAWABAN ...".
 // 3. Jalankan: node Jawaban/soal-js2.js
 // 4. Bandingkan output dengan Contoh Output di PDF soal.
 
@@ -15,14 +16,24 @@ function ringkasMutasi(mutasi) {
 }
 
 // ===== Beginner 3 (kode temanmu, perbaiki) =====
+// JAWABAN Beginner 3a:
+// 
+// JAWABAN Beginner 3b (cara perbaikan yang tidak dipakai di kode):
+// 
 const hitungPPN = (harga) => { harga * 11 / 100 };
 
 // ===== Intermediate 1 =====
+// JAWABAN Intermediate 1 (kondisi yang membuat target tidak tercapai):
+// 
 function bulanMencapaiTarget(saldoAwal, setoranBulanan, bungaPersenTahunan, target) {
   // TODO
 }
 
 // ===== Intermediate 2 (kode temanmu, perbaiki) =====
+// JAWABAN Intermediate 2a:
+// 
+// JAWABAN Intermediate 2b (mengapa for...of aman):
+// 
 function totalTagihan(biaya) {
   let total = 0;
   for (let i = 1; i <= biaya.length; i++) total += biaya[i];
@@ -30,17 +41,23 @@ function totalTagihan(biaya) {
 }
 
 // ===== Intermediate 3 =====
+// JAWABAN Intermediate 3:
+// 
 function posisiPertama(antrean, kodePoli) {
   // TODO
 }
 
 // ===== Advanced 1 =====
+// JAWABAN Advanced 1b:
+// 
 function jadwalCicilan(pokok, bungaPersenPerBulan, cicilanPerBulan) {
   // TODO: kembalikan array berisi string per bulan
   return [];
 }
 
 // ===== Advanced 2 =====
+// JAWABAN Advanced 2c:
+// 
 const biayaFlat = (nominal) => 2500;
 const biayaPersen = (nominal) => Math.ceil((nominal * 5) / 1000);
 

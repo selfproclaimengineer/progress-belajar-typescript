@@ -24,9 +24,9 @@ HO, soal, feedback, dan jawaban ke Dion memakai bahasa Indonesia. Istilah teknis
 **Jawaban asisten:** ringkasan hint yang diberikan
 ```
 
-## Saat Dion mengumpulkan laporan
+## Saat Dion minta jawabannya diperiksa
 
-1. Baca laporan PDF dan jalankan kode di `Jawaban/`.
+1. Baca `Jawaban/cobaN.js` dan `Jawaban/soal-jsN.js`. Jawaban *(jelaskan)* ada di komentar di bawah baris `// JAWABAN ...`; tebakan Coba Sendiri ada di komentar ujung baris. Jalankan kedua file.
 2. Bandingkan dengan Contoh Output dan kunci jawaban asisten.
 3. Tulis di `Diskusi/FEEDBACK.md`: nilai per bagian (Beginner 0.3, Intermediate 0.3, Advanced 0.4, total 0–100), yang sudah benar, yang salah dan alasannya, dan satu pertanyaan "mengapa" untuk latihan diskusi live coding.
 4. Isi kolom Nilai di `PROGRESS.md`.

@@ -168,7 +168,7 @@ console.log(hitungAkhir(100000, tambahOngkir)); // 115000
 Perhatikan: yang dikirim adalah `tambahPajak`, bukan `tambahPajak()`. Tanpa tanda kurung, kita mengirim fungsinya. Dengan tanda kurung, kita mengirim *hasil* pemanggilannya.
 
 #coba-sendiri[
-  Buat file `coba2.js`. Tulis tebakanmu di laporan sebelum menjalankan, lalu bandingkan.
+  Buat file `Jawaban/coba2.js`. Tulis tebakanmu sebagai komentar di ujung setiap baris sebelum menjalankan, lalu bandingkan.
 
   ```js
   const nilai = [10, 20, 30];
@@ -190,5 +190,5 @@ Perhatikan: yang dikirim adalah `tambahPajak`, bukan `tambahPajak()`. Tanpa tand
   2. Perbaiki perulangan `jumlah` dan fungsi `kali2` agar hasilnya `60` dan `10`.
   3. Ubah `sapa` menjadi arrow function yang disimpan di `const`, tanpa memindahkan barisnya. Apa yang terjadi, dan mengapa?
 
-  Sertakan screenshot hasil tiap langkah.
+  Jawab pertanyaan di atas sebagai komentar di bagian bawah `coba2.js`.
 ]

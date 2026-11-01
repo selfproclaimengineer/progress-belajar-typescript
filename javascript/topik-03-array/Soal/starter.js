@@ -1,6 +1,7 @@
 // Praktikum JS Modul 3 — file starter
 // 1. Salin file ini ke folder Jawaban/ (contoh: Jawaban/soal-js3.js).
 // 2. Lengkapi setiap fungsi bertanda TODO dan perbaiki fungsi milik "temanmu".
+//    Jawaban soal (jelaskan) ditulis sebagai komentar di bawah baris "// JAWABAN ...".
 // 3. Jalankan: node Jawaban/soal-js3.js
 // 4. Bandingkan output dengan Contoh Output di PDF soal.
 
@@ -43,6 +44,10 @@ function semuaRatingDiAtas(produk, batas) {
   // TODO
 }
 
+// ===== Beginner 4 (jelaskan) =====
+// JAWABAN Beginner 4 (pesan error, penyebab, versi benar):
+// 
+
 // ===== Intermediate 1 =====
 function rincianCheckout(keranjang, produk) {
   // TODO: kembalikan array of string
@@ -54,16 +59,24 @@ function totalCheckout(keranjang, produk) {
 }
 
 // ===== Intermediate 2 (kode temanmu, perbaiki) =====
+// JAWABAN Intermediate 2:
+// 
 function totalTerjual(produk) {
   return produk.reduce((acc, p) => acc + p.terjual);
 }
 
 // ===== Intermediate 3 (kode temanmu, perbaiki) =====
+// JAWABAN Intermediate 3:
+// 
 function urutHargaTermurah(produk) {
   return produk.sort((a, b) => a.harga - b.harga);
 }
 
 // ===== Intermediate 4 (kode temanmu, perbaiki) =====
+// JAWABAN Intermediate 4a:
+// 
+// JAWABAN Intermediate 4b:
+// 
 function cariProdukHabis(produk) {
   let hasil = null;
   produk.forEach((p) => {
@@ -82,6 +95,8 @@ function laporanKategori(produk) {
 }
 
 // ===== Advanced 2 =====
+// JAWABAN Advanced 2b:
+// 
 function checkout(keranjang, produk, kodePromo) {
   // TODO
 }

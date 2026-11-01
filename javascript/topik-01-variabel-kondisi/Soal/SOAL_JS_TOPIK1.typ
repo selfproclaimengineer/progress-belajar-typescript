@@ -9,7 +9,7 @@ Kamu membantu tim IT sebuah rumah sakit dan sebuah marketplace. Semua fungsi dit
   1. Salin `Soal/starter.js` ke folder `Jawaban/`, misalnya `Jawaban/soal-js1.js`.
   2. Lengkapi fungsi bertanda `TODO`. Jangan mengubah bagian `PEMANGGILAN` di bawah file.
   3. Jalankan `node Jawaban/soal-js1.js`. Output harus sama persis dengan Contoh Output.
-  4. Soal bertanda *(jelaskan)* dijawab di laporan, bukan di kode.
+  4. Soal bertanda *(jelaskan)* dijawab sebagai komentar di file jawaban, di bawah baris `// JAWABAN ...`.
   5. Hanya pakai materi Modul 1. Array dan method array belum boleh dipakai.
 ]
 
@@ -46,7 +46,7 @@ Kamu membantu tim IT sebuah rumah sakit dan sebuah marketplace. Semua fungsi dit
 
 + *Kode temanmu.* Dua fungsi berikut sudah ada di starter. Keduanya berjalan tanpa error, tetapi hasilnya salah.
   + Fungsi `infoStok` menampilkan stok barang di halaman marketplace. Barang dengan stok `0` malah tampil "tidak diketahui". *(jelaskan)* letak kesalahannya, lalu perbaiki.
-  + Fungsi `labelBMI` dipakai di poli gizi. Pasien dengan BMI 32 mendapat label "Normal". Batas yang benar: di bawah 18,5 "Kurus"; 18,5 sampai di bawah 25 "Normal"; 25 sampai di bawah 30 "Berat berlebih"; 30 ke atas "Obesitas". *(jelaskan)* mengapa BMI 32 mendapat "Normal". Tulis *dua* cara perbaikan yang berbeda di laporan, pilih satu untuk kode, dan jelaskan mana yang lebih mudah dirawat.
+  + Fungsi `labelBMI` dipakai di poli gizi. Pasien dengan BMI 32 mendapat label "Normal". Batas yang benar: di bawah 18,5 "Kurus"; 18,5 sampai di bawah 25 "Normal"; 25 sampai di bawah 30 "Berat berlebih"; 30 ke atas "Obesitas". *(jelaskan)* mengapa BMI 32 mendapat "Normal". Tulis *dua* cara perbaikan yang berbeda di komentar, pilih satu untuk kode, dan jelaskan mana yang lebih mudah dirawat.
 
 #level("Advanced", "0.4")
 
@@ -129,10 +129,10 @@ GAGAL: nominal tidak valid
 ```
 ]
 
-= Laporan
+= Pengumpulan
 
 #perhatian[
-  - Laporan PDF disimpan di `Jawaban/` dengan nama `NAMA_JS_TOPIK1.pdf`.
-  - Isi laporan: hasil Coba Sendiri dari HO, kode setiap fungsi, screenshot output, dan jawaban semua soal *(jelaskan)*.
-  - Catat waktu mulai dan selesai di halaman pertama laporan.
+  - Kode soal: `Jawaban/soal-js1.js`. Jawaban *(jelaskan)* ditulis sebagai komentar di bawah baris `// JAWABAN ...` yang sesuai.
+  - Coba Sendiri: `Jawaban/coba1.js`. Tebakan ditulis sebagai komentar di ujung setiap baris, jawaban pertanyaan sebagai komentar di bawah file.
+  - Jalankan `npm run selesai -- --durasi "..." --macet "..."`, lalu minta asisten memeriksa.
 ]
