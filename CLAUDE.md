@@ -33,7 +33,7 @@ HO, soal, feedback, dan jawaban ke Dion memakai bahasa Indonesia. Istilah teknis
 
 ## Kunci jawaban
 
-Kunci jawaban asisten tidak pernah masuk repo ini. Simpan di luar repo (scratchpad sesi atau folder lokal di luar repo).
+Kunci jawaban asisten tidak pernah masuk repo ini. Di laptop utama, kunci ada di `E:\Kuliah\kunci-praktikum-js\js-N\kunci.js`. `E:\Kuliah\kunci-praktikum-js\cek-output.sh <SOAL.typ> <kunci.js>` membandingkan Contoh Output di soal dengan output kunci. Di device lain kunci tidak tersedia; periksa jawaban dengan menjalankan kode Dion dan mencocokkannya dengan Contoh Output.
 
 ## Akhir sesi
 

@@ -20,7 +20,7 @@ Cadangan: 12–15 Nov. Topik yang molor menggeser jadwal; tidak ada topik yang d
 ## Topik JavaScript
 
 1. **Variabel dan kondisi**: `const`/`let`/`var`, tipe data, operator, `===` vs `==`, truthy/falsy, `if`/`else`, `switch`, ternary.
-2. **Perulangan dan fungsi**: `for`, `while`, `for...of`, function declaration vs arrow function, parameter default, scope, return.
+2. **Perulangan dan fungsi**: array dasar (index, `length`, `push`), `for`, `while`, `for...of`, function declaration vs arrow function, parameter default, scope, return.
 3. **Array**: `forEach`, `map`, `filter`, `reduce`, `find`, `some`, `every`, `includes`, `sort`. `for` vs `forEach`.
 4. **String dan object**: method string, string sebagai "mirip array", object literal, destructuring, spread, salinan dangkal vs dalam, JSON.
 5. **OOP**: `class`, constructor, method, getter, field `#private`, `extends`/`super`, object literal vs class.
