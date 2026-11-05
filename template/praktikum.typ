@@ -97,3 +97,14 @@
   #v(-0.5em)
   #isi
 ]
+
+// Output per tugas, ditaruh langsung di bawah tugasnya.
+// #keluaran[`console.log(f(x))`][```txt
+// hasil
+// ```]
+// Blok ```txt dibaca cek-output.sh, jadi isinya harus persis output program.
+#let keluaran(panggilan, hasil) = block(width: 100%, above: 0.9em, below: 0.9em, breakable: false)[
+  #text(size: 8.5pt, weight: "bold", fill: abu-teks)[Output dari] #panggilan
+  #v(-0.5em)
+  #hasil
+]

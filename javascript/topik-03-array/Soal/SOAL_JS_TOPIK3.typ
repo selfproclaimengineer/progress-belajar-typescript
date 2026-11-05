@@ -27,6 +27,13 @@ Tipe kolom: `id`, `nama`, `kategori` string; `harga`, `stok`, `terjual` number; 
 
 Isi `keranjang`: P01 sebanyak 1, P07 sebanyak 10, P03 sebanyak 2, P06 sebanyak 1.
 
+#figure(
+  image("erd.svg", width: 85%),
+  caption: [Relasi data (notasi crow's foot)],
+)
+
+Setiap item keranjang merujuk tepat satu produk lewat `idProduk`, seperti foreign key ke primary key `id`. Satu produk bisa muncul di nol atau banyak item. Berbeda dengan database, JavaScript tidak memeriksa relasi ini: `idProduk` yang tidak ada di data tidak menimbulkan error sampai kodenya memakai produk itu.
+
 #perhatian[
   1. Salin `Soal/starter.js` ke folder `Jawaban/`, misalnya `Jawaban/soal-js3.js`.
   2. Lengkapi fungsi bertanda `TODO`. Jangan mengubah bagian `DATA` dan `PEMANGGILAN`.
@@ -64,7 +71,7 @@ Isi `keranjang`: P01 sebanyak 1, P07 sebanyak 10, P03 sebanyak 2, P06 sebanyak 1
 #level("Intermediate", "0.3")
 
 + *Rincian checkout.*
-  - `rincianCheckout(keranjang, produk)`. Output: array string, satu per item keranjang, format persis `Nama xQty = Subtotal`.
+  - `rincianCheckout(keranjang, produk)`. Output: array string, satu per item keranjang, format persis `<nama> x<qty> = <subtotal>`.
   - `totalCheckout(keranjang, produk)`. Output: number, jumlah semua subtotal.
   - Untuk setiap item keranjang, cari produknya dengan `idProduk` yang sama dengan `id` produk. Subtotal = `harga × qty`.
 
@@ -88,10 +95,10 @@ Isi `keranjang`: P01 sebanyak 1, P07 sebanyak 10, P03 sebanyak 2, P06 sebanyak 1
 
 + *Laporan per kategori.*
   - Fungsi: `laporanKategori(produk)`.
-  - Output: array string, satu per kategori, format persis `Kategori: N produk, stok S, omzet O`.
-    - `N`: banyak produk dalam kategori.
-    - `S`: jumlah `stok`.
-    - `O`: jumlah `harga × terjual`.
+  - Output: array string, satu per kategori, format persis `<kategori>: <jumlahProduk> produk, stok <totalStok>, omzet <omzet>`.
+    - `<jumlahProduk>`: banyak produk dalam kategori.
+    - `<totalStok>`: jumlah `stok`.
+    - `<omzet>`: jumlah `harga × terjual`.
   - Urutan kategori sesuai kemunculan pertamanya di data.
   - Daftar kategori harus didapat dari data, bukan ditulis langsung di kode. Boleh memakai `for...of` untuk mengumpulkannya.
 
@@ -102,15 +109,15 @@ Isi `keranjang`: P01 sebanyak 1, P07 sebanyak 10, P03 sebanyak 2, P06 sebanyak 1
     - Cek berurutan, kembalikan pesan pertama yang cocok:
       + Keranjang kosong: `GAGAL: keranjang kosong`
       + Untuk setiap item, sesuai urutan keranjang:
-        - produk tidak ada di data: `GAGAL: produk ID tidak ditemukan`
-        - `qty` melebihi `stok`: `GAGAL: stok NAMA tidak cukup (sisa S)`
+        - produk tidak ada di data: `GAGAL: produk <idProduk> tidak ditemukan`
+        - `qty` melebihi `stok`: `GAGAL: stok <nama> tidak cukup (sisa <stok>)`
       + `kodePromo` bukan `null`, `"HEMAT10"`, atau `"GRATIS-ONGKIR"`: `GAGAL: kode promo tidak valid`
     - Jika semua lolos, hitung:
       - Subtotal: jumlah `harga × qty` semua item.
       - Diskon: `HEMAT10` memberi 10% dari subtotal, dibulatkan ke bawah, maksimal Rp 20.000. Selain itu 0.
       - Ongkir: Rp 15.000 jika subtotal di bawah Rp 100.000, selain itu 0. `GRATIS-ONGKIR` membuat ongkir selalu 0.
       - Total: subtotal − diskon + ongkir.
-    - Kembalikan `Subtotal: X, Diskon: D, Ongkir: O, Total: T`.
+    - Kembalikan `Subtotal: <subtotal>, Diskon: <diskon>, Ongkir: <ongkir>, Total: <total>`.
   + *(jelaskan)* Untuk mencari produk, mengapa `find` lebih tepat daripada `filter(...)[0]`? Jika keranjang berisi 50 item dan data berisi 10.000 produk, kira-kira berapa kali perbandingan id dilakukan? Usulkan cara agar pencarian lebih cepat. Tidak perlu ditulis kodenya; konsep ini muncul lagi di Modul 6.
 
 = Contoh Output

@@ -25,10 +25,10 @@ Kamu membantu tim IT sebuah bank digital dan sebuah rumah sakit. Data mutasi rek
 + *Ringkasan mutasi.*
   - Fungsi: `ringkasMutasi(mutasi)`.
   - Input: `mutasi` array number.
-  - Output: string persis `Masuk: X, Keluar: Y, Transaksi: Z`.
-    - `X`: jumlah semua mutasi positif.
-    - `Y`: jumlah semua mutasi negatif, ditulis sebagai angka positif.
-    - `Z`: banyaknya mutasi.
+  - Output: string persis `Masuk: <totalMasuk>, Keluar: <totalKeluar>, Transaksi: <jumlahTransaksi>`.
+    - `<totalMasuk>`: jumlah semua mutasi positif.
+    - `<totalKeluar>`: jumlah semua mutasi negatif, ditulis sebagai angka positif.
+    - `<jumlahTransaksi>`: banyaknya mutasi.
   - Wajib memakai `for...of`.
 
 + *Kode temanmu: `hitungPPN(harga)`.*
@@ -70,7 +70,7 @@ Kamu membantu tim IT sebuah bank digital dan sebuah rumah sakit. Data mutasi rek
 + *Jadwal cicilan pinjaman.*
   + Lengkapi `jadwalCicilan(pokok, bungaPersenPerBulan, cicilanPerBulan)`.
     - Input: semua number bulat lebih dari 0.
-    - Output: array string, satu string per bulan, format persis `Bulan N: bunga B, bayar P, sisa S`.
+    - Output: array string, satu string per bulan, format persis `Bulan <bulanKe>: bunga <bunga>, bayar <bayar>, sisa <sisa>`.
     - Sisa awal sama dengan `pokok`. Setiap bulan, berurutan:
       + Hitung `bunga = Math.floor(sisa * bungaPersenPerBulan / 100)`, lalu tambahkan ke sisa.
       + Bayar sebesar `cicilanPerBulan`. Jika sisa lebih kecil dari cicilan, bayar sebesar sisa.

@@ -2,7 +2,11 @@
 
 ## Lanjut dari sini
 
-**JS-3 Array.** Baca `javascript/topik-03-array/HO/`, kerjakan Coba Sendiri, lalu soal.
+**JS-4 String dan Object.** Baca `javascript/topik-04-string-object/HO/`, kerjakan Coba Sendiri, lalu soal. Format soal baru: output tertulis langsung di bawah setiap tugas, dengan label baris `console.log(...)` yang mencetaknya. Advanced cukup ditulis pendekatannya, kodenya opsional.
+
+JS-5 OOP dan JS-6 Modules sudah disiapkan lebih awal atas permintaan Dion. Sesuaikan isinya setelah feedback JS-4 jika perlu.
+
+JS-3 selesai dengan nilai 83. Advanced 2 dilewati atas keputusan Dion dan tidak dinilai. Sisa catatan ada di `javascript/topik-03-array/Diskusi/FEEDBACK.md`: Beginner 3 belum memakai `some`/`every`, versi benar Beginner 4 dan `console.log` yang tercetak `[]`, serta penjelasan Intermediate 2 dan 4a.
 
 JS-2 selesai dengan nilai 81. Sisa catatan ada di `javascript/topik-02-perulangan-fungsi/Diskusi/FEEDBACK.md` (Revisi 2): label Masuk/Keluar di Beginner 2 tertukar, `totalTagihan` belum diperbaiki, dan pertanyaan diskusi `bulanMencapaiTarget(0, 0, 6, 1000000)` belum dijawab. Penjelasan bagian lain ada di `DISKUSI.md`.
 
@@ -21,7 +25,7 @@ Alur setiap topik:
 |---|---|---|---|---|
 | JS-1 Variabel dan kondisi | [x] | [x] | [x] | 86 |
 | JS-2 Perulangan dan fungsi | [x] | [x] | [x] | 81 |
-| JS-3 Array | [ ] | [ ] | [ ] | |
+| JS-3 Array | [x] | [ ] | [x] | 83 |
 | JS-4 String dan object | [ ] | [ ] | [ ] | |
 | JS-5 OOP | [ ] | [ ] | [ ] | |
 | JS-6 Modules dan standard library | [ ] | [ ] | [ ] | |
@@ -42,3 +46,4 @@ Alur setiap topik:
 |---|---|---|---|---|
 | 2026-11-01 | JS-1 | 4 jam (disambi rapat) | JS-1: soal, tanya jawab, feedback | baca soal berulang |
 | 2026-11-02 | JS-1, JS-2 | 4 jam | JS-1: soal; JS-2: soal, tanya jawab, feedback | begadang, kurang tidur |
+| 2026-11-05 | JS-2, JS-3 | 7 jam | JS-2: feedback; JS-3: soal, tanya jawab, feedback | implementasi callback: urutan chaining, kapan memakai find untuk FK-PK, map, filter |

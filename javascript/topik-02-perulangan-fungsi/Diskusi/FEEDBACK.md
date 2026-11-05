@@ -14,7 +14,7 @@ Ringkasan: 21 dari 24 baris output cocok. Yang belum cocok: Beginner 2, Intermed
 
 **1. Benar.** Output cocok.
 
-**2. Salah.** Output `Masuk: 3, Keluar: 3`, seharusnya `Masuk: 1575000, Keluar: 520000`. Catatan dari sesi tanya jawab belum diterapkan: "jumlah" berarti total nominal, bukan banyaknya. Tanda masuk dan keluar juga masih tertukar. Ganti juga nama `X/Y/Z` dengan nama yang bermakna.
+**2. Salah.** Output `Masuk: 3, Keluar: 3`, seharusnya `Masuk: 1575000, Keluar: 520000`. Catatan dari sesi tanya jawab belum diterapkan: "jumlah" berarti total nominal, bukan banyaknya. Tanda masuk dan keluar juga masih tertukar.
 
 **3. Benar.** Penjelasan dan dua cara perbaikan sudah tepat.
 
@@ -57,7 +57,7 @@ Nilai setelah Revisi 1: 78.
 
 ## Revisi 2 (2026-11-02)
 
-**Beginner 2. Sebagian.** Angkanya sudah benar dan `i` dipakai langsung. Namun labelnya tertukar: outputnya `Masuk: 520000, Keluar: 1575000`, seharusnya `Masuk: 1575000, Keluar: 520000`. Variabel `X` (yang dicetak sebagai Masuk) menjumlahkan mutasi negatif. Ini contoh langsung mengapa nama `X/Y/Z` berbahaya: dengan nama `masuk` dan `keluar`, kesalahan ini langsung terlihat.
+**Beginner 2. Sebagian.** Angkanya sudah benar dan `i` dipakai langsung. Namun labelnya tertukar: outputnya `Masuk: 520000, Keluar: 1575000`, seharusnya `Masuk: 1575000, Keluar: 520000`. Variabel `X` (yang dicetak sebagai Masuk) menjumlahkan mutasi negatif. Notasi `X/Y/Z` di soal ikut membingungkan, jadi soal sudah diganti memakai nama deskriptif (`<totalMasuk>`, `<totalKeluar>`).
 
 Beginner setelah revisi: 90/100 (1: 100, 2: 70, 3: 100).
 
