@@ -84,6 +84,7 @@
 #let catatan(isi) = kotak(biru, "✎", "Catatan", isi)
 #let perhatian(isi) = kotak(merah, "⚠", "Perhatian", isi)
 #let coba-sendiri(isi) = kotak(hijau, "💡", "Coba Sendiri", isi)
+#let langkah(isi) = kotak(biru, "➤", "Langkah Mengerjakan", isi)
 
 // Listing bernomor: #listing("contoh if")[```js ... ```]
 #let listing(caption, kode) = figure(kode, caption: caption, kind: raw)

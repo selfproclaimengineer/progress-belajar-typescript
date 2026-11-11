@@ -2,9 +2,9 @@
 
 ## Lanjut dari sini
 
-**JS-4 String dan Object.** Baca `javascript/topik-04-string-object/HO/`, kerjakan Coba Sendiri, lalu soal. Format soal baru: output tertulis langsung di bawah setiap tugas, dengan label baris `console.log(...)` yang mencetaknya. Advanced cukup ditulis pendekatannya, kodenya opsional.
+**JS-5 OOP.** Sebelum Dion mulai, revisi HO dan soal JS-5 sesuai feedback JS-4 (aturan baru di `CLAUDE.md`): contoh input konkret di setiap tugas, dan tanda "Dipakai di: Soal X" di setiap materi HO. JS-6 Modules juga sudah disiapkan lebih awal, jadi sesuaikan dengan aturan yang sama.
 
-JS-5 OOP dan JS-6 Modules sudah disiapkan lebih awal atas permintaan Dion. Sesuaikan isinya setelah feedback JS-4 jika perlu.
+JS-4 selesai dengan nilai 86. Advanced 1 dijelaskan asisten atas kesepakatan dan tidak dinilai. Sisa catatan ada di `javascript/topik-04-string-object/Diskusi/FEEDBACK.md`: Beginner 4 belum dijalankan dan versi benarnya keliru, penjelasan Intermediate 3 kosong, dan Coba Sendiri 2 dan 3 (alamat object) belum dijawab. Macet utama JS-4: tidak bisa membayangkan input dan output, serta tidak tahu materi HO mana yang dipakai di soal mana.
 
 JS-3 selesai dengan nilai 83. Advanced 2 dilewati atas keputusan Dion dan tidak dinilai. Sisa catatan ada di `javascript/topik-03-array/Diskusi/FEEDBACK.md`: Beginner 3 belum memakai `some`/`every`, versi benar Beginner 4 dan `console.log` yang tercetak `[]`, serta penjelasan Intermediate 2 dan 4a.
 
@@ -26,7 +26,7 @@ Alur setiap topik:
 | JS-1 Variabel dan kondisi | [x] | [x] | [x] | 86 |
 | JS-2 Perulangan dan fungsi | [x] | [x] | [x] | 81 |
 | JS-3 Array | [x] | [ ] | [x] | 83 |
-| JS-4 String dan object | [ ] | [ ] | [ ] | |
+| JS-4 String dan object | [x] | [ ] | [x] | 86 |
 | JS-5 OOP | [ ] | [ ] | [ ] | |
 | JS-6 Modules dan standard library | [ ] | [ ] | [ ] | |
 | JS-7 Async | [ ] | [ ] | [ ] | |
@@ -47,3 +47,4 @@ Alur setiap topik:
 | 2026-11-01 | JS-1 | 4 jam (disambi rapat) | JS-1: soal, tanya jawab, feedback | baca soal berulang |
 | 2026-11-02 | JS-1, JS-2 | 4 jam | JS-1: soal; JS-2: soal, tanya jawab, feedback | begadang, kurang tidur |
 | 2026-11-05 | JS-2, JS-3 | 7 jam | JS-2: feedback; JS-3: soal, tanya jawab, feedback | implementasi callback: urutan chaining, kapan memakai find untuk FK-PK, map, filter |
+| 2026-11-12 | JS-4 | 2 jam | JS-4: soal, tanya jawab, feedback | membayangkan input dan output (console.log di bawah), tidak tahu materi HO mana dipakai di soal mana, energi minim karena belajar malam |
