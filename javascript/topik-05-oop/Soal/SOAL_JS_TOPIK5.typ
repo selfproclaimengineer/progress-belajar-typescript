@@ -25,6 +25,10 @@ Kamu membuat sistem rekening untuk sebuah bank kecil. Ada tiga class: `Rekening`
   - `nomor` dan `pemilik` disimpan sebagai field publik. Saldo disimpan di field *privat* `#saldo`.
   - `get saldo()`. Output: number, isi `#saldo`. Saldo hanya bisa dibaca dari luar, tidak bisa diubah langsung.
   - `info()`. Output: string format `<nomor> a.n. <pemilik>: saldo <saldo>`.
+  - Contoh:
+    - `new Rekening("1001", "Ani", 500000)` menghasilkan object dengan `nomor = "1001"`, `pemilik = "Ani"`, dan `#saldo = 500000`.
+    - `new Rekening("3001", "Cici")` tanpa argumen ketiga menghasilkan `#saldo = 0`.
+    - Untuk object pertama, `info()` menghasilkan `"1001 a.n. Ani: saldo 500000"`, dan `saldo` bernilai `500000`.
 
   #keluaran[`const ani = new Rekening("1001", "Ani", 500000);` lalu `console.log(ani.info())`][```txt
   1001 a.n. Ani: saldo 500000
@@ -37,6 +41,9 @@ Kamu membuat sistem rekening untuk sebuah bank kecil. Ada tiga class: `Rekening`
   - Input: `nominal` number. Output: string.
   - Jika `nominal` 0 atau negatif: kembalikan `GAGAL: nominal harus lebih dari 0`, saldo tidak berubah.
   - Selain itu: tambahkan ke saldo, kembalikan `Setor <nominal>, saldo <saldoBaru>`.
+  - Contoh (saldo `ani` sebelumnya `500000`):
+    - `ani.setor(250000)` menghasilkan `"Setor 250000, saldo 750000"`. Saldo `ani` menjadi `750000`.
+    - `ani.setor(0)` menghasilkan `"GAGAL: nominal harus lebih dari 0"`. Saldo tetap `750000`.
 
   #keluaran[`console.log(ani.setor(250000))`][```txt
   Setor 250000, saldo 750000
@@ -51,6 +58,9 @@ Kamu membuat sistem rekening untuk sebuah bank kecil. Ada tiga class: `Rekening`
     + `nominal` 0 atau negatif: `GAGAL: nominal harus lebih dari 0`
     + `nominal` lebih besar dari saldo: `GAGAL: saldo tidak cukup (sisa <saldo>)`
   - Jika lolos: kurangi saldo, kembalikan `Tarik <nominal>, saldo <saldoBaru>`.
+  - Contoh (saldo `ani` sebelumnya `750000`, dari Beginner 2):
+    - `ani.tarik(100000)` menghasilkan `"Tarik 100000, saldo 650000"`. Saldo `ani` menjadi `650000`.
+    - `ani.tarik(900000)`: `900000` lebih besar dari `650000`, jadi hasilnya `"GAGAL: saldo tidak cukup (sisa 650000)"`. Saldo tetap.
 
   #keluaran[`console.log(ani.tarik(100000))`][```txt
   Tarik 100000, saldo 650000
@@ -78,6 +88,10 @@ Kamu membuat sistem rekening untuk sebuah bank kecil. Ada tiga class: `Rekening`
   - `tambahBunga()`. Output: string format `Bunga <bunga>, saldo <saldoBaru>`.
     - `<bunga>`: `bungaPersen` persen dari saldo, dibulatkan ke bawah.
     - Bunga masuk ke saldo. `#saldo` milik `Rekening` tidak bisa diakses dari `Tabungan`, jadi pakai method yang sudah ada.
+  - Contoh:
+    - `new Tabungan("2001", "Budi", 1000000, 2)` menghasilkan object dengan `nomor = "2001"`, `pemilik = "Budi"`, `#saldo = 1000000` (diisi lewat `super`), dan `bungaPersen = 2`.
+    - `tambahBunga()`: 2% dari `1000000` adalah `20000`, jadi hasilnya `"Bunga 20000, saldo 1020000"`.
+    - `budi.tarik(20000)` langsung jalan tanpa ditulis ulang di `Tabungan`, karena diwarisi dari `Rekening`.
 
   #keluaran[`const budi = new Tabungan("2001", "Budi", 1000000, 2);` lalu `console.log(budi.tambahBunga())`][```txt
   Bunga 20000, saldo 1020000
@@ -90,6 +104,7 @@ Kamu membuat sistem rekening untuk sebuah bank kecil. Ada tiga class: `Rekening`
   - Output: string format `<infoRekening>, bunga <bungaPersen>%`. `<infoRekening>` adalah hasil `info()` milik `Rekening`.
   - Jangan menyalin isi `info()` milik `Rekening`. Panggil versi induknya.
   - `info()` milik `Rekening` sendiri tidak berubah.
+  - Contoh (saldo `budi` sekarang `1000000`): `info()` induk menghasilkan `"2001 a.n. Budi: saldo 1000000"`. `info()` milik `Tabungan` menambahkan `", bunga 2%"` di belakangnya. `ani.info()` tetap memakai format lama.
 
   #keluaran[`console.log(budi.info())`][```txt
   2001 a.n. Budi: saldo 1000000, bunga 2%
@@ -100,6 +115,7 @@ Kamu membuat sistem rekening untuk sebuah bank kecil. Ada tiga class: `Rekening`
 
 + *Kode temanmu: `setorBanyak(rek, daftarNominal)`.*
   - Output yang benar: number, saldo `rek` setelah semua nominal di `daftarNominal` disetor.
+  - Contoh: `rek` adalah `new Rekening("3001", "Cici")` dengan saldo `0`, dan `daftarNominal` adalah `[50000, 20000, 30000]`. Ketiganya disetor satu per satu, jadi hasilnya `100000`.
   - Masalah: setelah `setor` di Beginner 2 selesai, fungsi ini melempar `TypeError: Cannot read properties of undefined (reading '#saldo')`.
   - *(jelaskan)* Method `setor` jalan normal jika dipanggil `rek.setor(50000)`. Mengapa error ketika `rek.setor` diberikan ke `forEach` sebagai callback? Lalu perbaiki.
 
@@ -121,6 +137,11 @@ Advanced dinilai dari *pendekatannya*. Bagian (a) wajib dan menentukan nilai. Ba
     + penarikan dari rekening asal gagal: kembalikan pesan `GAGAL` dari `tarik` apa adanya
     + jika lolos, setor ke tujuan dan kembalikan `Transfer <nominal> dari <dariNomor> ke <keNomor> berhasil`
   - `totalSaldo()`: Output: number, jumlah saldo semua rekening.
+  - Contoh (sebelum transfer, saldo `ani` `650000` dan saldo `budi` `1000000`):
+    - Setelah `bank.buka(ani)` dan `bank.buka(budi)`, `daftar` berisi `[ani, budi]`.
+    - `bank.cari("1001")` mengembalikan object `ani`. `bank.cari("9999")` mengembalikan `undefined`.
+    - `bank.transfer("1001", "2001", 150000)`: saldo `ani` menjadi `500000`, saldo `budi` menjadi `1150000`.
+    - `bank.totalSaldo()`: `500000 + 1150000` adalah `1650000`.
 
   + *(jelaskan, wajib)* Tulis pendekatanmu di komentar `// JAWABAN Advanced 1a`. Untuk setiap method `Bank`, tulis langkahnya dan method array atau method `Rekening` yang dipakai. Jelaskan juga: mengapa `transfer` memanggil `tarik` dan `setor`, bukan mengubah saldo sendiri? Dan mengapa urutannya `tarik` dulu baru `setor`?
   + *(opsional)* Tulis kodenya.

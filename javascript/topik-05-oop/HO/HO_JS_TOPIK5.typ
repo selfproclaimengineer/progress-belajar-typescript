@@ -63,6 +63,8 @@ Kapan memakai yang mana:
   [Diolah dengan method array (Modul 3 dan 4)], [Perilaku menempel pada datanya sendiri],
 )
 
+#dipakai[seluruh soal. `Rekening`, `Tabungan`, dan `Bank` adalah class (cetakan). `ani`, `budi`, dan `bank` adalah instance yang dibuat dari cetakan itu.]
+
 == class, constructor, dan new
 
 #listing("class pertama")[```js
@@ -108,9 +110,20 @@ Jalannya `new Lampu("Dapur")`:
   Class wajib dipanggil dengan `new`. `Lampu("Dapur")` melempar `TypeError: Class constructor Lampu cannot be invoked without 'new'`.
 ]
 
+#dipakai[
+  - Beginner 1, untuk menulis `constructor` `Rekening` yang mengisi `nomor`, `pemilik`, dan saldo awal. `saldoAwal = 0` adalah parameter default dari Modul 2: dipakai jika argumen ketiga tidak diberikan, seperti `new Rekening("3001", "Cici")` di Intermediate 3.
+  - Beginner 1 sampai 3, untuk menulis `info`, `setor`, dan `tarik` sebagai method (tanpa kata `function`, tanpa koma).
+  - Advanced 1, untuk `constructor` `Bank` yang mengisi `this.daftar` dengan array kosong.
+]
+
 == this: Object di Sebelah Kiri Titik
 
 Di dalam method, `this` berisi *object yang memanggil method itu*, yaitu object di sebelah kiri titik saat pemanggilan. Pada `dapur.saklar()`, `this` adalah `dapur`. Pada `kamar.saklar()`, `this` adalah `kamar`. Method-nya satu, datanya berbeda: `dapur.saklar === kamar.saklar` bernilai `true`.
+
+#dipakai[
+  - Beginner 1 sampai 3, untuk membaca dan mengubah data object yang sedang dipakai: `this.nomor`, `this.pemilik`, `this.#saldo`. Pada `ani.setor(...)`, `this` adalah `ani`.
+  - Intermediate 1, untuk memanggil method sendiri dari method lain: `tambahBunga` membaca `this.saldo` dan menambah saldo lewat `this.setor(...)`.
+]
 
 === this hilang saat method dijadikan callback
 
@@ -141,6 +154,8 @@ console.log([5000, 2000].map((n) => akun.setor(n)));  // argumen diteruskan send
 ```]
 
 Alternatif lain adalah `dapur.saklar.bind(dapur)`, yang membuat fungsi baru dengan `this` dikunci ke `dapur`. Arrow function lebih sering dipakai karena lebih mudah dibaca.
+
+#dipakai[Intermediate 3, untuk menjelaskan mengapa `daftarNominal.forEach(rek.setor)` melempar `TypeError`, lalu memperbaikinya. Bentuk masalahnya sama dengan baris `["a"].map(dapur.saklar)` di atas.]
 
 == Getter dan Field Privat
 
@@ -177,6 +192,13 @@ Ada dua tingkat perlindungan:
 - `tm.#celsius` *di luar class* sudah ditolak saat file dibaca: `SyntaxError: Private field '#celsius' must be declared in an enclosing class`. Seluruh file tidak jalan.
 - Getter tanpa setter berarti *hanya bisa dibaca*. `tm.fahrenheit = 1` melempar `TypeError: Cannot set property fahrenheit of #<Termometer> which has only a getter`.
 
+#dipakai[
+  - Beginner 1, untuk menyimpan saldo di `#saldo` (deklarasi `#saldo;` di badan class, lalu `this.#saldo = saldoAwal` di constructor).
+  - Beginner 2 dan 3, untuk menambah dan mengurangi `this.#saldo` dari dalam `setor` dan `tarik`.
+  - Beginner 4, untuk menjelaskan mengapa saldo dilindungi: hanya `setor` dan `tarik` yang boleh mengubahnya, karena keduanya memeriksa aturan dulu.
+  - Intermediate 1, untuk memahami mengapa `Tabungan` tidak bisa menulis `this.#saldo` sendiri.
+]
+
 === Getter
 
 *Untuk apa:* membuka data privat untuk dibaca, atau menyediakan nilai turunan (misalnya `fahrenheit` dari `celsius`), dengan cara pakai seperti field biasa.
@@ -185,6 +207,13 @@ Ada dua tingkat perlindungan:
 
 #catatan[
   Ada juga _setter_ (`set celsius(v) { ... }`) yang dijalankan saat field di-assign. Setter berguna untuk validasi, misalnya menolak suhu di bawah −273. Di soal modul ini, perubahan saldo memakai method biasa (`setor`, `tarik`) karena method bisa mengembalikan pesan berhasil atau gagal.
+]
+
+#dipakai[
+  - Beginner 1, untuk `get saldo()` yang mengembalikan `this.#saldo`. Dari luar dibaca `ani.saldo`, tanpa tanda kurung.
+  - Beginner 4, untuk memunculkan dan menjelaskan error `r.saldo = 1000000`: getter tanpa setter hanya bisa dibaca.
+  - Intermediate 1, untuk membaca saldo dari dalam `Tabungan` lewat `this.saldo`, karena `#saldo` tidak bisa diakses langsung.
+  - Advanced 1, untuk `totalSaldo` yang menjumlahkan `rek.saldo` setiap rekening.
 ]
 
 == extends dan super: Menurunkan Class
@@ -235,6 +264,12 @@ Jalannya `new Motor("Honda", 150)`:
   [2], [`super("Honda")`: constructor `Kendaraan`], [`{ merk: "Honda" }`],
   [3], [`this.cc = 150`], [`{ merk: "Honda", cc: 150 }`],
 )
+
+#dipakai[
+  - Intermediate 1, untuk `class Tabungan extends Rekening` dan `super(nomor, pemilik, saldoAwal)` di baris pertama constructor, sebelum `this.bungaPersen = ...`. Method `tarik` dan `setor` otomatis dimiliki `Tabungan`, jadi tidak ditulis ulang.
+  - Intermediate 1, aturan 3: bunga masuk ke saldo lewat method publik induk (`this.setor(...)`), bukan `this.#saldo`. Bunga dibulatkan ke bawah dengan `Math.floor` dari Modul 1.
+  - Intermediate 2, untuk menimpa `info()` dan memanggil versi induknya dengan `super.info()`, seperti `info` milik `Motor` di atas.
+]
 
 == Class yang Menyimpan Object Lain
 
@@ -289,6 +324,11 @@ Perhatikan bentuk `pinjam`. Polanya sama dengan corong di Modul 3: cek yang gaga
   `find` mengembalikan *object yang sama* yang ada di dalam array, bukan salinan (ingat referensi di Modul 4). Karena itu `b.stok = b.stok - 1` mengubah buku di dalam `koleksi`. Itulah yang diinginkan di sini. Jika object yang ditemukan punya field privat, ubah lewat method-nya, misalnya `rek.tarik(...)`.
 ]
 
+#dipakai[
+  - Beginner 2 dan 3, untuk pola corong di `setor` dan `tarik`: cek yang gagal di atas dengan `return` lebih awal, lalu ubah saldo di bawah.
+  - Advanced 1, untuk seluruh class `Bank`: `push` di `buka`, `find` di `cari`, `reduce` di `totalSaldo`, dan pola `pinjam` (memakai `this.cari(...)`, cek gagal dulu) di `transfer`. Padanannya: `Perpustakaan` menjadi `Bank`, `koleksi` menjadi `daftar`, `kode` menjadi `nomor`.
+]
+
 == Membaca UML Class Diagram
 
 Soal modul ini memberi struktur class dalam UML class diagram. Satu kotak adalah satu class, dengan tiga bagian: nama, field, dan method.
@@ -305,6 +345,8 @@ Soal modul ini memberi struktur class dalam UML class diagram. Satu kotak adalah
   [`0..*`], [nol atau banyak, sama dengan notasi kardinalitas di ERD],
 )
 
+#dipakai[gambar UML di awal soal. Diagram itu adalah peta seluruh soal: field dan method setiap class, `Tabungan` yang `extends` `Rekening`, dan `Bank` yang menyimpan banyak `Rekening`.]
+
 == Membaca Pesan Error
 
 #table(
@@ -317,6 +359,8 @@ Soal modul ini memberi struktur class dalam UML class diagram. Satu kotak adalah
   [`Cannot set property x of #<X> which has only a getter`], [Assign ke getter yang tidak punya setter.], [Mencoba mengubah data yang sengaja dibuat hanya-baca.],
   [`Must call super constructor in derived class before accessing 'this'`], [Constructor turunan memakai `this` sebelum `super(...)`, atau tidak memanggil `super`.], [Urutan baris di constructor.],
 )
+
+#dipakai[Beginner 4 (error getter tanpa setter) dan Intermediate 3 (error `this` bernilai `undefined`). Saat kode error, cari pesannya di tabel ini dulu.]
 
 #catatan[
   Saat live coding, pertanyaan "object vs class" sering muncul. Jawaban yang baik: object literal cocok untuk data satu kali pakai. Class adalah cetakan untuk banyak object yang punya perilaku sama dan aturan yang harus dijaga (enkapsulasi dengan field privat). Di TypeScript nanti ada `interface`, yang hanya mendeskripsikan *bentuk* data tanpa perilaku dan hilang setelah di-compile.
