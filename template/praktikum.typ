@@ -161,9 +161,14 @@
   v(1.4em)
   if warna-tipe-data { legenda-tipe }
   // Nama tipe di teks biasa (baris Input/Output): miring dan berwarna sesuai tipenya, tanpa tebal.
+  // Show rule bersarang tidak bisa membatalkan regex ini di dalam kode, jadi kode ditandai lewat state.
+  let dalam-kode = state("dalam-kode", false)
+  show raw: it => if not warna-tipe-data { it } else { dalam-kode.update(true); it; dalam-kode.update(false) }
   show regex(`\b(number|string|boolean|array)\b`.text): it => if not warna-tipe-data { it } else {
-    let w = (number: warna-tipe.bulat, string: warna-tipe.teks, boolean: warna-tipe.boolean, array: warna-tipe.array)
-    text(fill: w.at(it.text), style: "italic", it)
+    context if dalam-kode.get() { it } else {
+      let w = (number: warna-tipe.bulat, string: warna-tipe.teks, boolean: warna-tipe.boolean, array: warna-tipe.array)
+      text(fill: w.at(it.text), style: "italic", it)
+    }
   }
   body
 }
