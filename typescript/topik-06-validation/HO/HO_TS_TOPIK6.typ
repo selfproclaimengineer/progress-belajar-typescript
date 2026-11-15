@@ -243,7 +243,7 @@ if (!r2.success) console.log(r2.error.issues[0].path, r2.error.issues[0].message
   [`.min(n)`, `.max(n)`], [untuk string dan array: panjang. Untuk number: nilai],
   [`.int()`, `.positive()`], [bilangan bulat, lebih dari 0],
   [`{ error: "..." }` di dalam `z.string(...)`, `z.object(..., ...)`, `z.array(..., ...)`], [pesan jika *tipenya* salah],
-  [argumen teks di `.min(1, "...")`, `.int("...")`, `.positive("...")`], [pesan jika *aturan* itu gagal],
+  [argumen teks di `.min(1, "...")`, `.int("...")`, `.positive("...")`], [pesan jika *aturan* itu gagal. Aturan tanpa pesan sendiri memakai pesan dari `{ error }` di atas, jadi beri setiap aturan pesannya sendiri.],
   [`z.infer<typeof Skema>`], [tipe TypeScript yang diturunkan dari skema],
 )
 
