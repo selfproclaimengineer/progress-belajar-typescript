@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Toko Roti Manis</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 24px auto; padding: 0 16px; color: #1f2328; background: #fffaf3; }
+    h1 { color: #9a3412; margin-bottom: 4px; }
+    .kolom { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    section { background: #fff; border: 1px solid #e7d8c4; border-radius: 8px; padding: 12px 16px; }
+    h2 { font-size: 1.05rem; margin: 0 0 8px; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    li { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 1px dashed #eadfce; }
+    li.kosong { color: #8c8c8c; font-style: italic; justify-content: flex-start; }
+    button { cursor: pointer; border: 1px solid #c2410c; background: #fff7ed; color: #9a3412; border-radius: 6px; padding: 3px 10px; }
+    .total { margin: 10px 0 0; text-align: right; }
+    form { margin-top: 16px; display: flex; gap: 8px; align-items: center; }
+    input { padding: 4px 8px; width: 140px; }
+    #pesan { min-height: 1.4em; font-weight: 600; }
+    #pesan.ok { color: #15803d; }
+    #pesan.gagal { color: #b91c1c; }
+  </style>
+</head>
+<body>
+  <h1>Toko Roti Manis</h1>
+  <p>Pilih roti, lalu bayar di kasir.</p>
+  <div class="kolom">
+    <section>
+      <h2>Menu</h2>
+      <ul id="daftar-produk"></ul>
+    </section>
+    <section>
+      <h2>Keranjang</h2>
+      <ul id="daftar-keranjang"></ul>
+      <p class="total">Total: <strong id="total">Rp0</strong></p>
+    </section>
+  </div>
+  <form id="form-bayar">
+    <label for="input-uang">Uang dibayar</label>
+    <input id="input-uang" type="text" inputmode="numeric" autocomplete="off">
+    <button type="submit">Bayar</button>
+  </form>
+  <p id="pesan"></p>
+  <script type="module" src="halaman.js"></script>
+</body>
+</html>

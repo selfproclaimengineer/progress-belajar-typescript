@@ -4,7 +4,8 @@
   "type": "module",
   "description": "Praktikum mandiri JavaScript dan TypeScript",
   "scripts": {
-    "selesai": "node scripts/progres.js"
+    "selesai": "node scripts/progres.js",
+    "sajikan": "node scripts/sajikan.js"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",
