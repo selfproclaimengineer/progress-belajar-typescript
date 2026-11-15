@@ -2,7 +2,16 @@
 
 ## Lanjut dari sini
 
-**JS-5 OOP.** Baca `javascript/topik-05-oop/HO/`, kerjakan Coba Sendiri, lalu soal. TS-1 Dasar sudah disiapkan lebih awal atas permintaan Dion, sebagai gambaran lompatan ke TypeScript (`typescript/topik-01-dasar/`). TypeScript 7 dan `@types/node` sudah terpasang, `tsconfig.json` ada di root. HO dan soal JS-5 dan JS-6 sudah direvisi sesuai feedback JS-4: soal dibuka cerita klien, setiap tugas punya kotak *Kebutuhan klien* dan baris `Contoh:` (input konkret dan output), dan setiap materi HO ditutup baris *Dipakai di:* yang menyebut tugas yang memakainya.
+**JS-5 OOP.** Baca `javascript/topik-05-oop/HO/`, kerjakan Coba Sendiri, lalu soal. Coba Sendiri JS-5 sudah diperiksa (lihat `Diskusi/DISKUSI.md`): CS3 dan CS4 masih kurang alasan.
+
+Semua topik sudah disiapkan lebih awal atas permintaan Dion (2026-11-15), karena Dion ingin membaca semua HO dulu. Revisi dilakukan langsung saat dibutuhkan. Yang tersedia: JS-5 sampai JS-8, TS-1 sampai TS-7, dan Tugas Rancang (`tugas-rancang/KRITERIA.pdf`). Urutan yang disarankan: JS-5, JS-6, TS-1, TS-2, TS-3, Tugas Rancang, lalu TS-4 sampai TS-6 jika waktu cukup. JS-7, JS-8, dan TS-7 boleh dilewati jika waktu mepet.
+
+Catatan teknis topik baru:
+- TS-6 dan TS-7 memakai `zod` dan `express`, sudah terpasang lewat `npm install`.
+- JS-8 dibuka di browser lewat `npm run sajikan` (server lokal di `127.0.0.1:8080`), karena browser menolak module dari `file://`.
+- Tugas Rancang: kode di `tugas-rancang/Jawaban/`, sudah ikut diperiksa `npx tsc --noEmit`. Uji terima: `node tugas-rancang/Jawaban/skenario.ts`.
+
+Format soal sejak JS-5: dibuka cerita klien, setiap tugas punya kotak *Kebutuhan klien* dan baris `Contoh:`, setiap materi HO ditutup baris *Dipakai di:*, dan kode inline di soal diwarnai per tipe data (legenda di bawah judul).
 
 JS-4 selesai dengan nilai 86. Advanced 1 dijelaskan asisten atas kesepakatan dan tidak dinilai. Sisa catatan ada di `javascript/topik-04-string-object/Diskusi/FEEDBACK.md`: Beginner 4 belum dijalankan dan versi benarnya keliru, penjelasan Intermediate 3 kosong, dan Coba Sendiri 2 dan 3 (alamat object) belum dijawab. Macet utama JS-4: tidak bisa membayangkan input dan output, serta tidak tahu materi HO mana yang dipakai di soal mana.
 

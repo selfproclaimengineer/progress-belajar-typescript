@@ -38,6 +38,11 @@ HO, soal, feedback, dan jawaban ke Dion memakai bahasa Indonesia. Istilah teknis
 
 Kunci jawaban asisten tidak pernah masuk repo ini. Di laptop utama, kunci ada di `E:\Kuliah\kunci-praktikum-js\js-N\kunci.js`. `E:\Kuliah\kunci-praktikum-js\cek-output.sh <SOAL.typ> <kunci.js>` membandingkan output di soal dengan output kunci. Script ini membaca bagian Contoh Output (JS-1 sampai JS-3) atau semua blok ```` ```txt ```` di kotak `#keluaran` (mulai JS-4). Di device lain kunci tidak tersedia; periksa jawaban dengan menjalankan kode Dion dan mencocokkannya dengan Contoh Output.
 
+Kasus khusus:
+- JS-8 DOM: logika diperiksa dengan `node Jawaban/soal-js8.js`. Tampilan diperiksa di browser (`npm run sajikan`) atau dari tangkapan layar Dion. Gambar tampilan di soal dibuat dari kunci `js-8/` dengan Chrome headless (`demoN.html`).
+- TS-6 dan TS-7: folder kunci punya junction `node_modules` ke repo (`mklink /J`) supaya `zod` dan `express` terbaca.
+- Tugas Rancang: kunci di `E:\Kuliah\kunci-praktikum-js\tugas-rancang\kasir.ts` hanya satu contoh desain. Nilai desain Dion dengan rubrik di `KRITERIA.typ`, bukan kemiripan dengan kunci. Cek output: `cek-output.sh tugas-rancang/KRITERIA.typ skenario.ts` dari folder kunci. Tambahkan uji di luar skenario (misalnya `riwayat` member yang tidak ada, saldo tepat di batas, array hasil `riwayat` diubah dari luar) dan minta satu perubahan aturan kecil saat sesi lisan.
+
 ## Akhir sesi
 
 1. Perbarui bagian "Lanjut dari sini" di `PROGRESS.md` secara manual.
