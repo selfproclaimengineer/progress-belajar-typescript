@@ -1,5 +1,5 @@
 #import "/template/praktikum.typ": *
-#show: praktikum.with(modul: "Soal Modul 5", judul: "Object-Oriented Programming")
+#show: praktikum.with(warna-tipe-data: true, modul: "Soal Modul 5", judul: "Object-Oriented Programming")
 
 = Tugas
 

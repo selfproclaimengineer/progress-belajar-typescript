@@ -10,7 +10,100 @@
 
 #let ikon(c) = text(font: "Segoe UI Symbol", c)
 
-#let praktikum(judul: "", modul: "", body) = {
+// Warna tipe data untuk kode inline di soal, supaya tipe data cepat terlihat.
+#let warna-tipe = (
+  bulat: rgb("#1d4ed8"), desimal: rgb("#7e22ce"), teks: rgb("#15803d"), boolean: rgb("#c2410c"),
+  kosong: rgb("#b91c1c"), array: rgb("#0f766e"), array2d: rgb("#be185d"), fungsi: rgb("#a16207"),
+)
+#let pola-token = regex(`"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:\[\])+|=>|[A-Za-z_$][\w$]*|\d[\d_]*(?:\.\d+)?|\s+|.`.text)
+#let pola-nama = regex(`^[A-Za-z_$]`.text)
+#let pola-angka = regex(`^\d`.text)
+// Kata kunci yang diikuti "(" atau "[" tetapi bukan pemanggilan fungsi atau index.
+#let kata-kunci = ("if", "for", "while", "switch", "catch", "return", "typeof", "of", "in", "case", "else", "await", "yield")
+// Perintah terminal, path, dan komentar tidak diwarnai.
+#let pola-lewati = regex(`^(node|npx|npm|git|typst)\s|^[\w.-]+/|^//`.text)
+
+#let warnai-kode(s) = {
+  let tok = s.matches(pola-token).map(m => m.text)
+  let n = tok.len()
+  // Pass 1: dimensi setiap kurung siku. 0 = index, 1 = array, 2 ke atas = array bertingkat.
+  let dim = (0,) * n
+  let pembuka = (none,) * n
+  let tumpuk = () // (index pembuka, literal?, dimensi anak terbesar)
+  let sebelum = none
+  for i in range(n) {
+    let t = tok.at(i)
+    let setelah-nilai = sebelum != none and (
+      (sebelum.match(pola-nama) != none and sebelum not in kata-kunci)
+        or sebelum.match(pola-angka) != none or sebelum in (")", "]") or sebelum.starts-with("[]")
+    )
+    let d = none
+    if t == "[" {
+      tumpuk.push((i, not setelah-nilai, 0))
+    } else if t == "]" and tumpuk.len() > 0 {
+      let (o, literal, anak) = tumpuk.pop()
+      pembuka.at(i) = o
+      d = if literal { anak + 1 } else { anak }
+      if literal { dim.at(o) = d }
+    } else if t.starts-with("[]") {
+      // number[][] = tipe array 2 dimensi; [] di posisi nilai = array kosong
+      d = if setelah-nilai { calc.div-euclid(t.len(), 2) } else { 1 }
+      dim.at(i) = d
+    }
+    if d != none and tumpuk.len() > 0 {
+      let (po, pl, pa) = tumpuk.pop()
+      tumpuk.push((po, pl, calc.max(pa, d)))
+    }
+    if t.trim() != "" { sebelum = t }
+  }
+  // Pass 2: beri warna setiap token.
+  let hasil = ()
+  for i in range(n) {
+    let t = tok.at(i)
+    let berikut = none
+    for j in range(i + 1, n) {
+      if tok.at(j).trim() != "" { berikut = tok.at(j); break }
+    }
+    let w = none
+    let tebal = false
+    if (t.starts-with("\"") or t.starts-with("'")) and t.len() >= 2 { w = warna-tipe.teks }
+    else if t.match(pola-angka) != none { w = if t.contains(".") { warna-tipe.desimal } else { warna-tipe.bulat } }
+    else if t in ("true", "false", "boolean") { w = warna-tipe.boolean }
+    else if t in ("null", "undefined", "NaN") { w = warna-tipe.kosong }
+    else if t == "number" { w = warna-tipe.bulat }
+    else if t == "string" { w = warna-tipe.teks }
+    else if t in ("=>", "function") { w = warna-tipe.fungsi; tebal = true }
+    else if t.match(pola-nama) != none and berikut == "(" and t not in kata-kunci { w = warna-tipe.fungsi }
+    else if t == "[" or t == "]" or t.starts-with("[]") {
+      let d = if t == "]" { if pembuka.at(i) == none { 0 } else { dim.at(pembuka.at(i)) } } else { dim.at(i) }
+      if d >= 2 { w = warna-tipe.array2d; tebal = true } else if d == 1 { w = warna-tipe.array; tebal = true }
+    }
+    else if t in ("{", "}") { tebal = true }
+    // Spasi jadi non-breaking space supaya spasi ganda tidak dilebur.
+    let isi = t.replace(" ", "\u{a0}")
+    hasil.push(text(fill: if w == none { black } else { w }, weight: if tebal { "bold" } else { "regular" }, isi))
+  }
+  text(font: "Consolas", size: 8.5pt, hyphenate: false, hasil.join())
+}
+
+#let contoh-warna(isi, label) = box[#raw(isi) #text(fill: abu-teks, label)]
+#let legenda-tipe = block(width: 100%, above: 0.4em, below: 1em, inset: (x: 9pt, y: 7pt),
+  stroke: 0.5pt + garis-kode, radius: 3pt)[
+  #set text(size: 8.5pt)
+  #set par(justify: false)
+  #text(weight: "bold")[Warna tipe data di kode:]
+  #h(0.6em) #contoh-warna("12000", "bulat")
+  #h(0.6em) #contoh-warna("0.007", "desimal")
+  #h(0.6em) #contoh-warna("\"qris\"", "string")
+  #h(0.6em) #contoh-warna("true", "boolean")
+  #h(0.6em) #contoh-warna("undefined", "kosong")
+  #h(0.6em) #contoh-warna("[3, \"a\"]", "array")
+  #h(0.6em) #contoh-warna("[[1, 2], [3, 4]]", "array 2D")
+  #h(0.6em) #contoh-warna("hitung(x)", "fungsi") \
+  #text(fill: abu-teks)[Bulat dan desimal di JavaScript sama-sama bertipe `number`. Warnanya dibedakan hanya agar mudah dilihat.]
+]
+
+#let praktikum(judul: "", modul: "", warna-tipe-data: false, body) = {
   set document(title: modul + " - " + judul)
   set page(
     paper: "a4",
@@ -39,7 +132,8 @@
 
   show raw: set text(font: "Consolas", size: 8.5pt)
   show raw.where(block: false): it => box(
-    fill: rgb("#eff2f6"), inset: (x: 3pt), outset: (y: 2.5pt), radius: 2pt, it,
+    fill: rgb("#eff2f6"), inset: (x: 3pt), outset: (y: 2.5pt), radius: 2pt,
+    if warna-tipe-data and it.lang == none and it.text.match(pola-lewati) == none { warnai-kode(it.text) } else { it },
   )
   show raw.where(block: true): it => block(
     width: 100%, fill: abu-kode, stroke: 0.5pt + garis-kode, radius: 4pt,
@@ -65,6 +159,12 @@
     #text(size: 13pt)[#modul - #judul]
   ]
   v(1.4em)
+  if warna-tipe-data { legenda-tipe }
+  // Nama tipe di teks biasa (baris Input/Output) ikut diwarnai.
+  show regex(`\b(number|string|boolean|array)\b`.text): it => if not warna-tipe-data { it } else {
+    let w = (number: warna-tipe.bulat, string: warna-tipe.teks, boolean: warna-tipe.boolean, array: warna-tipe.array)
+    text(fill: w.at(it.text), weight: "bold", it)
+  }
   body
 }
 

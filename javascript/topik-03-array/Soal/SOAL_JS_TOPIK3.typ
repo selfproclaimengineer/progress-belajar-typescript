@@ -1,5 +1,5 @@
 #import "/template/praktikum.typ": *
-#show: praktikum.with(modul: "Soal Modul 3", judul: "Array dan Method Array")
+#show: praktikum.with(warna-tipe-data: true, modul: "Soal Modul 3", judul: "Array dan Method Array")
 
 = Tugas
 

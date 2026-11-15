@@ -1,5 +1,5 @@
 #import "/template/praktikum.typ": *
-#show: praktikum.with(modul: "Soal TypeScript Modul 1", judul: "Dasar TypeScript")
+#show: praktikum.with(warna-tipe-data: true, modul: "Soal TypeScript Modul 1", judul: "Dasar TypeScript")
 
 = Tugas
 
@@ -64,7 +64,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan apote
     - `"qris"`: 0,7% dari `total`, dibulatkan ke atas.
     - `"tunai"`: `0`.
   - `biayaAdmin("kartu", 50000)` dan `biayaAdmin("qriss", 50000)` harus ditolak `tsc`.
-  - Contoh: `biayaAdmin("qris", 12345)`: 0,7% dari `12345` adalah `86,415`, dibulatkan ke atas menjadi `87`. `biayaAdmin("debit", 50000)` menghasilkan `2500`.
+  - Contoh: `biayaAdmin("qris", 12345)`: 0,7% dari `12345` adalah `86.415`, dibulatkan ke atas menjadi `87`. `biayaAdmin("debit", 50000)` menghasilkan `2500`.
 
   #keluaran[`console.log(biayaAdmin("tunai", 50000), biayaAdmin("debit", 50000), biayaAdmin("qris", 50000))`][```txt
   0 2500 350
@@ -166,7 +166,7 @@ Advanced dinilai dari *pendekatannya*. Bagian (a) wajib dan menentukan nilai. Ba
   - Contoh: keranjang `new Map([["OB01", 3], ["OB02", 2]])` dibayar dengan QRIS.
     - Subtotal: `3 × 12000 + 2 × 35000` adalah `106000`.
     - Promo: member menjadi `100700`, lalu voucher menjadi `90700`.
-    - Biaya admin QRIS: 0,7% dari `90700` adalah `634,9`, dibulatkan ke atas menjadi `635`.
+    - Biaya admin QRIS: 0,7% dari `90700` adalah `634.9`, dibulatkan ke atas menjadi `635`.
     - Total bayar: `90700 + 635` adalah `91335`.
 
   + *(jelaskan, wajib)* Tulis pendekatanmu di komentar `// JAWABAN Advanced 1a`. Tulis langkah-langkah `buatTagihan`, fungsi dari tugas sebelumnya yang dipakai di setiap langkah, dan *tipe data* di setiap langkah. Jelaskan juga: di langkah mana `tsc` memaksamu menangani obat yang tidak terdaftar, dan apa yang terjadi di JavaScript biasa jika kasus itu tidak ditangani?
