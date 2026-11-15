@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="830" height="520" viewBox="0 0 830 520" font-family="Arial" font-size="12">
+  <defs>
+    <marker id="segitiga" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="14" markerHeight="14" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#ffffff" stroke="#24292f" stroke-width="1"/>
+    </marker>
+  </defs>
+
+  <!-- MetodeBayar (interface) -->
+  <rect x="290" y="10" width="250" height="92" fill="#ffffff" stroke="#57606a"/>
+  <rect x="290" y="10" width="250" height="40" fill="#eff2f6" stroke="#57606a"/>
+  <text x="415" y="26" text-anchor="middle" font-size="11">«interface»</text>
+  <text x="415" y="42" text-anchor="middle" font-weight="bold">MetodeBayar</text>
+  <text x="300" y="68">+ nama : string {readonly}</text>
+  <text x="300" y="88">+ bayar(nominal : number) : string</text>
+
+  <!-- Tunai -->
+  <rect x="10" y="180" width="180" height="84" fill="#ffffff" stroke="#57606a"/>
+  <rect x="10" y="180" width="180" height="26" fill="#eff2f6" stroke="#57606a"/>
+  <text x="100" y="198" text-anchor="middle" font-weight="bold">Tunai</text>
+  <text x="18" y="224">+ nama = "Tunai" {readonly}</text>
+  <line x1="10" y1="234" x2="190" y2="234" stroke="#57606a"/>
+  <text x="18" y="254">+ bayar(nominal) : string</text>
+
+  <!-- Dompet -->
+  <rect x="200" y="180" width="205" height="152" fill="#ffffff" stroke="#57606a"/>
+  <rect x="200" y="180" width="205" height="26" fill="#eff2f6" stroke="#57606a"/>
+  <text x="302" y="198" text-anchor="middle" font-weight="bold">Dompet</text>
+  <text x="208" y="224">+ nama : string {readonly}</text>
+  <text x="208" y="242">- saldo : number</text>
+  <line x1="200" y1="252" x2="405" y2="252" stroke="#57606a"/>
+  <text x="208" y="270">+ constructor(nama, saldoAwal)</text>
+  <text x="208" y="288">+ get sisa() : number</text>
+  <text x="208" y="306">+ isiSaldo(nominal) : void</text>
+  <text x="208" y="324">+ bayar(nominal) : string</text>
+
+  <!-- Voucher -->
+  <rect x="415" y="180" width="180" height="116" fill="#ffffff" stroke="#57606a"/>
+  <rect x="415" y="180" width="180" height="26" fill="#eff2f6" stroke="#57606a"/>
+  <text x="505" y="198" text-anchor="middle" font-weight="bold">Voucher</text>
+  <text x="423" y="224">+ nama = "Voucher" {readonly}</text>
+  <text x="423" y="242">+ sisa : number</text>
+  <line x1="415" y1="252" x2="595" y2="252" stroke="#57606a"/>
+  <text x="423" y="270">+ constructor(nilai)</text>
+  <text x="423" y="288">+ bayar(nominal) : string</text>
+
+  <!-- Kartu (abstract) -->
+  <rect x="605" y="180" width="218" height="166" fill="#ffffff" stroke="#57606a"/>
+  <rect x="605" y="180" width="218" height="40" fill="#eff2f6" stroke="#57606a"/>
+  <text x="714" y="196" text-anchor="middle" font-size="11">«abstract»</text>
+  <text x="714" y="212" text-anchor="middle" font-weight="bold" font-style="italic">Kartu</text>
+  <text x="613" y="238">+ nama : string {readonly}</text>
+  <text x="613" y="256"># limit : number {readonly}</text>
+  <text x="613" y="274"># terpakai : number = 0</text>
+  <line x1="605" y1="284" x2="823" y2="284" stroke="#57606a"/>
+  <text x="613" y="302">+ constructor(nama, limit)</text>
+  <text x="613" y="320" font-style="italic">+ biaya(nominal) : number</text>
+  <text x="613" y="338">+ bayar(nominal) : string</text>
+
+  <!-- KartuDebit -->
+  <rect x="505" y="410" width="160" height="58" fill="#ffffff" stroke="#57606a"/>
+  <rect x="505" y="410" width="160" height="26" fill="#eff2f6" stroke="#57606a"/>
+  <text x="585" y="428" text-anchor="middle" font-weight="bold">KartuDebit</text>
+  <text x="513" y="456">+ biaya(nominal) : number</text>
+
+  <!-- KartuKredit -->
+  <rect x="672" y="410" width="152" height="76" fill="#ffffff" stroke="#57606a"/>
+  <rect x="672" y="410" width="152" height="26" fill="#eff2f6" stroke="#57606a"/>
+  <text x="748" y="428" text-anchor="middle" font-weight="bold">KartuKredit</text>
+  <text x="680" y="456">+ biaya(nominal) : number</text>
+  <text x="680" y="474">+ sisaLimit() : number</text>
+
+  <!-- implements: garis putus-putus ke interface -->
+  <g stroke="#24292f" stroke-dasharray="6,4" fill="none">
+    <path d="M100,180 L100,140 L360,140 L360,102" marker-end="url(#segitiga)"/>
+    <path d="M302,180 L302,150 L395,150 L395,102" marker-end="url(#segitiga)"/>
+    <path d="M505,180 L505,150 L435,150 L435,102" marker-end="url(#segitiga)"/>
+    <path d="M714,180 L714,140 L470,140 L470,102" marker-end="url(#segitiga)"/>
+  </g>
+
+  <!-- extends: garis utuh ke Kartu -->
+  <g stroke="#24292f" fill="none">
+    <path d="M585,410 L585,380 L690,380 L690,346" marker-end="url(#segitiga)"/>
+    <path d="M748,410 L748,380 L740,380 L740,346" marker-end="url(#segitiga)"/>
+  </g>
+
+  <!-- keterangan -->
+  <text x="10" y="508" font-size="11" fill="#57606a">+ public · - private · # protected · miring = abstract · garis putus-putus = implements · garis utuh = extends</text>
+</svg>
