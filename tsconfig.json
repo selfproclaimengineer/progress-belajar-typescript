@@ -1,0 +1,16 @@
+{
+  // Pengecekan tipe untuk semua jawaban TypeScript: npx tsc --noEmit
+  // File .ts dijalankan langsung dengan node (Node 24 membuang tipe tanpa memeriksanya).
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "nodenext",
+    "strict": true,
+    "noEmit": true,
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true,
+    "types": ["node"],
+    "skipLibCheck": true
+  },
+  "include": ["typescript/*/Jawaban/**/*.ts"]
+}
