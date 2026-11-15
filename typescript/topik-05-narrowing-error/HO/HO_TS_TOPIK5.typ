@@ -336,7 +336,7 @@ Analogi database: `throw` seperti transaksi yang di-`ROLLBACK` karena error. `Ha
 
   1. Tulis tebakan output setiap baris `console.log` sebelum menjalankan `node Jawaban/soal-ts5.ts coba`. Tebakan mana yang salah, dan mengapa?
   2. Bagian 2: untuk setiap baris, tulis nomor dan pesan error `tsc`-nya.
-  3. Di baris terakhir `jelaskan` (`return \`boolean ${x}\``), apa tipe `x`, dan bagaimana TypeScript tahu?
+  3. Di baris `return` terakhir dalam `jelaskan`, apa tipe `x`, dan bagaimana TypeScript tahu?
   4. `typeof null` dan `typeof []` sama-sama `"object"`. Bagaimana kamu memeriksa bahwa sebuah nilai benar-benar array? Bagaimana memeriksa `null`?
 
   Jawab pertanyaan di atas di bawah baris `// JAWABAN Coba Sendiri N` pada file soal.
