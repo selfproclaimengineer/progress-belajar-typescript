@@ -85,6 +85,10 @@
 #let perhatian(isi) = kotak(merah, "⚠", "Perhatian", isi)
 #let coba-sendiri(isi) = kotak(hijau, "💡", "Coba Sendiri", isi)
 #let langkah(isi) = kotak(biru, "➤", "Langkah Mengerjakan", isi)
+// Cerita kebutuhan klien di awal setiap tugas soal, sebelum spesifikasi teknis.
+#let kebutuhan(isi) = block(width: 100%, above: 0.7em, below: 0.9em, inset: (x: 9pt, y: 7pt),
+  fill: luma(246), radius: 3pt)[#text(weight: "bold")[Kebutuhan klien.] #isi]
+
 // Penutup setiap materi HO: tugas soal yang memakai materi itu dan kegunaannya.
 #let dipakai(isi) = block(width: 100%, above: 0.9em, below: 1.1em, inset: (left: 8pt, y: 4pt),
   stroke: (left: 2.5pt + hijau))[#text(fill: hijau, weight: "bold")[Dipakai di:] #isi]
