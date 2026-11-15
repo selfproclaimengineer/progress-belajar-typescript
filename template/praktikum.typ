@@ -160,10 +160,9 @@
   ]
   v(1.4em)
   if warna-tipe-data { legenda-tipe }
-  // Nama tipe di teks biasa (baris Input/Output) ikut diwarnai.
+  // Nama tipe di teks biasa (baris Input/Output) diberi garis bawah saja, tanpa warna dan tebal.
   show regex(`\b(number|string|boolean|array)\b`.text): it => if not warna-tipe-data { it } else {
-    let w = (number: warna-tipe.bulat, string: warna-tipe.teks, boolean: warna-tipe.boolean, array: warna-tipe.array)
-    text(fill: w.at(it.text), weight: "bold", it)
+    underline(offset: 2pt, it)
   }
   body
 }
