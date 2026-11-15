@@ -64,6 +64,11 @@ Akibatnya, jika satu nama yang di-import tidak ada, *tidak ada satu baris pun* y
   Ada juga _default export_: `export default function ...`, yang di-import tanpa kurung kurawal (`import luas from "./geometri.js"`). Di modul ini kita hanya memakai named export, karena namanya selalu tertulis jelas di kedua file.
 ]
 
+#dipakai[
+  - Seluruh soal, untuk pembagian dua file: setiap fungsi di `kasir.js` diberi `export`, dan `soal-js6.js` meng-import-nya. Baris `import` di starter sudah tersedia. Yang perlu kamu pastikan, setiap nama di `{ }` benar-benar di-export oleh `kasir.js`.
+  - Beginner 4, untuk menjelaskan error nama import yang salah dan mengapa `"mulai"` tidak tercetak (bagian _Import dijalankan sebelum baris lain_).
+]
+
 == Math: Pembulatan dan Perhitungan
 
 `Math` adalah object bawaan yang berisi fungsi matematika. Kamu tidak membuatnya dengan `new`, cukup memanggil `Math.nama(...)`.
@@ -109,6 +114,8 @@ Jalannya `Math.ceil(50 / 15) * 15`:
   [`* 15`], [`60` (kembali ke satuan menit)],
 )
 
+#dipakai[Beginner 2, untuk `bulatkanKe(n, kelipatan)`. Kalimat soalnya "terkecil yang tidak kurang dari `n`", jadi pilih fungsi pembulatan dari tabel _Empat cara membulatkan_, lalu pakai pola blok 15 menit di atas dengan `kelipatan` sebagai ganti `15`.]
+
 === Fungsi lain yang sering dipakai
 
 #listing("max, min, abs")[```js
@@ -145,6 +152,11 @@ console.log(berat);                     // "12.500 kg"
   Ada opsi `{ style: "currency", currency: "IDR" }` yang menghasilkan `"Rp 15.000"`. Spasi di antara `Rp` dan angka adalah _non-breaking space_ (karakter ` `), bukan spasi biasa. Hasilnya terlihat sama, tetapi `===` dengan `"Rp 15.000"` yang diketik biasa bernilai `false`. Jika format teks harus persis, susun sendiri dari `format(...)` dan template literal.
 ]
 
+#dipakai[
+  - Beginner 1, untuk `formatRupiah`. Soal meminta `Rp` tanpa spasi, jadi pakai cara di kotak Perhatian: format angkanya dengan locale `"id-ID"`, lalu sambung `Rp` di depannya dengan template literal, seperti contoh `berat` di atas.
+  - Advanced 1, untuk subtotal dan total di struk (lewat `formatRupiah`).
+]
+
 == Set: Kumpulan Nilai Tanpa Duplikat
 
 *Untuk apa:* menyimpan nilai unik, atau membuang duplikat dari array. Di SQL: `SELECT DISTINCT`.
@@ -177,6 +189,8 @@ console.log(kota);   // ["Solo", "Semarang"]
 ```]
 
 Bentuk data di setiap langkah: `pelanggan` (array object), lalu `map` (array string dengan duplikat), lalu `new Set(...)` (Set tanpa duplikat), lalu `[...]` (array string).
+
+#dipakai[Beginner 3, untuk `kategoriUnik`. Polanya sama dengan daftar kota unik di atas: `pelanggan` menjadi `produk`, dan `kota` menjadi `kategori`.]
 
 == Map: Kamus dengan Pencarian Cepat
 
@@ -241,6 +255,11 @@ Berapa langkah pencarian yang dilakukan?
 
 Map menyimpan isinya dengan _hash table_: key diubah menjadi alamat penyimpanan, jadi `get` langsung melompat ke tempatnya tanpa memeriksa elemen lain. Di database, ini sama dengan `CREATE INDEX` atau index bawaan primary key. Tanpa index, database harus memindai seluruh tabel (_full table scan_), sama seperti `find`. Biaya membuat index hanya dibayar sekali (satu perulangan), lalu setiap pencarian menjadi cepat.
 
+#dipakai[
+  - Intermediate 1, untuk `buatIndex`. Polanya sama dengan index mahasiswa lewat NIM: `mahasiswa` menjadi `produk`, dan `nim` menjadi `id`. Pertanyaan *(jelaskan)*-nya memakai tabel jumlah langkah dan penjelasan _hash table_ di atas.
+  - Advanced 1, untuk mencari produk setiap item keranjang lewat `index.get(...)`, dan mengenali produk yang tidak ada karena hasilnya `undefined`.
+]
+
 == Date: Tanggal dan Waktu
 
 *Untuk apa:* menyimpan tanggal, misalnya tanggal transaksi atau jatuh tempo.
@@ -273,6 +292,11 @@ function formatIso(tgl) {
 }
 console.log(formatIso(new Date(2026, 0, 5)));   // "2026/01/05"
 ```]
+
+#dipakai[
+  - Intermediate 3, untuk memperbaiki `formatTanggal`. Kotak Perhatian menjelaskan bulan yang dimulai dari 0. `formatIso` di atas menunjukkan cara membuat hari dan bulan dua digit. Bedanya hanya urutan dan pemisah: soal meminta `DD-MM-YYYY`.
+  - Advanced 1, untuk tanggal di baris pertama struk (lewat `formatTanggal`).
+]
 
 == throw, try, catch: Menangani Error
 
@@ -351,6 +375,11 @@ console.log(daftar("Cici", "20")); // "GAGAL: umur tidak valid"
 
 `Number.isInteger(x)` bernilai `true` hanya jika `x` bertipe number dan tidak punya desimal. `Number.isInteger("20")` bernilai `false`, karena `"20"` adalah string.
 
+#dipakai[
+  - Intermediate 2, untuk `validasiQty` dan `cobaTambah`. Polanya sama dengan `validasiUmur` dan `daftar` di atas: `validasiQty` melempar, `cobaTambah` menangkap. Bedanya, `qty` juga tidak boleh `0`.
+  - Advanced 1, untuk melempar error "produk tidak ditemukan" di `buatStruk` dan menangkapnya di `cetakStruk`. Pertanyaan *(jelaskan)* bagian (a) tentang tempat melempar dan menangkap dibahas di bagian _Di mana melempar, di mana menangkap_.
+]
+
 #catatan[
   Di Modul 5, kegagalan dikembalikan sebagai string `"GAGAL: ..."`. Itu cocok untuk method yang hasilnya memang pesan untuk pengguna. `throw` lebih cocok ketika fungsi seharusnya mengembalikan *data* (number, object, string struk), sehingga tidak ada nilai kembalian yang masuk akal saat gagal. Di TypeScript nanti (TS-5) ada pola ketiga, yaitu _Result_.
 ]
@@ -367,6 +396,8 @@ console.log(daftar("Cici", "20")); // "GAGAL: umur tidak valid"
   [`Cannot read properties of undefined (reading 'x')` setelah `map.get(...)`], [Key tidak ada di Map.], [Id salah, atau index belum diisi.],
   [Pesan dari `throw new Error(...)` milikmu sendiri], [Error yang kamu lempar tidak ditangkap.], [Lupa `try...catch` di pemanggil.],
 )
+
+#dipakai[Beginner 4 (error nama import) dan saat kodemu error di tugas mana pun. Cari pesannya di tabel ini dulu.]
 
 #coba-sendiri[
   Kerjakan di fungsi `cobaSendiri()` pada file soal `Jawaban/soal-js6.js` (sudah tersedia di starter). Sebelum menjalankan, *tulis tebakanmu* sebagai komentar di ujung setiap baris `console.log`. Jalankan bagian ini saja dengan `node Jawaban/soal-js6.js coba`, lalu bandingkan.

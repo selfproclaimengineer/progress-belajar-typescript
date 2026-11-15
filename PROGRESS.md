@@ -2,7 +2,7 @@
 
 ## Lanjut dari sini
 
-**JS-5 OOP.** Baca `javascript/topik-05-oop/HO/`, kerjakan Coba Sendiri, lalu soal. HO dan soal sudah direvisi sesuai feedback JS-4: setiap tugas soal punya baris `Contoh:` (input konkret, output, dan saldo sebelumnya), dan setiap materi HO ditutup baris *Dipakai di:* yang menyebut tugas yang memakainya. JS-6 Modules belum direvisi dengan aturan ini.
+**JS-5 OOP.** Baca `javascript/topik-05-oop/HO/`, kerjakan Coba Sendiri, lalu soal. HO dan soal JS-5 dan JS-6 sudah direvisi sesuai feedback JS-4: soal dibuka cerita klien, setiap tugas punya kotak *Kebutuhan klien* dan baris `Contoh:` (input konkret dan output), dan setiap materi HO ditutup baris *Dipakai di:* yang menyebut tugas yang memakainya.
 
 JS-4 selesai dengan nilai 86. Advanced 1 dijelaskan asisten atas kesepakatan dan tidak dinilai. Sisa catatan ada di `javascript/topik-04-string-object/Diskusi/FEEDBACK.md`: Beginner 4 belum dijalankan dan versi benarnya keliru, penjelasan Intermediate 3 kosong, dan Coba Sendiri 2 dan 3 (alamat object) belum dijawab. Macet utama JS-4: tidak bisa membayangkan input dan output, serta tidak tahu materi HO mana yang dipakai di soal mana.
 
