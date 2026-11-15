@@ -15,7 +15,8 @@
   bulat: rgb("#1d4ed8"), desimal: rgb("#7e22ce"), teks: rgb("#15803d"), boolean: rgb("#c2410c"),
   kosong: rgb("#b91c1c"), array: rgb("#0f766e"), array2d: rgb("#be185d"), fungsi: rgb("#a16207"),
 )
-#let pola-token = regex(`"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:\[\])+|=>|[A-Za-z_$][\w$]*|\d[\d_]*(?:\.\d+)?|\s+|.`.text)
+// Rp10.000 di pesan output adalah teks hasil format, jadi satu token tanpa warna.
+#let pola-token = regex(`"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:\[\])+|=>|Rp\d+(?:\.\d+)*|[A-Za-z_$][\w$]*|\d[\d_]*(?:\.\d+)?|\s+|.`.text)
 #let pola-nama = regex(`^[A-Za-z_$]`.text)
 #let pola-angka = regex(`^\d`.text)
 // Kata kunci yang diikuti "(" atau "[" tetapi bukan pemanggilan fungsi atau index.
