@@ -168,7 +168,7 @@ class Tabungan extends Rekening {
   // TODO Intermediate 2: info(): string
   // ≈ 3 baris
   info(){
-    return `${super.info()}, bunga ${this.bungaPersen}`
+    return `${super.info()}, bunga ${this.bungaPersen}%`
   }
 }
 
@@ -190,7 +190,8 @@ function setorBanyak(rek, daftarNominal) {
 // ===== Advanced 1 =====
 // JAWABAN Advanced 1a (langkah per method,
 // mengapa tarik dan setor, mengapa urutannya):
-// 
+// karena sudah dijawab di soal, maka tidak perlu dijelaskan
+
 class Bank {
   constructor() {
     this.daftar = [];

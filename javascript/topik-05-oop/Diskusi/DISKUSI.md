@@ -109,3 +109,8 @@
 **Pertanyaan:** Dion melihat ada saldo yang bertambah 150000 dan total sama, jadi merasa transfer sudah benar.
 **Level hint:** 2 (bukti dengan salinan kode yang diberi log saldo, file Dion tidak diubah)
 **Jawaban asisten:** Ditunjukkan log saldo per langkah: awal ani 650000 budi 1000000, setelah `tarik` ani 500000, setelah `setor` ani kembali 650000, budi tetap 1000000. Yang bertambah 150000 adalah ani sendiri, karena `setor` dipanggil pada `saldoDari`. Total sama karena uang kembali ke pemiliknya, jadi total tidak bisa dipakai untuk membuktikan transfer benar. Pembuktian yang tepat adalah `budi.saldo` setelah transfer (soal: 1150000).
+
+### 2026-11-22 — Penilaian JS-5
+**Pertanyaan:** Dion menetapkan Advanced cukup salah satu, (a) atau (b), dan minta semua soal dinilai.
+**Level hint:** - (penilaian)
+**Jawaban asisten:** Nilai di `FEEDBACK.md`: Beginner 86, Intermediate 83, Advanced 75 (dinilai dari bagian (b)), total 80. Kekurangan utama: Beginner 4 bagian kedua hilang dan contoh setter keliru, penjelasan Intermediate 3 salah konsep (bukan soal data nominal, tetapi `this` hilang), `buka` kurang `dibuka`, dan `transfer` menulis ulang cek saldo sehingga nominal 0 atau negatif dilaporkan berhasil. Aturan Advanced baru dicatat di `CLAUDE.md`.

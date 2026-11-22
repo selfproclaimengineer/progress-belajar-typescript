@@ -2,16 +2,9 @@
 
 ## Lanjut dari sini
 
-**JS-5 OOP, sedang dikerjakan (sesi 2026-11-22).** Semua tanya jawab sesi ini ada di `javascript/topik-05-oop/Diskusi/DISKUSI.md`. Sisa pekerjaan sebelum diperiksa dan dinilai:
-- Beginner 3: pesan saldo kurang masih `sisa (650000)`, seharusnya `(sisa 650000)`.
-- Beginner 4: bagian "apa yang terjadi jika saldo publik" belum ditulis ulang. Contoh setter masih memakai `get` dan dipanggil dengan `()`.
-- Intermediate 1: bunga belum dibulatkan ke bawah. Field `#bunga` dan getter `bunga` tidak perlu.
-- Intermediate 2: output kurang tanda `%`.
-- Intermediate 3: kode benar, penjelasan *(jelaskan)* belum ditulis.
-- Advanced 1: `buka` kurang kata `dibuka`. `transfer` masih menarik lalu menyetor ke rekening pengirim sendiri (seharusnya setor ke `saldoKe`), dan cek saldo ditulis ulang (seharusnya membaca hasil `tarik` dengan `startsWith`). `cari` dan `totalSaldo` jalan. Bagian (a) `// JAWABAN Advanced 1a` masih kosong dan wajib ditulis sendiri, bahannya ada di DISKUSI.md.
-- Coba Sendiri 3 dan 4 masih kurang alasan.
+**Berikutnya: JS-6 Modules dan Stdlib.** Coba Sendiri JS-6 sudah dijawab sebagian di `Jawaban/soal-js6.js`. Starter dan file Jawaban punya `// ≈ N baris` di bawah setiap `TODO`. Advanced cukup dikerjakan salah satu, bagian (a) pendekatan atau bagian (b) kode.
 
-Starter dan file Jawaban kini punya `// ≈ N baris` di bawah setiap `TODO`.
+JS-5 selesai dengan nilai 80. Sisa catatan ada di `javascript/topik-05-oop/Diskusi/FEEDBACK.md`: Beginner 4 bagian kedua hilang dan contoh setter keliru, penjelasan Intermediate 3 salah konsep (`this` hilang di callback), `buka` kurang `dibuka`, dan `transfer` tidak membaca hasil `tarik` sehingga nominal 0 atau negatif dilaporkan berhasil. Macet utama JS-5: membedakan object pengirim dan penerima di `transfer`, dan arti `this` di method `Bank`.
 
 Semua topik sudah disiapkan lebih awal atas permintaan Dion (2026-11-15), karena Dion ingin membaca semua HO dulu. Revisi dilakukan langsung saat dibutuhkan. Yang tersedia: JS-5 sampai JS-8, TS-1 sampai TS-7, dan Tugas Rancang (`tugas-rancang/KRITERIA.pdf`). Urutan yang disarankan: JS-5, JS-6, TS-1, TS-2, TS-3, Tugas Rancang, lalu TS-4 sampai TS-6 jika waktu cukup. JS-7, JS-8, dan TS-7 boleh dilewati jika waktu mepet.
 
@@ -45,7 +38,7 @@ Alur setiap topik:
 | JS-2 Perulangan dan fungsi | [x] | [x] | [x] | 81 |
 | JS-3 Array | [x] | [ ] | [x] | 83 |
 | JS-4 String dan object | [x] | [ ] | [x] | 86 |
-| JS-5 OOP | [x] | [ ] | [ ] | |
+| JS-5 OOP | [x] | [ ] | [x] | 80 |
 | JS-6 Modules dan standard library | [x] | [ ] | [ ] | |
 | JS-7 Async | [ ] | [ ] | [ ] | |
 | JS-8 DOM | [ ] | [x] | [ ] | |
@@ -66,4 +59,4 @@ Alur setiap topik:
 | 2026-11-02 | JS-1, JS-2 | 4 jam | JS-1: soal; JS-2: soal, tanya jawab, feedback | begadang, kurang tidur |
 | 2026-11-05 | JS-2, JS-3 | 7 jam | JS-2: feedback; JS-3: soal, tanya jawab, feedback | implementasi callback: urutan chaining, kapan memakai find untuk FK-PK, map, filter |
 | 2026-11-12 | JS-4 | 2 jam | JS-4: soal, tanya jawab, feedback | membayangkan input dan output (console.log di bawah), tidak tahu materi HO mana dipakai di soal mana, energi minim karena belajar malam |
-| 2026-11-22 | JS-5 | 4 jam | JS-5: soal, tanya jawab | transfer di Advanced (tarik dan setor ke rekening sendiri), this di method Bank |
+| 2026-11-22 | JS-5, JS-6 | 4 jam | JS-5: soal, tanya jawab, feedback; JS-6: soal | transfer di Advanced (tarik dan setor ke rekening sendiri), this di method Bank |
