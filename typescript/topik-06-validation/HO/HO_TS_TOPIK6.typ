@@ -104,7 +104,7 @@ if (apakahSiswa(data)) {
 Jalannya tipe di dalam `apakahSiswa`:
 
 #table(
-  columns: (auto, 1fr, auto),
+  columns: (1fr, 1fr, 1fr),
   inset: 6pt,
   [*Posisi*], [*Alasan*], [*Tipe*],
   [awal fungsi], [dari parameter], [`x: unknown`],

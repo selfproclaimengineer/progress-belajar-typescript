@@ -62,7 +62,12 @@ function ringkasKegiatan(topik, berubah) {
     const f = berubah.filter((x) => x.startsWith(prefixDir));
     if (f.length === 0) continue;
     const jenis = [];
-    if (f.some((x) => /\/Jawaban\/soal-.*\.(js|ts|html)$/.test(x))) jenis.push("soal");
+    // salinan starter yang belum diubah (disiapkan asisten) tidak dihitung sebagai mengerjakan soal
+    const masihStarter = (x) => {
+      const starter = join(t.dir, "Soal", "starter" + x.slice(x.lastIndexOf(".")));
+      return existsSync(x) && existsSync(starter) && readFileSync(x, "utf8") === readFileSync(starter, "utf8");
+    };
+    if (f.some((x) => /\/Jawaban\/soal-.*\.(js|ts|html)$/.test(x) && !masihStarter(x))) jenis.push("soal");
     // file diskusi/feedback kosong ikut dibuat bersama materi, jadi hanya dihitung jika sudah berisi
     const diskusi = join(t.dir, "Diskusi", "DISKUSI.md");
     const feedback = join(t.dir, "Diskusi", "FEEDBACK.md");

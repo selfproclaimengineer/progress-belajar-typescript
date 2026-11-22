@@ -59,11 +59,11 @@ Ada dua perintah, dan keduanya punya tugas berbeda.
   columns: (auto, 1fr, 1fr),
   inset: 6pt,
   [*Perintah*], [*Yang dikerjakan*], [*Yang tidak dikerjakan*],
-  [`npx tsc --noEmit`], [Memeriksa tipe semua file jawaban TypeScript, lalu mencetak daftar error. `--noEmit` berarti tidak membuat file baru.], [Tidak menjalankan program.],
+  [`npx tsc --noEmit`], [Memeriksa tipe semua file di `Jawaban/` topik ini, lalu mencetak daftar error. `--noEmit` berarti tidak membuat file baru.], [Tidak menjalankan program.],
   [`node Jawaban/soal-ts1.ts`], [Membuang keterangan tipe, lalu menjalankan sisanya seperti file `.js`.], [Tidak memeriksa tipe sama sekali. Kode yang salah tipe tetap dijalankan.],
 )
 
-Alur kerjanya: jalankan `tsc` dulu sampai tidak ada error, baru jalankan `node`. Aturan pemeriksaan ditulis di `tsconfig.json` di root repo, dengan mode `strict` menyala.
+Alur kerjanya: jalankan `tsc` dulu sampai tidak ada error, baru jalankan `node`. Aturan pemeriksaan ditulis di `tsconfig.json` di root repo, dengan mode `strict` menyala. Setiap folder topik punya `tsconfig.json` kecil yang memakai aturan itu dan hanya memeriksa `Jawaban/` topik tersebut, jadi error dari topik lain tidak ikut tampil.
 
 #listing("satu file, dua perintah")[```ts
 // coba.ts

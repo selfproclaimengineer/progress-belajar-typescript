@@ -298,7 +298,7 @@ console.log(JSON.stringify(baru));     // [{"id":"K1","jumlah":1},{"id":"K2","ju
 == Membaca Pesan Error (tambahan JS-8)
 
 #table(
-  columns: (auto, 1fr),
+  columns: (1fr, 1fr),
   inset: 6pt,
   [*Pesan atau gejala*], [*Penyebab umum*],
   [`TypeError: Cannot read properties of null (reading '...')`], [`querySelector` tidak menemukan elemen. Periksa selector dan id di HTML.],

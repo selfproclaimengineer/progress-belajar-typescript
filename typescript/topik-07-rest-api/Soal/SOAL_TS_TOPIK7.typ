@@ -37,9 +37,9 @@ Daftar route yang diminta tim ponsel:
 Setiap balasan gagal berbentuk `{ pesan }`. Setiap tugas di bawah diawali kotak *Kebutuhan klien*. Baris *Dalam kode* menunjukkan bagian kode yang menjawab kebutuhan itu.
 
 #perhatian[
-  1. Salin `Soal/starter.ts` ke `Jawaban/soal-ts7.ts`.
+  1. Kerjakan di `Jawaban/soal-ts7.ts`. File itu sudah disiapkan dari `Soal/starter.ts`.
   2. Lengkapi route dan skema bertanda `TODO`. Jangan mengubah bagian `TIPE`, `DATA`, dan `PEMANGGILAN`.
-  3. *Cek tipe dulu* dengan `npx tsc --noEmit`, lalu *jalankan* dengan `node Jawaban/soal-ts7.ts`. File itu menyalakan server, memanggil setiap route dengan `fetch`, mencetak `<status> <isi balasan>`, lalu mematikan server.
+  3. *Cek tipe dulu* dengan `npx tsc --noEmit`, lalu *jalankan* dengan `node Jawaban/soal-ts7.ts`. Keduanya dijalankan dari folder topik ini. File itu menyalakan server, memanggil setiap route dengan `fetch`, mencetak `<status> <isi balasan>`, lalu mematikan server.
   4. Jawaban dianggap selesai jika `npx tsc --noEmit` tidak menampilkan error *dan* output `node` sama persis dengan kotak *Output dari*.
   5. Route yang belum dibuat membalas `501 {"pesan":"belum dibuat"}`. Pemanggilan berjalan berurutan pada server yang sama, jadi perubahan data terbawa ke tugas berikutnya.
   6. Jangan memakai `any`, `as`, dan tanda `!` di kodemu sendiri. Setiap balasan gagal harus diikuti `return`. Soal bertanda *(jelaskan)* dijawab sebagai komentar di bawah baris `// JAWABAN ...`.
@@ -47,7 +47,7 @@ Setiap balasan gagal berbentuk `{ pesan }`. Setiap tugas di bawah diawali kotak 
 
 #level("Beginner", "0.3")
 
-+ *Daftar semua buku.*
++ *Daftar semua buku.* #est(3)
   #kebutuhan[
     Halaman pertama aplikasi ponsel menampilkan semua buku beserta stoknya.
 
@@ -60,7 +60,7 @@ Setiap balasan gagal berbentuk `{ pesan }`. Setiap tugas di bawah diawali kotak 
   200 [{"id":"B001","judul":"Laskar Pelangi","penulis":"Andrea Hirata","stok":2},{"id":"B002","judul":"Bumi Manusia","penulis":"Pramoedya Ananta Toer","stok":1},{"id":"B003","judul":"Filosofi Teras","penulis":"Henry Manampiring","stok":0}]
   ```]
 
-+ *Satu buku.*
++ *Satu buku.* #est(8)
   #kebutuhan[
     Saat mahasiswa membuka detail buku, aplikasi meminta satu buku berdasarkan id. Jika id-nya salah, aplikasi harus bisa membedakan "buku tidak ada" dari "server error", supaya pesan di layar tepat.
 
@@ -84,7 +84,7 @@ Setiap balasan gagal berbentuk `{ pesan }`. Setiap tugas di bawah diawali kotak 
 
 #level("Intermediate", "0.3")
 
-+ *Menambah buku.*
++ *Menambah buku.* #est(16)
   #kebutuhan[
     Petugas menambah buku baru dari aplikasi. Isi permintaan dikirim aplikasi ponsel, jadi bisa salah: judul kosong, stok berupa teks, atau field yang hilang. Server harus menolak dengan pesan yang jelas dan tidak boleh menyimpan data yang salah. Id buku dibuat server, bukan dikirim aplikasi.
 
@@ -121,7 +121,7 @@ Setiap balasan gagal berbentuk `{ pesan }`. Setiap tugas di bawah diawali kotak 
   400 {"pesan":"stok: stok harus angka"}
   ```]
 
-+ *Mengubah sebagian data buku.*
++ *Mengubah sebagian data buku.* #est(15)
   #kebutuhan[
     Petugas sering hanya mengubah stok setelah buku baru datang, tanpa mengirim ulang judul dan penulis. Field yang dikirim tetap harus memenuhi aturan yang sama dengan buku baru.
 
@@ -143,7 +143,7 @@ Setiap balasan gagal berbentuk `{ pesan }`. Setiap tugas di bawah diawali kotak 
   404 {"pesan":"buku tidak ditemukan"}
   ```]
 
-+ *Kode temanmu: `DELETE /buku/:id`.*
++ *Kode temanmu: `DELETE /buku/:id`.* #est(10)
   #kebutuhan[
     Petugas menghapus buku yang sudah tidak dimiliki perpustakaan. Temanmu sudah menulis route-nya, dan `tsc` tidak protes. Balasannya juga terlihat benar. Tetapi setelah petugas salah ketik id saat menghapus, buku lain hilang dari daftar.
 
@@ -174,7 +174,7 @@ Setiap balasan gagal berbentuk `{ pesan }`. Setiap tugas di bawah diawali kotak 
 
 Advanced dinilai dari *pendekatannya*. Bagian (a) wajib dan menentukan nilai. Bagian (b) opsional. Kode yang kosong tidak mengurangi nilai.
 
-+ *Meminjam buku.*
++ *Meminjam buku.* #est(31)
   #kebutuhan[
     Mahasiswa meminjam buku dari aplikasi. Peminjaman ditolak jika isi permintaan salah, bukunya tidak ada, stoknya habis, atau anggota itu sudah meminjam 2 buku. Aplikasi ponsel perlu tahu *jenis* penolakannya dari status code: isi permintaan salah, data tidak ada, atau ditolak aturan perpustakaan. Jika berhasil, stok berkurang dan aplikasi menerima nomor peminjaman.
 

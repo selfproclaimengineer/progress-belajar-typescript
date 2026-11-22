@@ -23,9 +23,9 @@ Pengurus koperasi ingin setiap jenis kegagalan punya pesan yang jelas, dan setia
 Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan koperasi dan mengapa. Baris *Dalam kode* menunjukkan bagian kode yang menjawab kebutuhan itu. Spesifikasi teknis ada di poin-poin setelahnya.
 
 #perhatian[
-  1. Salin `Soal/starter.ts` ke `Jawaban/soal-ts5.ts`.
+  1. Kerjakan di `Jawaban/soal-ts5.ts`. File itu sudah disiapkan dari `Soal/starter.ts`.
   2. Lengkapi bagian bertanda `TODO`. Jangan mengubah bagian `TIPE`, `DATA`, dan `PEMANGGILAN`.
-  3. *Cek tipe dulu* dengan `npx tsc --noEmit`, lalu *jalankan* dengan `node Jawaban/soal-ts5.ts`.
+  3. *Cek tipe dulu* dengan `npx tsc --noEmit`, lalu *jalankan* dengan `node Jawaban/soal-ts5.ts`. Keduanya dijalankan dari folder topik ini.
   4. Jawaban dianggap selesai jika `npx tsc --noEmit` tidak menampilkan error *dan* output `node` sama persis dengan kotak *Output dari*.
   5. Pemanggilan berjalan berurutan dan memakai `daftarRekening` yang sama, jadi saldo di satu tugas terbawa ke tugas berikutnya.
   6. Jangan memakai `any`, `as`, dan tanda `!` di kodemu sendiri. Soal bertanda *(jelaskan)* dijawab sebagai komentar di bawah baris `// JAWABAN ...`.
@@ -33,7 +33,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan koper
 
 #level("Beginner", "0.3")
 
-+ *Nominal dari dua sumber.*
++ *Nominal dari dua sumber.* #est(6)
   #kebutuhan[
     Nominal transaksi datang dari dua tempat. Mesin setor mengirim angka, misalnya `15000`. Form di loket mengirim teks yang diketik petugas, sering dengan titik ribuan, misalnya `"25.000"`. Kadang petugas mengetik huruf. Koperasi ingin keduanya ditampilkan dalam format Rupiah, dan teks yang bukan angka diberi pesan.
 
@@ -56,7 +56,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan koper
   nominal tidak valid
   ```]
 
-+ *Keterangan mutasi.*
++ *Keterangan mutasi.* #est(14)
   #kebutuhan[
     Buku tabungan anggota mencetak satu baris keterangan untuk setiap mutasi: setor, tarik, atau transfer. Hanya transfer yang punya rekening tujuan. Koperasi berencana menambah jenis mutasi baru tahun depan, dan tidak mau ada jenis yang lupa diberi keterangan.
 
@@ -86,7 +86,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan koper
 
 #level("Intermediate", "0.3")
 
-+ *Error khusus.*
++ *Error khusus.* #est(22)
   #kebutuhan[
     Penarikan bisa gagal karena dua hal yang penanganannya berbeda. Jika saldo kurang, petugas perlu tahu *berapa* kekurangannya supaya bisa menawarkan jumlah lain. Jika rekening dibekukan, petugas perlu tahu *nomor* rekeningnya untuk diteruskan ke bagian CS. Pesan teks biasa tidak cukup, karena angka kekurangan dan nomor rekening harus bisa dibaca program.
 
@@ -114,7 +114,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan koper
   400000
   ```]
 
-+ *Tarik dengan pesan jelas.*
++ *Tarik dengan pesan jelas.* #est(11)
   #kebutuhan[
     Layar petugas tidak boleh menampilkan error mentah. Setiap jenis kegagalan diterjemahkan menjadi pesan yang bisa dibacakan ke anggota. Kegagalan yang tidak dikenal tetap ditampilkan, tetapi diberi tanda bahwa itu error tak terduga.
 
@@ -137,7 +137,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan koper
   Ditolak: rekening 1003 dibekukan, hubungi CS
   ```]
 
-+ *Kode temanmu: `ringkasRespon(r)`.*
++ *Kode temanmu: `ringkasRespon(r)`.* #est(4)
   #kebutuhan[
     Transfer ke bank lain dikirim lewat layanan pihak ketiga. Jika berhasil, layanan itu membalas id transaksi dan biaya. Jika gagal, layanan membalas alasan kegagalannya. Kedua balasan tidak punya field penanda yang sama. Temanmu menulis fungsi ringkasan, dan `tsc` tidak protes. Tetapi untuk transfer gagal, struk mencetak `Transfer berhasil, id undefined, biaya RpNaN`.
 
@@ -160,7 +160,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan koper
 
 Advanced dinilai dari *pendekatannya*. Bagian (a) wajib dan menentukan nilai. Bagian (b) opsional. Kode yang kosong tidak mengurangi nilai.
 
-+ *Transfer antar-anggota.*
++ *Transfer antar-anggota.* #est(18)
   #kebutuhan[
     Anggota bisa mentransfer saldo ke anggota lain. Transfer ditolak jika nominalnya tidak masuk akal, salah satu rekening tidak ada, rekening tujuan sama dengan pengirim, salah satu rekening dibekukan, atau saldo pengirim kurang. Kegagalan seperti ini *biasa terjadi* setiap hari, jadi koperasi tidak mau memakai `throw` untuk kasus ini. Fungsi transfer cukup mengembalikan hasil yang menyatakan berhasil atau gagal beserta alasannya.
 

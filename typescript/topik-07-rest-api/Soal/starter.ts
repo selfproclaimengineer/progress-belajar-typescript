@@ -78,11 +78,14 @@ const BATAS_PINJAM = 2;
 
 // ===== Skema =====
 // TODO (Intermediate 1): skema buku baru, lengkap dengan pesan error seperti di soal
+// ≈ 5 baris
 const SkemaBukuBaru = z.object({});
 
 // TODO (Intermediate 2): skema perubahan buku, diturunkan dari SkemaBukuBaru
+// ≈ 1 baris
 
 // TODO (Advanced 1, opsional): skema peminjaman
+// ≈ 4 baris
 
 // Sudah jadi (dari TS-6): ubah error zod pertama menjadi "<path>: <pesan>".
 function pesanZod(error: z.ZodError): string {
@@ -108,12 +111,14 @@ function buatApp() {
   // ===== Beginner 1 =====
   app.get("/buku", (req: Request, res: Response) => {
     // TODO
+    // ≈ 3 baris
     res.status(501).json({ pesan: "belum dibuat" });
   });
 
   // ===== Beginner 2 =====
   app.get("/buku/:id", (req: Request<{ id: string }>, res: Response) => {
     // TODO
+    // ≈ 8 baris
     res.status(501).json({ pesan: "belum dibuat" });
   });
 
@@ -124,12 +129,14 @@ function buatApp() {
   // ===== Intermediate 1 =====
   app.post("/buku", (req: Request, res: Response) => {
     // TODO
+    // ≈ 11 baris
     res.status(501).json({ pesan: "belum dibuat" });
   });
 
   // ===== Intermediate 2 =====
   app.patch("/buku/:id", (req: Request<{ id: string }>, res: Response) => {
     // TODO
+    // ≈ 14 baris
     res.status(501).json({ pesan: "belum dibuat" });
   });
 
@@ -150,6 +157,7 @@ function buatApp() {
   //
   app.post("/pinjam", (req: Request, res: Response) => {
     // TODO (opsional)
+    // ≈ 26 baris
     res.status(501).json({ pesan: "belum dibuat" });
   });
 

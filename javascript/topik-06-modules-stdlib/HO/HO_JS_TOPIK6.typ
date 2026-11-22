@@ -10,6 +10,7 @@ Setelah mengikuti praktikum ini, peserta mampu:
 - Membuat dan memformat tanggal dengan `Date` tanpa terjebak bulan yang dimulai dari 0
 - Melempar error dengan `throw` dan menangkapnya dengan `try...catch`
 - Memilih di mana error dilempar dan di mana ditangkap
+- Membaca argumen terminal dan pengaturan lewat `process.argv` dan `process.env`, serta mengakhiri program dengan `process.exit`
 
 = Dasar Teori
 
@@ -383,6 +384,139 @@ console.log(daftar("Cici", "20")); // "GAGAL: umur tidak valid"
 #catatan[
   Di Modul 5, kegagalan dikembalikan sebagai string `"GAGAL: ..."`. Itu cocok untuk method yang hasilnya memang pesan untuk pengguna. `throw` lebih cocok ketika fungsi seharusnya mengembalikan *data* (number, object, string struk), sehingga tidak ada nilai kembalian yang masuk akal saat gagal. Di TypeScript nanti (TS-5) ada pola ketiga, yaitu _Result_.
 ]
+
+== process: Program dan Terminal
+
+*Untuk apa:* program sering perlu tahu hal dari luar kodenya. Misalnya argumen yang diketik di terminal, pengaturan seperti nomor port server, atau cara memberi tahu terminal bahwa program gagal. Semua itu lewat object bawaan Node bernama `process`.
+
+*Cara kerja:* `process` sudah tersedia di setiap file Node tanpa `import`, sama seperti `Math`. Object ini mewakili program yang *sedang berjalan*. Kamu sudah memakainya sejak Modul 1, di blok ini pada setiap starter:
+
+#listing("blok coba di setiap starter")[```js
+if (process.argv[2] === "coba") {
+  cobaSendiri();
+  process.exit(0);
+}
+```]
+
+Artinya: jika kata ketiga di perintah terminal adalah `coba`, jalankan `cobaSendiri()`, lalu hentikan program sebelum bagian soal dijalankan. Bagian berikut menjelaskan `process.argv` dan `process.exit` satu per satu.
+
+Contoh di aplikasi nyata: server kantin di proyek Softeng membaca nomor port dari `process.env.PORT`, membaca flag dari `process.argv`, dan memanggil `process.exit(1)` jika pengaturannya salah.
+
+=== process.argv: argumen dari terminal
+
+`process.argv` adalah array string berisi seluruh perintah yang diketik di terminal. Dua elemen pertama selalu diisi Node, jadi argumenmu sendiri dimulai dari index `2`.
+
+#listing("diskon.js")[```js
+console.log(process.argv);
+const persen = process.argv[2];
+console.log(persen, typeof persen);
+console.log(persen + 5);           // sambung string, bukan tambah
+console.log(Number(persen) + 5);   // ubah dulu menjadi number
+console.log(process.argv[3]);
+```]
+
+Dijalankan dengan `node diskon.js 10 coba`:
+
+```text
+[
+  'C:\\Program Files\\nodejs\\node.exe',
+  'E:\\...\\diskon.js',
+  '10',
+  'coba'
+]
+10 string
+105
+15
+coba
+```
+
+#table(
+  columns: (auto, 1fr, 1fr),
+  inset: 6pt,
+  [*Index*], [*Isi*], [*Asalnya*],
+  [`0`], [`'C:\\Program Files\\nodejs\\node.exe'`], [path program `node`],
+  [`1`], [`'E:\\...\\diskon.js'`], [path file yang dijalankan],
+  [`2`], [`'10'`], [argumen pertama yang kamu ketik],
+  [`3`], [`'coba'`], [argumen kedua],
+  [`4`], [`undefined`], [tidak diketik: index di luar array],
+)
+
+Padanan di SQL: argumen ini mirip parameter stored procedure, `CALL hitung_diskon(10)`. Bedanya, di `process.argv` semua parameter selalu bertipe string.
+
+#perhatian[
+  Isi `process.argv` *selalu string*, walaupun yang diketik terlihat seperti angka. `"10" + 5` menghasilkan `"105"` karena `+` dengan string berarti menyambung (Modul 1). Ubah dulu dengan `Number(...)` sebelum dihitung. Jika argumen tidak diketik, hasilnya `undefined`, dan `Number(undefined)` adalah `NaN`.
+]
+
+=== process.env: pengaturan dari luar kode
+
+*Untuk apa:* menyimpan pengaturan yang berbeda di setiap komputer tanpa mengubah kode. Contohnya nomor port, alamat database, atau password. Password tidak boleh ditulis langsung di kode, karena kode masuk ke Git dan bisa dibaca orang lain. Di dunia database, ini seperti _connection string_ yang disimpan di konfigurasi server, bukan di query.
+
+*Cara kerja:* `process.env` adalah object berisi _environment variable_ (variabel lingkungan) dari terminal. Key-nya nama variabel, value-nya *selalu string*. Variabel yang tidak diatur bernilai `undefined`.
+
+#listing("env.js")[```js
+const port = Number(process.env.PORT ?? 3000);   // 3000 jika PORT tidak diatur
+console.log(process.env.PORT, port);
+console.log(process.env.TIDAK_ADA);
+```]
+
+#table(
+  columns: (1fr, 1fr),
+  inset: 6pt,
+  [*Perintah di PowerShell*], [*Output*],
+  [`node env.js`], [`undefined 3000`, lalu `undefined`],
+  [`$env:PORT = "8080"; node env.js`], [`8080 8080`, lalu `undefined`],
+)
+
+Baris pertama `env.js` sama persis dengan baris di `server/main.ts` proyek kantin. Operator `??` mengambil nilai di kanan hanya jika nilai di kiri `undefined` atau `null`. Ini cara umum memberi nilai bawaan untuk pengaturan yang tidak diisi.
+
+#catatan[
+  `$env:PORT = "8080"` adalah sintaks PowerShell, terminal bawaan VS Code di Windows. Variabel ini hanya berlaku di jendela terminal itu sampai ditutup. Di Git Bash atau Linux, tulis `PORT=8080 node env.js`.
+]
+
+=== process.exit: mengakhiri program dengan kode keluar
+
+*Untuk apa:* menghentikan program saat itu juga, sekaligus memberi tahu terminal apakah program berhasil.
+
+*Cara kerja:* `process.exit(kode)` langsung menghentikan seluruh program. Baris setelahnya tidak dijalankan, termasuk kode di file lain. Angka `kode` disebut _exit code_. `0` berarti berhasil, selain `0` (biasanya `1`) berarti gagal. Program yang selesai sampai baris terakhir otomatis keluar dengan kode `0`. Program yang berhenti karena error yang tidak ditangkap keluar dengan kode `1`.
+
+#listing("keluar.js")[```js
+const qty = Number(process.argv[2]);
+if (!Number.isInteger(qty) || qty <= 0) {
+  console.log("qty tidak valid");
+  process.exit(1);
+}
+console.log("qty:", qty);
+```]
+
+#table(
+  columns: (1fr, 1fr, auto),
+  inset: 6pt,
+  [*Perintah*], [*Output*], [*Exit code*],
+  [`node keluar.js 3`], [`qty: 3`], [`0`],
+  [`node keluar.js abc`], [`qty tidak valid`], [`1`],
+)
+
+Di PowerShell, exit code program terakhir dibaca dengan `$LASTEXITCODE`. Program lain memakai exit code ini untuk memutuskan langkah berikutnya. Contohnya `npm test` yang gagal membuat GitHub Actions menandai build merah. Analogi database: mirip transaksi yang selesai dengan `COMMIT` (berhasil) atau `ROLLBACK` (gagal), yang dibaca oleh aplikasi pemanggil.
+
+Bedanya dengan `throw`:
+- `throw` bisa ditangkap pemanggil dengan `try...catch`. Pilih `throw` di dalam fungsi.
+- `process.exit` tidak bisa ditangkap dan menghentikan seluruh program. Pakai hanya di lapisan paling luar, misalnya setelah memeriksa argumen terminal.
+
+=== Kesalahan umum
+
+#table(
+  columns: (1fr, 1fr),
+  inset: 6pt,
+  [*Kesalahan*], [*Akibat*],
+  [Mengambil argumen pertama dari `process.argv[0]`], [Dapat path `node.exe`. Argumenmu mulai dari index `2`.],
+  [Menghitung `process.argv[2]` tanpa `Number(...)`], [`"10" + 5` menjadi `"105"`, bukan `15`.],
+  [Lupa argumen saat menjalankan], [Nilainya `undefined`. Jika di-`Number`, hasilnya `NaN` tanpa pesan error.],
+  [`process.env.PORT` tidak diatur], [`undefined`. Beri nilai bawaan dengan `??`.],
+  [Memanggil `process.exit` di dalam fungsi kecil], [Pemanggil tidak bisa menangkapnya dengan `try...catch`. Pakai `throw` di fungsi.],
+  [`process.exit` sebelum `setTimeout` atau Promise selesai], [Program berhenti duluan, callback tidak pernah jalan (lihat Modul 7).],
+)
+
+#dipakai[Tidak ada tugas soal yang memakai `process`. Bagian ini menjelaskan blok `coba` di setiap starter, dan menjadi bekal membaca kode server di proyek nyata dan di TS-7.]
 
 == Membaca Pesan Error
 

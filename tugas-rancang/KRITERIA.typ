@@ -26,9 +26,9 @@ Kami ingin mesin kasir baru yang menangani dompet saldo member, keranjang belanj
 )
 
 #perhatian[
-  1. Salin semua file di `Starter/` ke `Jawaban/`: `kontrak.ts`, `data.ts`, `skenario.ts`, dan `kasir.ts`.
+  1. Kerjakan di folder `Jawaban/`. `kontrak.ts`, `data.ts`, `skenario.ts`, dan `kasir.ts` sudah disiapkan dari `Starter/`.
   2. `kontrak.ts`, `data.ts`, dan `skenario.ts` *jangan diubah*. Kodemu dimulai dari `kasir.ts`, yang wajib meng-export `buatKasir`. File tambahan boleh dibuat di folder `Jawaban/`.
-  3. Cek tipe dengan `npx tsc --noEmit` (folder `tugas-rancang/Jawaban/` sudah ikut diperiksa), lalu jalankan `node tugas-rancang/Jawaban/skenario.ts`.
+  3. Cek tipe dengan `npx tsc --noEmit` dari root repo (hanya memeriksa `tugas-rancang/Jawaban/`), lalu jalankan `node tugas-rancang/Jawaban/skenario.ts`.
   4. Starter sudah bisa dijalankan. Setiap langkah menampilkan `GAGAL: belum dibuat` sampai kamu menggantinya.
   5. Jangan memakai `any`, `as`, dan tanda `!`.
 ]
@@ -48,7 +48,7 @@ Di pesan, `<id>`, `<kode>`, dan `<nama>` diganti nilai sebenarnya. `<selisih>` d
 ]
 
 #table(
-  columns: (auto, auto, 1fr, auto),
+  columns: (auto, auto, 1fr, 16em),
   inset: 5pt,
   [*Method*], [*No*], [*Aturan*], [*Pesan jika dilanggar*],
   [`topUp(idMember, nominal)`], [1], [member harus ada], [`member <id> tidak ditemukan`],
@@ -75,7 +75,7 @@ Di pesan, `<id>`, `<kode>`, dan `<nama>` diganti nilai sebenarnya. `<selisih>` d
 ]
 
 #table(
-  columns: (auto, auto, 1fr, auto),
+  columns: (auto, auto, 1fr, 16em),
   inset: 5pt,
   [*Method*], [*No*], [*Aturan*], [*Pesan jika dilanggar*],
   [`tambahKeKeranjang(kode, qty)`], [1], [produk harus ada], [`produk <kode> tidak ditemukan`],
@@ -98,7 +98,7 @@ Di pesan, `<id>`, `<kode>`, dan `<nama>` diganti nilai sebenarnya. `<selisih>` d
 ]
 
 #table(
-  columns: (auto, auto, 1fr, auto),
+  columns: (auto, auto, 1fr, 16em),
   inset: 5pt,
   [*Method*], [*No*], [*Aturan*], [*Pesan jika dilanggar*],
   [`bayarTunai(uang)`], [1], [keranjang tidak kosong], [`keranjang kosong`],

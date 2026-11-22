@@ -40,17 +40,17 @@ Pemilik klinik ingin satu fungsi yang bisa dipakai untuk pasien, dokter, dan dat
 Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan klinik dan mengapa. Baris *Dalam kode* menunjukkan bagian kode yang menjawab kebutuhan itu. Spesifikasi teknis ada di poin-poin setelahnya.
 
 #perhatian[
-  1. Salin `Soal/starter.ts` ke `Jawaban/soal-ts4.ts`.
+  1. Kerjakan di `Jawaban/soal-ts4.ts`. File itu sudah disiapkan dari `Soal/starter.ts`.
   2. Lengkapi bagian bertanda `TODO`. Jangan mengubah bagian `TIPE`, `DATA`, dan `PEMANGGILAN`.
-  3. *Cek tipe dulu* dengan `npx tsc --noEmit`, lalu *jalankan* dengan `node Jawaban/soal-ts4.ts`.
-  4. Saat baru disalin, `tsc` sudah menampilkan error `TS7006` dan `TS2558`. Itu disengaja. Error itu hilang setelah fungsi dan class diberi tipe generik sesuai komentar di atasnya.
+  3. *Cek tipe dulu* dengan `npx tsc --noEmit`, lalu *jalankan* dengan `node Jawaban/soal-ts4.ts`. Keduanya dijalankan dari folder topik ini.
+  4. Saat pertama dibuka, `tsc` sudah menampilkan error `TS7006` dan `TS2558`. Itu disengaja. Error itu hilang setelah fungsi dan class diberi tipe generik sesuai komentar di atasnya.
   5. Jawaban dianggap selesai jika `npx tsc --noEmit` tidak menampilkan error *dan* output `node` sama persis dengan kotak *Output dari*.
   6. Jangan memakai `any` di kodemu sendiri. Soal bertanda *(jelaskan)* dijawab sebagai komentar di bawah baris `// JAWABAN ...`.
 ]
 
 #level("Beginner", "0.3")
 
-+ *Fungsi serbaguna.*
++ *Fungsi serbaguna.* #est(6)
   #kebutuhan[
     Petugas pendaftaran sering perlu dua hal sederhana: melihat data yang paling akhir masuk, dan menghitung berapa data yang memenuhi syarat tertentu, misalnya pasien berumur 40 tahun ke atas. Kebutuhan yang sama muncul untuk daftar angka, daftar nama, dan daftar pasien. Klinik tidak mau menulis fungsi terpisah untuk setiap jenis data.
 
@@ -73,7 +73,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan klini
   3 2
   ```]
 
-+ *Cari berdasarkan id.*
++ *Cari berdasarkan id.* #est(3)
   #kebutuhan[
     Pasien dan dokter sama-sama dicari lewat id. Inilah fungsi yang dulu ditulis tiga kali. Klinik ingin satu fungsi untuk semua data yang punya field `id`, dan `tsc` harus menolak jika fungsi itu dipakai untuk data tanpa `id`.
 
@@ -108,7 +108,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan klini
 
 #level("Intermediate", "0.3")
 
-+ *Kelompokkan data.*
++ *Kelompokkan data.* #est(9)
   #kebutuhan[
     Kepala klinik ingin melihat pasien dikelompokkan per poli. Bagian farmasi ingin hal serupa untuk obat, dikelompokkan per huruf awal. Cara mengelompokkannya sama, hanya "kunci" pengelompokannya yang berbeda.
 
@@ -128,7 +128,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan klini
   {"a":["apel","anggur"],"j":["jeruk"]}
   ```]
 
-+ *Antrian.*
++ *Antrian.* #est(15)
   #kebutuhan[
     Setiap poli punya antrian: yang datang lebih dulu dipanggil lebih dulu. Antrian poli umum berisi data pasien lengkap, sedangkan antrian loket berisi nomor karcis berupa teks. Klinik ingin satu class antrian untuk keduanya, dan antrian pasien tidak boleh kemasukan data yang bukan pasien.
 
@@ -155,7 +155,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan klini
   A-001 undefined
   ```]
 
-+ *Kode temanmu: `perbaruiPasien(p, perubahan)`.*
++ *Kode temanmu: `perbaruiPasien(p, perubahan)`.* #est(3)
   #kebutuhan[
     Petugas bisa memperbarui sebagian data pasien, misalnya nomor telepon saja, atau telepon dan umur. Id pasien tidak boleh ikut diubah karena dipakai di rekam medis. Temanmu menulis fiturnya dengan `perubahan: any`. Akibatnya salah ketik seperti `{ umr: 53 }` diterima tanpa protes, id bisa diganti, dan data pasien di `daftarPasien` ikut berubah, padahal fungsi itu seharusnya mengembalikan *salinan* yang sudah diperbarui.
 
@@ -178,7 +178,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan klini
 
 Advanced dinilai dari *pendekatannya*. Bagian (a) wajib dan menentukan nilai. Bagian (b) opsional. Kode yang kosong tidak mengurangi nilai.
 
-+ *Halaman data.*
++ *Halaman data.* #est(10)
   #kebutuhan[
     Daftar pasien di layar petugas terlalu panjang jika ditampilkan sekaligus. Klinik ingin daftar ditampilkan per halaman, dengan keterangan halaman ke berapa dari berapa, dan apakah masih ada halaman berikutnya. Fitur yang sama dipakai untuk daftar dokter. Halaman yang diminta di luar jangkauan menampilkan halaman kosong, bukan error.
 

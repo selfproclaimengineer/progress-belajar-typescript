@@ -2,14 +2,23 @@
 
 ## Lanjut dari sini
 
-**JS-5 OOP.** Baca `javascript/topik-05-oop/HO/`, kerjakan Coba Sendiri, lalu soal. Coba Sendiri JS-5 sudah diperiksa (lihat `Diskusi/DISKUSI.md`): CS3 dan CS4 masih kurang alasan.
+**JS-5 OOP, sedang dikerjakan (sesi 2026-11-22).** Semua tanya jawab sesi ini ada di `javascript/topik-05-oop/Diskusi/DISKUSI.md`. Sisa pekerjaan sebelum diperiksa dan dinilai:
+- Beginner 3: pesan saldo kurang masih `sisa (650000)`, seharusnya `(sisa 650000)`.
+- Beginner 4: bagian "apa yang terjadi jika saldo publik" belum ditulis ulang. Contoh setter masih memakai `get` dan dipanggil dengan `()`.
+- Intermediate 1: bunga belum dibulatkan ke bawah. Field `#bunga` dan getter `bunga` tidak perlu.
+- Intermediate 2: output kurang tanda `%`.
+- Intermediate 3: kode benar, penjelasan *(jelaskan)* belum ditulis.
+- Advanced 1: `buka` kurang kata `dibuka`. `transfer` masih menarik lalu menyetor ke rekening pengirim sendiri (seharusnya setor ke `saldoKe`), dan cek saldo ditulis ulang (seharusnya membaca hasil `tarik` dengan `startsWith`). `cari` dan `totalSaldo` jalan. Bagian (a) `// JAWABAN Advanced 1a` masih kosong dan wajib ditulis sendiri, bahannya ada di DISKUSI.md.
+- Coba Sendiri 3 dan 4 masih kurang alasan.
+
+Starter dan file Jawaban kini punya `// ≈ N baris` di bawah setiap `TODO`.
 
 Semua topik sudah disiapkan lebih awal atas permintaan Dion (2026-11-15), karena Dion ingin membaca semua HO dulu. Revisi dilakukan langsung saat dibutuhkan. Yang tersedia: JS-5 sampai JS-8, TS-1 sampai TS-7, dan Tugas Rancang (`tugas-rancang/KRITERIA.pdf`). Urutan yang disarankan: JS-5, JS-6, TS-1, TS-2, TS-3, Tugas Rancang, lalu TS-4 sampai TS-6 jika waktu cukup. JS-7, JS-8, dan TS-7 boleh dilewati jika waktu mepet.
 
 Catatan teknis topik baru:
 - TS-6 dan TS-7 memakai `zod` dan `express`, sudah terpasang lewat `npm install`.
 - JS-8 dibuka di browser lewat `npm run sajikan` (server lokal di `127.0.0.1:8080`), karena browser menolak module dari `file://`.
-- Tugas Rancang: kode di `tugas-rancang/Jawaban/`, sudah ikut diperiksa `npx tsc --noEmit`. Uji terima: `node tugas-rancang/Jawaban/skenario.ts`.
+- Tugas Rancang: kode di `tugas-rancang/Jawaban/`, diperiksa dengan `npx tsc --noEmit` dari root repo. Uji terima: `node tugas-rancang/Jawaban/skenario.ts`.
 
 Format soal sejak JS-5: dibuka cerita klien, setiap tugas punya kotak *Kebutuhan klien* dan baris `Contoh:`, setiap materi HO ditutup baris *Dipakai di:*, dan kode inline di soal diwarnai per tipe data (legenda di bawah judul).
 
@@ -22,7 +31,7 @@ JS-2 selesai dengan nilai 81. Sisa catatan ada di `javascript/topik-02-perulanga
 JS-1 selesai dengan nilai 86.
 
 Alur setiap topik:
-1. Salin `Soal/starter.js` ke `Jawaban/soal-jsN.js`.
+1. Buka `Jawaban/soal-jsN.js` (atau `soal-tsN.ts`). File jawaban sudah disiapkan dari starter, jadi tidak perlu menyalin. Topik TS: jalankan `npx tsc --noEmit` dari folder topik, supaya hanya error topik itu yang tampil.
 2. Baca HO. Kerjakan Coba Sendiri di fungsi `cobaSendiri()` pada file itu, jalankan dengan `node Jawaban/soal-jsN.js coba`.
 3. Kerjakan soal Beginner, Intermediate, Advanced di file yang sama. Jawaban *(jelaskan)* ditulis sebagai komentar di bawah baris `// JAWABAN ...`.
 4. Minta asisten memeriksa. Nilai dan feedback masuk `Diskusi/FEEDBACK.md`.
@@ -36,10 +45,10 @@ Alur setiap topik:
 | JS-2 Perulangan dan fungsi | [x] | [x] | [x] | 81 |
 | JS-3 Array | [x] | [ ] | [x] | 83 |
 | JS-4 String dan object | [x] | [ ] | [x] | 86 |
-| JS-5 OOP | [ ] | [ ] | [ ] | |
-| JS-6 Modules dan standard library | [ ] | [ ] | [ ] | |
+| JS-5 OOP | [x] | [ ] | [ ] | |
+| JS-6 Modules dan standard library | [x] | [ ] | [ ] | |
 | JS-7 Async | [ ] | [ ] | [ ] | |
-| JS-8 DOM | [ ] | [ ] | [ ] | |
+| JS-8 DOM | [ ] | [x] | [ ] | |
 | TS-1 Dasar | [ ] | [ ] | [ ] | |
 | TS-2 Object type | [ ] | [ ] | [ ] | |
 | TS-3 OOP | [ ] | [ ] | [ ] | |
@@ -57,3 +66,4 @@ Alur setiap topik:
 | 2026-11-02 | JS-1, JS-2 | 4 jam | JS-1: soal; JS-2: soal, tanya jawab, feedback | begadang, kurang tidur |
 | 2026-11-05 | JS-2, JS-3 | 7 jam | JS-2: feedback; JS-3: soal, tanya jawab, feedback | implementasi callback: urutan chaining, kapan memakai find untuk FK-PK, map, filter |
 | 2026-11-12 | JS-4 | 2 jam | JS-4: soal, tanya jawab, feedback | membayangkan input dan output (console.log di bawah), tidak tahu materi HO mana dipakai di soal mana, energi minim karena belajar malam |
+| 2026-11-22 | JS-5, JS-6 | 4 jam | JS-5: soal, tanya jawab; JS-6: soal | transfer di Advanced (tarik dan setor ke rekening sendiri), this di method Bank |

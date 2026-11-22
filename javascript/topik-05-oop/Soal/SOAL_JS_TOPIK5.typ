@@ -15,7 +15,7 @@ Aplikasi ini terdiri dari tiga class: `Rekening`, `Tabungan` (turunan `Rekening`
 )
 
 #perhatian[
-  1. Salin `Soal/starter.js` ke folder `Jawaban/`, misalnya `Jawaban/soal-js5.js`.
+  1. Kerjakan di `Jawaban/soal-js5.js`. File itu sudah disiapkan dari `Soal/starter.js`.
   2. Lengkapi bagian bertanda `TODO`. Jangan mengubah bagian `PEMANGGILAN`.
   3. Jalankan `node Jawaban/soal-js5.js`. Kotak *Output dari* `console.log(...)` di bawah setiap tugas menunjukkan baris `console.log` yang mencetaknya dan output yang harus keluar persis.
   4. Soal bertanda *(jelaskan)* dijawab sebagai komentar di bawah baris `// JAWABAN ...`.
@@ -24,7 +24,7 @@ Aplikasi ini terdiri dari tiga class: `Rekening`, `Tabungan` (turunan `Rekening`
 
 #level("Beginner", "0.3")
 
-+ *Class `Rekening`.*
++ *Class `Rekening`.* #est(14)
   #kebutuhan[
     Setiap nasabah yang membuka rekening punya nomor rekening, nama pemilik, dan setoran awal. Setoran awal boleh nol. Saat nasabah bertanya "saldo saya berapa?", teller ingin melihat ringkasan rekening dalam satu baris. Bank juga tidak mau angka saldo bisa ditulis langsung oleh siapa pun, seperti coretan di buku besar dulu. Saldo boleh *dilihat*, tetapi hanya boleh *berubah* lewat transaksi resmi (setor dan tarik di tugas berikutnya).
 
@@ -46,7 +46,7 @@ Aplikasi ini terdiri dari tiga class: `Rekening`, `Tabungan` (turunan `Rekening`
   500000
   ```]
 
-+ *Method `setor(nominal)`.*
++ *Method `setor(nominal)`.* #est(5)
   #kebutuhan[
     Nasabah datang ke teller membawa uang tunai. Teller mengetik nominalnya, lalu aplikasi menambah saldo dan mencetak struk singkat berisi nominal dan saldo baru. Kadang teller salah ketik, misalnya `0` atau angka minus. Setoran seperti itu harus ditolak dengan pesan yang jelas, dan saldo tidak boleh berubah sedikit pun.
 
@@ -66,7 +66,7 @@ Aplikasi ini terdiri dari tiga class: `Rekening`, `Tabungan` (turunan `Rekening`
   GAGAL: nominal harus lebih dari 0
   ```]
 
-+ *Method `tarik(nominal)`.*
++ *Method `tarik(nominal)`.* #est(6)
   #kebutuhan[
     Nasabah ingin mengambil uang tunai. Selain salah ketik seperti di setoran, ada aturan penting: nasabah tidak boleh mengambil lebih dari saldonya, karena bank tidak memberi utang. Jika saldo kurang, teller perlu tahu sisa saldo nasabah, supaya bisa menawarkan nominal yang lebih kecil.
 
@@ -101,7 +101,7 @@ Aplikasi ini terdiri dari tiga class: `Rekening`, `Tabungan` (turunan `Rekening`
 
 #level("Intermediate", "0.3")
 
-+ *Class `Tabungan`.*
++ *Class `Tabungan`.* #est(11)
   #kebutuhan[
     Bank meluncurkan produk baru bernama Tabungan. Tabungan sama persis dengan rekening biasa (punya saldo, bisa setor, bisa tarik), ditambah satu hal: setiap akhir bulan nasabah mendapat bunga sekian persen dari saldonya. Bank tidak mau aturan setor dan tarik ditulis dua kali. Jika suatu hari aturan tarik berubah, programmer cukup mengubah satu tempat. Bunga dibulatkan ke bawah, karena bank tidak membayar pecahan rupiah.
 
@@ -124,7 +124,7 @@ Aplikasi ini terdiri dari tiga class: `Rekening`, `Tabungan` (turunan `Rekening`
   Tarik 20000, saldo 1000000
   ```]
 
-+ *Menimpa `info()` di `Tabungan`.*
++ *Menimpa `info()` di `Tabungan`.* #est(3)
   #kebutuhan[
     Saat teller melihat ringkasan rekening Tabungan, teller juga ingin tahu besar bunganya, supaya bisa menjelaskan ke nasabah. Ringkasan rekening biasa harus tetap seperti semula.
 
@@ -142,7 +142,7 @@ Aplikasi ini terdiri dari tiga class: `Rekening`, `Tabungan` (turunan `Rekening`
   1001 a.n. Ani: saldo 650000
   ```]
 
-+ *Kode temanmu: `setorBanyak(rek, daftarNominal)`.*
++ *Kode temanmu: `setorBanyak(rek, daftarNominal)`.* #est(4)
   #kebutuhan[
     Seorang pedagang pasar menyetor hasil jualan beberapa hari sekaligus. Teller mengetik daftar nominal per hari, dan aplikasi menyetor semuanya ke rekening pedagang itu, satu per satu, lalu menampilkan saldo akhir. Temanmu sudah menulis fiturnya, tetapi aplikasi error saat dijalankan.
 
@@ -161,7 +161,7 @@ Aplikasi ini terdiri dari tiga class: `Rekening`, `Tabungan` (turunan `Rekening`
 
 Advanced dinilai dari *pendekatannya*. Bagian (a) wajib dan menentukan nilai. Bagian (b) opsional. Kode yang kosong tidak mengurangi nilai.
 
-+ *Class `Bank`.*
++ *Class `Bank`.* #est(25)
   #kebutuhan[
     Bank ingin satu tempat untuk mengelola semua rekening. Ada empat fitur yang diminta:
     - membuka rekening baru dan mendaftarkannya ke bank,

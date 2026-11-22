@@ -51,6 +51,7 @@ const rupiah = (n) => `Rp${new Intl.NumberFormat("id-ID").format(n)}`;
 // tunda(ms: number, nilai: any): Promise<any>
 function tunda(ms, nilai) {
   // TODO
+  // ≈ 3 baris
   return Promise.resolve();
 }
 
@@ -58,6 +59,7 @@ function tunda(ms, nilai) {
 // cekSaldo(nomor: string): Promise<number>
 function cekSaldo(nomor) {
   // TODO: bungkus cekSaldoCallback dengan new Promise
+  // ≈ 8 baris
   return Promise.resolve(0);
 }
 
@@ -69,12 +71,14 @@ function cekSaldo(nomor) {
 // ambilRekening(nomor: string): Promise<{ nomor: string, nama: string, saldo: number }>
 async function ambilRekening(nomor) {
   // TODO
+  // ≈ 6 baris
   return { nomor: "", nama: "", saldo: 0 };
 }
 
 // infoRekening(nomor: string): Promise<string>
 async function infoRekening(nomor) {
   // TODO
+  // ≈ 8 baris
   return "";
 }
 
@@ -84,6 +88,7 @@ async function infoRekening(nomor) {
 // totalSaldo(daftarNomor: string[]): Promise<number>
 async function totalSaldo(daftarNomor) {
   // TODO: ambil semua rekening BERSAMAAN
+  // ≈ 4 baris
   return 0;
 }
 
@@ -106,12 +111,14 @@ async function daftarNama(daftarNomor) {
 // denganBatasWaktu(janji: Promise<any>, ms: number): Promise<any>
 function denganBatasWaktu(janji, ms) {
   // TODO (opsional)
+  // ≈ 4 baris
   return janji;
 }
 
 // prosesAntrian(daftar: { dari: string, ke: string, nominal: number }[]): Promise<string>
 async function prosesAntrian(daftar) {
   // TODO (opsional)
+  // ≈ 16 baris
   return "";
 }
 

@@ -36,7 +36,7 @@ Isi `api.js` (sudah jadi, jangan diubah):
 Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan bank dan mengapa. Baris *Dalam kode* menunjukkan bagian kode yang menjawab kebutuhan itu. Spesifikasi teknis ada di poin-poin setelahnya.
 
 #perhatian[
-  1. Salin `Soal/starter.js` ke `Jawaban/soal-js7.js`, dan `Soal/api.js` ke `Jawaban/api.js`. Kedua file harus berada di folder yang sama.
+  1. Kerjakan di `Jawaban/soal-js7.js`. File itu dan `Jawaban/api.js` sudah disiapkan dari `Soal/`, dan harus tetap berada di folder yang sama.
   2. Lengkapi fungsi bertanda `TODO`. Jangan mengubah `api.js`, baris `import`, dan bagian `PEMANGGILAN`.
   3. Jalankan `node Jawaban/soal-js7.js`. Output harus sama persis dengan kotak *Output dari*.
   4. `PEMANGGILAN` memakai `await` di luar fungsi. Ini boleh karena file ini adalah modul (lihat HO).
@@ -46,7 +46,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan bank 
 
 #level("Beginner", "0.3")
 
-+ *Menunggu sebentar.*
++ *Menunggu sebentar.* #est(3)
   #kebutuhan[
     Setelah transfer, aplikasi menampilkan animasi sukses selama beberapa saat sebelum kembali ke menu. Tim butuh fungsi kecil untuk "menunggu sekian milidetik, lalu lanjut", yang bisa dipakai dengan `await`.
 
@@ -63,7 +63,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan bank 
   43
   ```]
 
-+ *Membungkus fungsi gaya lama.*
++ *Membungkus fungsi gaya lama.* #est(8)
   #kebutuhan[
     Fitur cek saldo masih memakai pustaka lama yang hanya mengenal callback. Seluruh aplikasi baru memakai `await`, dan tim tidak mau mencampur dua gaya. Pustaka lama tidak boleh diubah, jadi fungsinya cukup dibungkus.
 
@@ -93,7 +93,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan bank 
 
 #level("Intermediate", "0.3")
 
-+ *Data rekening dari server.*
++ *Data rekening dari server.* #est(14)
   #kebutuhan[
     Halaman utama aplikasi menampilkan nama pemilik dan saldo. Jika nomor rekening salah, layar harus menampilkan alasan dari server, bukan error mentah atau `undefined`.
 
@@ -116,7 +116,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan bank 
   Gagal: 404 rekening tidak ditemukan
   ```]
 
-+ *Total saldo keluarga.*
++ *Total saldo keluarga.* #est(4)
   #kebutuhan[
     Nasabah bisa menautkan beberapa rekening keluarga dan melihat total saldonya. Setiap permintaan ke server butuh waktu, jadi rekening-rekening itu harus diminta *bersamaan*, bukan satu per satu. Jika salah satu rekening gagal diambil, total tidak boleh ditampilkan, karena angkanya pasti salah.
 
@@ -135,7 +135,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan bank 
   Gagal: 404 rekening tidak ditemukan
   ```]
 
-+ *Kode temanmu: `daftarNama(daftarNomor)`.*
++ *Kode temanmu: `daftarNama(daftarNomor)`.* #est(4)
   #kebutuhan[
     Halaman rekening tertaut menampilkan nama semua pemilik, dipisah koma, sesuai urutan nomor yang diberikan. Temanmu menulis fungsinya dengan `forEach`. Tidak ada error, tetapi halaman itu selalu kosong.
 
@@ -153,7 +153,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan bank 
 
 Advanced dinilai dari *pendekatannya*. Bagian (a) wajib dan menentukan nilai. Bagian (b) opsional. Kode yang kosong tidak mengurangi nilai.
 
-+ *Antrean transfer terjadwal.*
++ *Antrean transfer terjadwal.* #est(20)
   #kebutuhan[
     Nasabah bisa menjadwalkan beberapa transfer sekaligus. Bank memproses antrean itu satu per satu, *berurutan*, karena saldo setelah satu transfer menentukan transfer berikutnya. Sebelum mentransfer, aplikasi mengambil data rekening tujuan untuk menampilkan nama penerima. Server cabang yang lambat tidak boleh membuat antrean macet: jika data rekening tujuan tidak datang dalam 200 ms, transfer itu dibatalkan dan antrean lanjut. Satu transfer yang gagal juga tidak boleh menghentikan transfer berikutnya.
 

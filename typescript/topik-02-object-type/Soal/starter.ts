@@ -51,12 +51,15 @@ const rupiah = (n: number): string => `Rp${new Intl.NumberFormat("id-ID").format
 
 // ===== TIPE (Beginner 1, Beginner 2, Intermediate 2) =====
 // TODO Beginner 1: id (tidak boleh diubah), nama, kategori, harga, stok, diskonPersen (boleh tidak ada)
+// ≈ 8 baris
 interface Produk {}
 
 // TODO Beginner 2: pasangan [id, qty]
+// ≈ 1 baris
 type BarisKeranjang = unknown;
 
 // TODO Intermediate 2: type Alamat (kota, kodePos) dan interface Pembeli (nama, alamat boleh tidak ada)
+// ≈ 5 baris
 type Alamat = {};
 interface Pembeli {}
 
@@ -87,12 +90,14 @@ const daftarPembeli: Pembeli[] = [
 // ===== Beginner 1 =====
 function hargaAkhir(p: Produk): number {
   // TODO
+  // ≈ 3 baris
   return 0;
 }
 
 // ===== Beginner 2 =====
 function jumlahBarang(keranjang: BarisKeranjang[]): number {
   // TODO
+  // ≈ 3 baris
   return 0;
 }
 
@@ -103,12 +108,14 @@ function jumlahBarang(keranjang: BarisKeranjang[]): number {
 // ===== Intermediate 1 =====
 function stokPerKategori(daftar: readonly Produk[]): Record<string, number> {
   // TODO
+  // ≈ 7 baris
   return {};
 }
 
 // ===== Intermediate 2 =====
 function labelPengiriman(p: Pembeli): string {
   // TODO
+  // ≈ 4 baris
   return "";
 }
 
@@ -124,6 +131,7 @@ function urutTermurah(daftar: Produk[]): string[] {
 //
 function ringkasPesanan(keranjang: BarisKeranjang[], daftar: readonly Produk[]): Ringkasan {
   // TODO (opsional)
+  // ≈ 15 baris
   return { totalBayar: 0, jumlahBarang: 0, ditolak: [] };
 }
 

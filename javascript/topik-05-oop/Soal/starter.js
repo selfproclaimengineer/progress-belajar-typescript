@@ -55,33 +55,39 @@ if (process.argv[2] === "coba") {
 // ===== Beginner 1, 2, 3 =====
 class Rekening {
   // TODO: field privat #saldo
+  // ≈ 1 baris
 
   // constructor(nomor: string, pemilik: string, saldoAwal: number = 0)
   constructor(nomor, pemilik, saldoAwal = 0) {
     // TODO
+    // ≈ 5 baris
   }
 
   // get saldo(): number
   get saldo() {
     // TODO
+    // ≈ 3 baris
     return 0;
   }
 
   // info(): string
   info() {
     // TODO
+    // ≈ 3 baris
     return "";
   }
 
   // setor(nominal: number): string
   setor(nominal) {
     // TODO
+    // ≈ 5 baris
     return "";
   }
 
   // tarik(nominal: number): string
   tarik(nominal) {
     // TODO
+    // ≈ 6 baris
     return "";
   }
 }
@@ -95,15 +101,18 @@ class Tabungan extends Rekening {
   // constructor(nomor: string, pemilik: string, saldoAwal: number, bungaPersen: number)
   constructor(nomor, pemilik, saldoAwal, bungaPersen) {
     // TODO
+    // ≈ 4 baris
   }
 
   // tambahBunga(): string
   tambahBunga() {
     // TODO
+    // ≈ 5 baris
     return "";
   }
 
   // TODO Intermediate 2: info(): string
+  // ≈ 3 baris
 }
 
 // ===== Intermediate 3 (kode temanmu, perbaiki) =====
@@ -126,24 +135,28 @@ class Bank {
   // buka(rek: Rekening): string
   buka(rek) {
     // TODO (opsional)
+    // ≈ 4 baris
     return "";
   }
 
   // cari(nomor: string): Rekening | undefined
   cari(nomor) {
     // TODO (opsional)
+    // ≈ 3 baris
     return undefined;
   }
 
   // transfer(dariNomor: string, keNomor: string, nominal: number): string
   transfer(dariNomor, keNomor, nominal) {
     // TODO (opsional)
+    // ≈ 10 baris
     return "";
   }
 
   // totalSaldo(): number
   totalSaldo() {
     // TODO (opsional)
+    // ≈ 3 baris
     return 0;
   }
 }

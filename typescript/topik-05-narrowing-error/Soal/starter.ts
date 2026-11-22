@@ -73,12 +73,14 @@ const daftarRekening: Rekening[] = [
 // ===== Beginner 1 =====
 function formatNominal(x: number | string): string {
   // TODO
+  // ≈ 6 baris
   return "";
 }
 
 // ===== Beginner 2 =====
 function keterangan(t: Transaksi): string {
   // TODO: switch pada t.jenis, dengan cabang default berisi pemeriksaan never
+  // ≈ 14 baris
   return "";
 }
 
@@ -88,6 +90,7 @@ function keterangan(t: Transaksi): string {
 
 // ===== Intermediate 1 =====
 // TODO: field kekurangan (number, readonly), name "SaldoKurangError", pesan "saldo kurang <rupiah>"
+// ≈ 8 baris untuk seluruh class
 class SaldoKurangError extends Error {
   constructor(kekurangan: number) {
     super("TODO");
@@ -95,6 +98,7 @@ class SaldoKurangError extends Error {
 }
 
 // TODO: field nomor (string, readonly), name "RekeningBekuError", pesan "rekening <nomor> dibekukan"
+// ≈ 8 baris untuk seluruh class
 class RekeningBekuError extends Error {
   constructor(nomor: string) {
     super("TODO");
@@ -103,12 +107,14 @@ class RekeningBekuError extends Error {
 
 function tarik(r: Rekening, nominal: number): number {
   // TODO
+  // ≈ 6 baris
   return r.saldo;
 }
 
 // ===== Intermediate 2 =====
 function cobaTarik(r: Rekening, nominal: number): string {
   // TODO: panggil tarik di dalam try, bedakan error di catch dengan instanceof
+  // ≈ 11 baris
   return "";
 }
 
@@ -130,6 +136,7 @@ function transfer(
   daftar: Rekening[],
 ): Hasil<{ saldoPengirim: number; saldoPenerima: number }> {
   // TODO (opsional)
+  // ≈ 18 baris
   return { ok: false, error: "belum dibuat" };
 }
 

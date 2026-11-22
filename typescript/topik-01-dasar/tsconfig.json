@@ -1,0 +1,5 @@
+{
+  // Pengecekan tipe topik ini saja: jalankan npx tsc --noEmit dari folder ini.
+  "extends": "../../tsconfig.json",
+  "include": ["Jawaban/**/*.ts"]
+}

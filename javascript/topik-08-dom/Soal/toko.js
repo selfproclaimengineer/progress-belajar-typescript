@@ -19,6 +19,7 @@ export const formatRupiah = (n) => `Rp${new Intl.NumberFormat("id-ID").format(n)
 // teksMenu(p: Produk): string
 export function teksMenu(p) {
   // TODO
+  // ≈ 3 baris
   return "";
 }
 
@@ -26,6 +27,7 @@ export function teksMenu(p) {
 // kurangiItem(keranjang: Keranjang, id: string): Keranjang   (keranjang lama tidak boleh berubah)
 export function kurangiItem(keranjang, id) {
   // TODO
+  // ≈ 3 baris
   return keranjang;
 }
 
@@ -33,6 +35,7 @@ export function kurangiItem(keranjang, id) {
 // hitungTotal(keranjang: Keranjang, daftarProduk: Produk[]): number
 export function hitungTotal(keranjang, daftarProduk) {
   // TODO
+  // ≈ 6 baris
   return 0;
 }
 
@@ -40,6 +43,7 @@ export function hitungTotal(keranjang, daftarProduk) {
 // validasiBayar(teksUang: string, total: number): { ok: boolean, pesan: string }
 export function validasiBayar(teksUang, total) {
   // TODO
+  // ≈ 8 baris
   return { ok: false, pesan: "" };
 }
 

@@ -1,5 +1,6 @@
 {
-  // Pengecekan tipe untuk semua jawaban TypeScript: npx tsc --noEmit
+  // Dasar aturan tipe. Dari root, npx tsc --noEmit memeriksa Tugas Rancang saja.
+  // Setiap topik TS punya tsconfig.json sendiri yang meng-extend file ini dan hanya memeriksa Jawaban/ topik itu.
   // File .ts dijalankan langsung dengan node (Node 24 membuang tipe tanpa memeriksanya).
   "compilerOptions": {
     "target": "es2022",
@@ -12,5 +13,5 @@
     "types": ["node"],
     "skipLibCheck": true
   },
-  "include": ["typescript/*/Jawaban/**/*.ts", "tugas-rancang/Jawaban/**/*.ts"]
+  "include": ["tugas-rancang/Jawaban/**/*.ts"]
 }

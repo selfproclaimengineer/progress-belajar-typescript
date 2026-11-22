@@ -35,7 +35,7 @@ Pembagian kerja dua file:
 )
 
 #perhatian[
-  1. Salin `Soal/starter.js` ke `Jawaban/soal-js6.js`, dan `Soal/kasir.js` ke `Jawaban/kasir.js`. Kedua file harus berada di folder yang sama.
+  1. Kerjakan di `Jawaban/soal-js6.js` dan `Jawaban/kasir.js`. Keduanya sudah disiapkan dari `Soal/starter.js` dan `Soal/kasir.js`, dan harus tetap berada di folder yang sama.
   2. Lengkapi fungsi bertanda `TODO`. Jangan mengubah baris `import`, bagian `DATA`, dan `PEMANGGILAN`.
   3. Jalankan `node Jawaban/soal-js6.js`. Kotak *Output dari* `console.log(...)` di bawah setiap tugas menunjukkan baris `console.log` yang mencetaknya dan output yang harus keluar persis.
   4. Soal bertanda *(jelaskan)* dijawab sebagai komentar di `soal-js6.js`, di bawah baris `// JAWABAN ...`.
@@ -44,7 +44,7 @@ Pembagian kerja dua file:
 
 #level("Beginner", "0.3")
 
-+ *Format rupiah* (di `kasir.js`).
++ *Format rupiah* (di `kasir.js`). #est(3)
   #kebutuhan[
     Layar harga dan struk sekarang menampilkan angka mentah seperti `1250000`. Pembeli sulit membacanya, dan pernah ada pembeli yang mengira harganya seratus dua puluh lima ribu. Pemilik ingin semua harga tampil dalam format rupiah dengan pemisah ribuan titik, tanpa spasi setelah `Rp`, seperti di label rak.
 
@@ -62,7 +62,7 @@ Pembagian kerja dua file:
   Rp500
   ```]
 
-+ *Pembulatan harga* (di `kasir.js`).
++ *Pembulatan harga* (di `kasir.js`). #est(3)
   #kebutuhan[
     Toko tidak menyediakan uang receh di bawah Rp500, jadi kasir sering tidak bisa memberi kembalian yang pas. Pemilik memutuskan total belanja dibulatkan *ke atas* ke kelipatan 500 terdekat. Total yang sudah pas kelipatan 500 tidak diubah. Pemilik juga ingin bisa mengganti kelipatannya, misalnya menjadi 100 atau 1000, tanpa meminta programmer mengubah kode.
 
@@ -83,7 +83,7 @@ Pembagian kerja dua file:
   12500
   ```]
 
-+ *Kategori unik* (di `kasir.js`).
++ *Kategori unik* (di `kasir.js`). #est(3)
   #kebutuhan[
     Layar kasir punya deretan tombol filter per kategori, misalnya "Sembako" dan "Minuman". Saat ini tombol itu ditulis manual, jadi setiap ada kategori baru, programmer harus mengubah kode. Pemilik ingin daftar tombol dibuat otomatis dari data produk. Setiap kategori muncul tepat sekali, dengan urutan sesuai produk pertama yang memakai kategori itu.
 
@@ -109,7 +109,7 @@ Pembagian kerja dua file:
 
 #level("Intermediate", "0.3")
 
-+ *Index produk* (di `kasir.js`).
++ *Index produk* (di `kasir.js`). #est(5)
   #kebutuhan[
     Kasir memindai barcode, dan setiap pindaian harus langsung menemukan produknya. Cabang yang lebih besar punya ribuan produk. Jika produk dicari satu per satu dari depan, layar terasa lambat saat antrean panjang. Pemilik ingin pencarian tetap cepat berapa pun jumlah produknya.
 
@@ -133,7 +133,7 @@ Pembagian kerja dua file:
   undefined
   ```]
 
-+ *Validasi jumlah barang.*
++ *Validasi jumlah barang.* #est(14)
   #kebutuhan[
     Saat membeli banyak barang yang sama, kasir mengetik jumlahnya. Jumlah harus bilangan bulat positif. Tidak ada setengah batang sabun, dan `0` atau angka minus pasti salah ketik. Isian dari layar kadang terbaca sebagai teks, misalnya `"2"`, dan teks seperti itu juga ditolak supaya perhitungan selalu memakai number. Jika jumlah ditolak, kasir harus melihat pesan yang jelas, dan program tidak boleh berhenti.
 
@@ -153,7 +153,7 @@ Pembagian kerja dua file:
   GAGAL: qty harus bilangan bulat positif
   ```]
 
-+ *Kode temanmu: `formatTanggal(tgl)`* (di `kasir.js`).
++ *Kode temanmu: `formatTanggal(tgl)`* (di `kasir.js`). #est(5)
   #kebutuhan[
     Setiap struk mencetak tanggal transaksi dalam urutan Indonesia: hari, bulan, tahun. Hari dan bulan selalu dua digit, supaya kolom tanggal di laporan bulanan rata. Temanmu sudah menulis fiturnya, tetapi struk hari ini mencetak bulan yang salah dan tidak rata.
 
@@ -175,7 +175,7 @@ Pembagian kerja dua file:
 
 Advanced dinilai dari *pendekatannya*. Bagian (a) wajib dan menentukan nilai. Bagian (b) opsional. Kode yang kosong tidak mengurangi nilai.
 
-+ *Struk belanja.*
++ *Struk belanja.* #est(17)
   #kebutuhan[
     Setelah semua barang dipindai, kasir menekan tombol bayar, dan struk tercetak. Struk berisi tanggal, satu baris per barang (nama, jumlah, subtotal), lalu total belanja. Jika ada barang yang tidak terdaftar atau jumlahnya salah, struk tidak boleh tercetak setengah jadi. Kasir cukup melihat satu pesan gagal yang menyebut masalahnya, lalu memperbaiki keranjang.
 

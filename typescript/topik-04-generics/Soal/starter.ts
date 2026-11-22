@@ -90,12 +90,14 @@ const daftarDokter: Dokter[] = [
 // terakhir<T>(daftar: readonly T[]): T | undefined
 function terakhir(daftar) {
   // TODO
+  // ≈ 3 baris
   return undefined;
 }
 
 // hitungJika<T>(daftar: readonly T[], syarat: (x: T) => boolean): number
 function hitungJika(daftar, syarat) {
   // TODO
+  // ≈ 3 baris
   return 0;
 }
 
@@ -103,6 +105,7 @@ function hitungJika(daftar, syarat) {
 // cariById<T extends { id: string }>(daftar: readonly T[], id: string): T | undefined
 function cariById(daftar, id) {
   // TODO
+  // ≈ 3 baris
   return undefined;
 }
 
@@ -114,6 +117,7 @@ function cariById(daftar, id) {
 // kelompokkan<T>(daftar: readonly T[], kunci: (x: T) => string): Record<string, T[]>
 function kelompokkan(daftar, kunci) {
   // TODO
+  // ≈ 9 baris
   return {};
 }
 
@@ -126,6 +130,7 @@ function kelompokkan(daftar, kunci) {
 //   lihatSemua(): readonly T[]
 class Antrian {
   // TODO
+  // ≈ 15 baris untuk seluruh class
   masuk(x) {}
   panggil() {
     return undefined;
@@ -151,6 +156,7 @@ function perbaruiPasien(p: Pasien, perubahan: any): Pasien {
 //
 function paginasi<T>(daftar: readonly T[], halaman: number, perHalaman: number): Halaman<T> {
   // TODO (opsional)
+  // ≈ 10 baris
   return { isi: [], halaman, totalHalaman: 0, adaBerikutnya: false };
 }
 

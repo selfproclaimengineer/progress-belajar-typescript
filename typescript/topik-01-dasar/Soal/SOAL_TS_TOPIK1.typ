@@ -23,17 +23,17 @@ Pemilik apotek ingin aplikasi kasir berikutnya ditulis dengan TypeScript, supaya
 Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan apotek dan mengapa. Baris *Dalam kode* menunjukkan bagian kode yang menjawab kebutuhan itu. Spesifikasi teknis ada di poin-poin setelahnya.
 
 #perhatian[
-  1. Salin `Soal/starter.ts` ke `Jawaban/soal-ts1.ts`.
+  1. Kerjakan di `Jawaban/soal-ts1.ts`. File itu sudah disiapkan dari `Soal/starter.ts`.
   2. Lengkapi bagian bertanda `TODO`. Jangan mengubah bagian `DATA` dan `PEMANGGILAN`.
   3. *Cek tipe dulu* dengan `npx tsc --noEmit`, lalu *jalankan* dengan `node Jawaban/soal-ts1.ts`. Keduanya dijalankan dari folder topik ini.
-  4. Saat baru disalin, `tsc` sudah menampilkan sepuluh error `TS7006`. Itu disengaja. Error itu hilang satu per satu saat kamu memberi tipe.
+  4. Saat pertama dibuka, `tsc` sudah menampilkan sepuluh error `TS7006`. Itu disengaja. Error itu hilang satu per satu saat kamu memberi tipe.
   5. Jawaban dianggap selesai jika `npx tsc --noEmit` tidak menampilkan error *dan* output `node` sama persis dengan kotak *Output dari*.
   6. Jangan memakai `any` di kodemu sendiri. Soal bertanda *(jelaskan)* dijawab sebagai komentar di bawah baris `// JAWABAN ...`.
 ]
 
 #level("Beginner", "0.3")
 
-+ *Beri tipe fungsi lama.*
++ *Beri tipe fungsi lama.* #est(6)
   #kebutuhan[
     Programmer lama menulis `subtotal` dan `formatRupiah` dengan JavaScript. Kedua fungsi itu menerima apa saja, termasuk harga berupa teks, lalu diam-diam menghasilkan angka yang salah. Pemilik ingin kedua fungsi itu *menolak* data bertipe salah, tetapi cara hitungnya tidak boleh berubah karena sudah dipakai di banyak tempat.
 
@@ -52,7 +52,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan apote
   Rp36.000
   ```]
 
-+ *Metode bayar dan biaya admin.*
++ *Metode bayar dan biaya admin.* #est(6)
   #kebutuhan[
     Apotek menerima tiga cara bayar: tunai, kartu debit, dan QRIS. Biaya admin bank ditanggung pembeli. Debit dikenai Rp2.500 per transaksi, QRIS dikenai 0,7% dari total dibulatkan ke atas, dan tunai gratis. Dulu kasir pernah mengetik `"qriss"`, dan aplikasi lama diam-diam menganggapnya tunai, sehingga biaya admin tidak tertagih. Pemilik ingin salah ketik nama metode langsung ketahuan sebelum aplikasi dijalankan.
 
@@ -85,7 +85,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan apote
 
 #level("Intermediate", "0.3")
 
-+ *Cek harga obat.*
++ *Cek harga obat.* #est(5)
   #kebutuhan[
     Kasir mengetik kode obat untuk melihat harganya. Kadang kode salah ketik, atau obatnya belum terdaftar. Aplikasi lama menampilkan `OB99: RpNaN`, dan kasir bingung. Pemilik ingin kasir melihat pesan `tidak terdaftar`.
 
@@ -102,7 +102,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan apote
   OB99: tidak terdaftar
   ```]
 
-+ *Aturan promo.*
++ *Aturan promo.* #est(6)
   #kebutuhan[
     Apotek punya dua promo. Member mendapat diskon 5%, dengan potongan dibulatkan ke bawah. Belanja minimal Rp100.000 mendapat voucher potongan Rp10.000. Promo bisa bertambah setiap bulan, dan pemilik bisa mengganti urutan penerapannya. Pemilik ingin setiap promo menjadi satu aturan terpisah, lalu satu fungsi menerapkan daftar aturan itu berurutan.
 
@@ -126,7 +126,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan apote
   50000
   ```]
 
-+ *Kode temanmu: `tambahStok(stok, teksInput)`.*
++ *Kode temanmu: `tambahStok(stok, teksInput)`.* #est(7)
   #kebutuhan[
     Petugas gudang menambah stok obat lewat pemindai. Pemindai mengirim jumlahnya sebagai teks JSON, misalnya `5`. Kadang pemindai salah setelan dan mengirim `"5"`, yaitu teks di dalam tanda kutip. Temanmu sudah menulis fiturnya, dan `tsc` tidak menampilkan error apa pun. Tetapi stok `10` ditambah `"5"` malah menjadi `105`. Pemilik ingin input yang bukan angka ditolak dengan pesan yang jelas.
 
@@ -147,7 +147,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan apote
 
 Advanced dinilai dari *pendekatannya*. Bagian (a) wajib dan menentukan nilai. Bagian (b) opsional. Kode yang kosong tidak mengurangi nilai.
 
-+ *Tagihan pembeli.*
++ *Tagihan pembeli.* #est(16)
   #kebutuhan[
     Saat pembeli selesai memilih obat, kasir mencetak tagihan berisi subtotal, total setelah promo, biaya admin sesuai cara bayar, dan total yang harus dibayar. Keranjang berisi pasangan kode obat dan jumlahnya. Jika ada kode yang tidak terdaftar, tagihan tidak boleh tercetak. Kasir cukup melihat satu pesan gagal.
 

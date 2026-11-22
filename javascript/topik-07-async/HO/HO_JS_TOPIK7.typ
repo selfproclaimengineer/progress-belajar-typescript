@@ -337,7 +337,7 @@ console.log(await Promise.race([masak("nasi goreng"), habis]).catch((e) => e.mes
 Kapan memakai yang mana:
 
 #table(
-  columns: (auto, 1fr),
+  columns: (3fr, 2fr),
   inset: 6pt,
   [*Situasi*], [*Pakai*],
   [langkah berikutnya butuh hasil langkah sebelumnya, atau urutan mengubah data (saldo)], [`for...of` dengan `await`],
@@ -379,7 +379,7 @@ Ini sambungan dari JS-3 (`for` vs `forEach`): `forEach` tidak bisa dihentikan de
 == Membaca Pesan Error (tambahan JS-7)
 
 #table(
-  columns: (auto, 1fr),
+  columns: (1fr, 1fr),
   inset: 6pt,
   [*Pesan atau gejala*], [*Penyebab umum*],
   [`[object Promise]` atau `Promise { <pending> }` di output], [Lupa `await`.],

@@ -100,12 +100,14 @@ const kirimanMitra = [
 // ===== Beginner 1 =====
 function apakahObject(x: unknown): x is Record<string, unknown> {
   // TODO
+  // ≈ 3 baris
   return false;
 }
 
 // ===== Beginner 2 =====
 function apakahItem(x: unknown): x is ItemPesanan {
   // TODO
+  // ≈ 3 baris
   return false;
 }
 
@@ -116,6 +118,7 @@ function apakahItem(x: unknown): x is ItemPesanan {
 // ===== Intermediate 1 =====
 function validasiManual(x: unknown): Hasil<Pesanan> {
   // TODO
+  // ≈ 16 baris
   return { ok: false, error: "belum dibuat" };
 }
 
@@ -123,12 +126,14 @@ function validasiManual(x: unknown): Hasil<Pesanan> {
 // JAWABAN Intermediate 2 (bandingkan dengan Intermediate 1, dari mana tsc tahu bentuk PesananZod):
 //
 // TODO: tulis skema zod untuk Pesanan, lengkap dengan pesan error seperti di soal
+// ≈ 16 baris
 const SkemaPesanan = z.object({});
 
 type PesananZod = z.infer<typeof SkemaPesanan>;
 
 function validasiZod(x: unknown): Hasil<PesananZod> {
   // TODO
+  // ≈ 7 baris
   return { ok: false, error: "belum dibuat" };
 }
 
@@ -155,6 +160,7 @@ function totalKatalogMitra(teksJson: string): number {
 //
 function prosesKiriman(daftarTeks: string[], hargaPerKode: Map<string, number>): string {
   // TODO (opsional)
+  // ≈ 32 baris
   return "";
 }
 

@@ -6,6 +6,7 @@
 // formatRupiah(n: number): string
 export function formatRupiah(n) {
   // TODO
+  // ≈ 3 baris
   return String(n);
 }
 
@@ -13,6 +14,7 @@ export function formatRupiah(n) {
 // bulatkanKe(n: number, kelipatan: number): number
 export function bulatkanKe(n, kelipatan) {
   // TODO
+  // ≈ 3 baris
   return n;
 }
 
@@ -20,6 +22,7 @@ export function bulatkanKe(n, kelipatan) {
 // kategoriUnik(produk: Produk[]): string[]
 export function kategoriUnik(produk) {
   // TODO: pakai Set
+  // ≈ 3 baris
   return [];
 }
 
@@ -27,6 +30,7 @@ export function kategoriUnik(produk) {
 // buatIndex(produk: Produk[]): Map<string, Produk>   (key: id produk)
 export function buatIndex(produk) {
   // TODO
+  // ≈ 5 baris
   return new Map();
 }
 
@@ -34,6 +38,7 @@ export function buatIndex(produk) {
 // validasiQty(qty: unknown): number   (melempar Error jika tidak valid)
 export function validasiQty(qty) {
   // TODO
+  // ≈ 6 baris
   return qty;
 }
 
@@ -48,5 +53,6 @@ export function formatTanggal(tgl) {
 // Melempar Error jika produk tidak ada atau qty tidak valid.
 export function buatStruk(keranjang, index, tanggal) {
   // TODO (opsional)
+  // ≈ 10 baris
   return "";
 }

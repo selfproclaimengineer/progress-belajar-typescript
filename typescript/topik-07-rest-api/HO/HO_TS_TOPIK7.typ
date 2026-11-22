@@ -253,7 +253,7 @@ curl -i -X DELETE http://localhost:3000/buku/B009        (-i menampilkan status 
 == Membaca Pesan Error (tambahan TS-7)
 
 #table(
-  columns: (auto, 1fr),
+  columns: (1fr, 1fr),
   inset: 6pt,
   [*Pesan atau gejala*], [*Penyebab umum*],
   [`501 {"pesan":"belum dibuat"}`], [Route masih berisi kode starter.],

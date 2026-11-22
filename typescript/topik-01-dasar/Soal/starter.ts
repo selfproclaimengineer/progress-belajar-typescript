@@ -63,11 +63,13 @@ function formatRupiah(n) {
 
 // ===== Beginner 2 =====
 // TODO: ganti string dengan literal union tiga metode bayar
+// ≈ 1 baris
 type MetodeBayar = string;
 
 // biayaAdmin(metode: MetodeBayar, total: number): number
 function biayaAdmin(metode, total) {
   // TODO
+  // ≈ 5 baris
   return 0;
 }
 
@@ -79,19 +81,23 @@ function biayaAdmin(metode, total) {
 // hargaObat(kode: string): string
 function hargaObat(kode) {
   // TODO
+  // ≈ 5 baris
   return "";
 }
 
 // ===== Intermediate 2 =====
 // TODO: tulis type AturanDiskon
+// ≈ 1 baris
 
 // TODO: beri tipe AturanDiskon dan isi aturannya
+// ≈ 2 baris
 const diskonMember = (total) => total;
 const voucher10rb = (total) => total;
 
 // terapkanDiskon(total: number, daftarAturan: AturanDiskon[]): number
 function terapkanDiskon(total, daftarAturan) {
   // TODO
+  // ≈ 3 baris
   return total;
 }
 
@@ -118,6 +124,7 @@ function cobaStok(stok: number, teksInput: string): string {
 //
 function buatTagihan(keranjang: Map<string, number>, metode: MetodeBayar): string {
   // TODO (opsional)
+  // ≈ 16 baris
   return "";
 }
 

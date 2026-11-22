@@ -24,9 +24,9 @@ Pemilik supermarket ingin setiap data dari luar diperiksa dulu sebelum dipakai. 
 Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan supermarket dan mengapa. Baris *Dalam kode* menunjukkan bagian kode yang menjawab kebutuhan itu. Spesifikasi teknis ada di poin-poin setelahnya.
 
 #perhatian[
-  1. Salin `Soal/starter.ts` ke `Jawaban/soal-ts6.ts`.
+  1. Kerjakan di `Jawaban/soal-ts6.ts`. File itu sudah disiapkan dari `Soal/starter.ts`.
   2. Lengkapi bagian bertanda `TODO`. Jangan mengubah bagian `TIPE`, `DATA`, dan `PEMANGGILAN`.
-  3. *Cek tipe dulu* dengan `npx tsc --noEmit`, lalu *jalankan* dengan `node Jawaban/soal-ts6.ts`.
+  3. *Cek tipe dulu* dengan `npx tsc --noEmit`, lalu *jalankan* dengan `node Jawaban/soal-ts6.ts`. Keduanya dijalankan dari folder topik ini.
   4. Jawaban dianggap selesai jika `npx tsc --noEmit` tidak menampilkan error *dan* output `node` sama persis dengan kotak *Output dari*.
   5. Selama `SkemaPesanan` masih kosong, `tsc` menampilkan `TS2345` di baris pemanggilan Intermediate 2. Error itu hilang setelah skemanya lengkap.
   6. Jangan memakai `any`, `as`, dan tanda `!` di kodemu sendiri. Soal bertanda *(jelaskan)* dijawab sebagai komentar di bawah baris `// JAWABAN ...`.
@@ -34,7 +34,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan super
 
 #level("Beginner", "0.3")
 
-+ *Apakah ini object?*
++ *Apakah ini object?* #est(3)
   #kebutuhan[
     Setiap pesanan dikirim sebagai object JSON. Kiriman yang rusak bisa berisi apa saja: `null`, array, teks, atau angka. Sebelum membaca field apa pun, program harus yakin datanya benar-benar object biasa.
 
@@ -48,7 +48,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan super
   true false false false
   ```]
 
-+ *Satu baris pesanan.*
++ *Satu baris pesanan.* #est(3)
   #kebutuhan[
     Satu baris pesanan berisi kode barang dan jumlahnya. Gudang hanya bisa mengambil barang dalam jumlah utuh, minimal satu. Jumlah yang ditulis sebagai teks, pecahan, atau nol harus ditolak.
 
@@ -78,7 +78,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan super
 
 #level("Intermediate", "0.3")
 
-+ *Validasi pesanan secara manual.*
++ *Validasi pesanan secara manual.* #est(16)
   #kebutuhan[
     Aplikasi pelanggan mengirim satu pesanan sebagai teks JSON. Petugas ingin tahu *alasan pertama* sebuah pesanan ditolak, supaya pelanggan bisa memperbaikinya. Catatan untuk kurir boleh tidak diisi, tetapi jika diisi harus berupa teks.
 
@@ -103,7 +103,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan super
   GAGAL: catatan harus teks
   ```]
 
-+ *Validasi pesanan dengan zod.*
++ *Validasi pesanan dengan zod.* #est(22)
   #kebutuhan[
     Pemeriksaan manual di Intermediate 1 sudah benar, tetapi panjang, dan pesannya kurang rinci. Untuk item yang salah, petugas hanya tahu nomornya, tidak tahu field mana yang salah. Tim ingin memakai library `zod`: aturan bentuk data ditulis sekali sebagai _skema_, dan tipe TypeScript-nya diturunkan dari skema itu.
 
@@ -142,7 +142,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan super
   GAGAL: catatan: catatan harus teks
   ```]
 
-+ *Kode temanmu: `totalKatalogMitra(teksJson)`.*
++ *Kode temanmu: `totalKatalogMitra(teksJson)`.* #est(6)
   #kebutuhan[
     Mitra toko mengirim katalog barang titipannya sebagai teks JSON berisi array produk. Supermarket ingin menjumlahkan harga semua produk yang datanya lengkap. Produk yang datanya tidak lengkap atau salah tipe dilewati saja. Temanmu sudah menulis fungsinya, dan `tsc` tidak protes. Tetapi untuk katalog pertama, hasilnya `"1500012000undefined"`.
 
@@ -165,7 +165,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan super
 
 Advanced dinilai dari *pendekatannya*. Bagian (a) wajib dan menentukan nilai. Bagian (b) opsional. Kode yang kosong tidak mengurangi nilai.
 
-+ *Memproses kiriman mitra.*
++ *Memproses kiriman mitra.* #est(32)
   #kebutuhan[
     Setiap malam mitra mengirim kumpulan pesanan, satu teks JSON per baris. Ada baris yang terpotong (JSON rusak), ada yang bentuknya salah, dan ada yang memesan kode barang yang tidak dijual. Supermarket ingin semua baris tetap diproses. Baris yang gagal dicatat alasannya, baris yang lolos dihitung totalnya, dan di akhir ada ringkasan berapa yang diterima.
 

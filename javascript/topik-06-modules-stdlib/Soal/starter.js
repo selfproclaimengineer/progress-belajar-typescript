@@ -65,6 +65,7 @@ const produk = [
 // cobaTambah(qty: unknown): string
 function cobaTambah(qty) {
   // TODO: panggil validasiQty di dalam try...catch
+  // ≈ 8 baris
   return "";
 }
 
@@ -78,6 +79,7 @@ function cobaTambah(qty) {
 // cetakStruk(keranjang: { id: string, qty: number }[], index: Map<string, Produk>, tanggal: Date): string
 function cetakStruk(keranjang, index, tanggal) {
   // TODO (opsional)
+  // ≈ 7 baris
   return "";
 }
 

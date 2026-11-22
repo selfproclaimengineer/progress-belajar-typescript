@@ -25,17 +25,17 @@ Pemilik toko ingin bentuk setiap data ditulis jelas: field apa saja yang wajib a
 Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan toko dan mengapa. Baris *Dalam kode* menunjukkan bagian kode yang menjawab kebutuhan itu. Spesifikasi teknis ada di poin-poin setelahnya.
 
 #perhatian[
-  1. Salin `Soal/starter.ts` ke `Jawaban/soal-ts2.ts`.
+  1. Kerjakan di `Jawaban/soal-ts2.ts`. File itu sudah disiapkan dari `Soal/starter.ts`.
   2. Lengkapi bagian bertanda `TODO`. Jangan mengubah bagian `DATA` dan `PEMANGGILAN`.
-  3. *Cek tipe dulu* dengan `npx tsc --noEmit`, lalu *jalankan* dengan `node Jawaban/soal-ts2.ts`.
-  4. Saat baru disalin, `tsc` sudah menampilkan error karena interface `Produk` masih kosong. Itu disengaja. Error itu hilang setelah semua tipe di bagian `TIPE` lengkap.
+  3. *Cek tipe dulu* dengan `npx tsc --noEmit`, lalu *jalankan* dengan `node Jawaban/soal-ts2.ts`. Keduanya dijalankan dari folder topik ini.
+  4. Saat pertama dibuka, `tsc` sudah menampilkan error karena interface `Produk` masih kosong. Itu disengaja. Error itu hilang setelah semua tipe di bagian `TIPE` lengkap.
   5. Jawaban dianggap selesai jika `npx tsc --noEmit` tidak menampilkan error *dan* output `node` sama persis dengan kotak *Output dari*.
   6. Jangan memakai `any` dan tanda `!`. Soal bertanda *(jelaskan)* dijawab sebagai komentar di bawah baris `// JAWABAN ...`.
 ]
 
 #level("Beginner", "0.3")
 
-+ *Bentuk data produk.*
++ *Bentuk data produk.* #est(11)
   #kebutuhan[
     Setiap produk punya id, nama, kategori, harga, dan stok. Sebagian produk sedang diskon, sebagian tidak. Id dipakai di laporan penjualan dan di keranjang pembeli, jadi id yang sudah tercatat tidak boleh diubah oleh siapa pun. Halaman toko menampilkan harga akhir, yaitu harga setelah diskon.
 
@@ -54,7 +54,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan toko 
   50000 135000 90000
   ```]
 
-+ *Baris keranjang.*
++ *Baris keranjang.* #est(4)
   #kebutuhan[
     Keranjang pembeli disimpan sebagai daftar pasangan pendek: id produk dan jumlahnya, misalnya `["P01", 2]`. Bentuk pendek ini dipilih karena keranjang dikirim ke server setiap kali pembeli menekan tombol, dan pasangan dua nilai lebih hemat daripada object lengkap. Toko ingin ikon keranjang menampilkan jumlah barang di dalamnya.
 
@@ -82,7 +82,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan toko 
 
 #level("Intermediate", "0.3")
 
-+ *Stok per kategori.*
++ *Stok per kategori.* #est(7)
   #kebutuhan[
     Bagian gudang ingin melihat total stok setiap kategori, misalnya semua pakaian digabung. Kategori bisa bertambah kapan saja, jadi daftar kategori tidak boleh ditulis tetap di kode.
 
@@ -96,7 +96,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan toko 
   {"pakaian":13,"rumah":5,"alat tulis":50}
   ```]
 
-+ *Label pengiriman.*
++ *Label pengiriman.* #est(9)
   #kebutuhan[
     Pembeli boleh mendaftar tanpa mengisi alamat, lalu melengkapinya saat checkout. Bagian pengiriman mencetak label berisi nama, kota, dan kode pos. Jika alamat belum diisi, label harus memberi tahu hal itu, bukan mencetak `undefined`.
 
@@ -116,7 +116,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan toko 
   Joko - alamat belum diisi
   ```]
 
-+ *Kode temanmu: `urutTermurah(daftar)`.*
++ *Kode temanmu: `urutTermurah(daftar)`.* #est(3)
   #kebutuhan[
     Halaman toko punya tombol "urutkan dari termurah". Temanmu sudah menulis fiturnya, dan daftar yang tampil benar. Tetapi setelah tombol ditekan, produk pertama di `katalog` ikut berubah. Laporan stok yang dibuat setelahnya jadi tertukar urutannya. Pemilik ingin fungsi itu *tidak bisa* mengubah katalog asli, dan ingin `tsc` yang menjaga aturan itu.
 
@@ -137,7 +137,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan toko 
 
 Advanced dinilai dari *pendekatannya*. Bagian (a) wajib dan menentukan nilai. Bagian (b) opsional. Kode yang kosong tidak mengurangi nilai.
 
-+ *Ringkasan pesanan.*
++ *Ringkasan pesanan.* #est(15)
   #kebutuhan[
     Sebelum pembeli membayar, toko menampilkan ringkasan: total yang harus dibayar, jumlah barang yang benar-benar bisa dikirim, dan daftar baris keranjang yang ditolak beserta alasannya. Baris ditolak jika produknya tidak ada di katalog, atau jumlah yang dipesan melebihi stok. Baris yang ditolak tidak ikut dihitung, tetapi baris lain tetap diproses.
 

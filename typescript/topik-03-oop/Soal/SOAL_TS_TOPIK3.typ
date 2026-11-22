@@ -15,17 +15,17 @@ Pemilik minimarket ingin setiap cara bayar menjadi bagiannya sendiri, dengan sat
 Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan minimarket dan mengapa. Baris *Dalam kode* menunjukkan bagian kode yang menjawab kebutuhan itu. Spesifikasi teknis ada di poin-poin setelahnya.
 
 #perhatian[
-  1. Salin `Soal/starter.ts` ke `Jawaban/soal-ts3.ts`.
+  1. Kerjakan di `Jawaban/soal-ts3.ts`. File itu sudah disiapkan dari `Soal/starter.ts`.
   2. Lengkapi bagian bertanda `TODO`. Jangan mengubah bagian `INTERFACE`, `DATA`, `PEMANGGILAN`, dan class `Kartu`.
-  3. *Cek tipe dulu* dengan `npx tsc --noEmit`, lalu *jalankan* dengan `node Jawaban/soal-ts3.ts`.
-  4. Saat baru disalin, `tsc` sudah menampilkan beberapa error, misalnya `Property 'nama' is missing in type 'Tunai'`. Itu disengaja. Error itu hilang setelah class-class di bawah lengkap.
+  3. *Cek tipe dulu* dengan `npx tsc --noEmit`, lalu *jalankan* dengan `node Jawaban/soal-ts3.ts`. Keduanya dijalankan dari folder topik ini.
+  4. Saat pertama dibuka, `tsc` sudah menampilkan beberapa error, misalnya `Property 'nama' is missing in type 'Tunai'`. Itu disengaja. Error itu hilang setelah class-class di bawah lengkap.
   5. Jawaban dianggap selesai jika `npx tsc --noEmit` tidak menampilkan error *dan* output `node` sama persis dengan kotak *Output dari*.
   6. Jangan memakai `any`. Jangan menulis field di parameter constructor seperti `constructor(private saldo: number)`, karena pengaturan praktikum ini menolaknya (lihat HO).
 ]
 
 #level("Beginner", "0.3")
 
-+ *Bayar tunai.*
++ *Bayar tunai.* #est(6)
   #kebutuhan[
     Cara bayar paling sederhana adalah tunai. Uang selalu diterima, dan kasir mencetak struk pendek berisi nominalnya. Tunai harus memenuhi aturan bersama semua cara bayar, supaya nanti kasir bisa memperlakukannya sama dengan cara bayar lain.
 
@@ -40,7 +40,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan minim
   Tunai: dibayar Rp25.000
   ```]
 
-+ *Dompet digital.*
++ *Dompet digital.* #est(19)
   #kebutuhan[
     Pelanggan bisa mengisi saldo dompet digital milik minimarket, lalu memakainya untuk belanja. Jika saldo tidak cukup, pembayaran ditolak dan saldo tidak berubah. Kasir boleh *melihat* sisa saldo, tetapi saldo hanya boleh berubah lewat isi saldo dan pembayaran, bukan diketik langsung.
 
@@ -78,7 +78,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan minim
 
 #level("Intermediate", "0.3")
 
-+ *Kartu debit dan kredit.*
++ *Kartu debit dan kredit.* #est(30)
   #kebutuhan[
     Minimarket menerima dua jenis kartu. Keduanya punya limit pemakaian, dan pembayaran ditolak jika limit terlampaui. Bedanya hanya di biaya: kartu debit kena biaya tetap Rp2.500 per transaksi, kartu kredit kena 2% dari nominal, dibulatkan ke atas. Bagian keuangan juga ingin tahu sisa limit kartu kredit. Aturan limit sudah ditulis sekali di class `Kartu`, jadi setiap jenis kartu cukup menentukan biayanya sendiri.
 
@@ -107,7 +107,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan minim
   47000
   ```]
 
-+ *Bayar bertahap.*
++ *Bayar bertahap.* #est(7)
   #kebutuhan[
     Pelanggan sering membawa beberapa cara bayar. Kasir ingin mencoba cara bayar satu per satu sesuai urutan pilihan pelanggan, dan berhenti di cara bayar pertama yang berhasil. Jika semuanya gagal, kasir melihat satu pesan gagal. Fungsi ini tidak boleh peduli jenis cara bayarnya, termasuk cara bayar baru yang belum dibuat hari ini.
 
@@ -129,7 +129,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan minim
   Poin Member: dibayar Rp5.000
   ```]
 
-+ *Kode temanmu: class `Voucher`.*
++ *Kode temanmu: class `Voucher`.* #est(12)
   #kebutuhan[
     Minimarket membagikan voucher belanja bernilai tertentu. Voucher bisa dipakai beberapa kali sampai nilainya habis, tetapi tidak boleh minus. Temanmu sudah menulis class-nya. Saat dicoba, struk mencetak angka `-10000`, bukan pesan, dan voucher yang sudah habis tetap bisa dipakai.
 
@@ -152,7 +152,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan minim
 
 Advanced dinilai dari *pendekatannya*. Bagian (a) wajib dan menentukan nilai. Bagian (b) opsional. Kode yang kosong tidak mengurangi nilai.
 
-+ *Rekap kasir harian.*
++ *Rekap kasir harian.* #est(15)
   #kebutuhan[
     Di akhir hari, kasir memproses semua transaksi yang tercatat dan mencetak rekap: satu baris hasil untuk setiap transaksi, lalu satu baris ringkasan berisi jumlah transaksi berhasil, jumlah yang gagal, dan uang yang masuk. Uang masuk dihitung dari total belanja transaksi yang berhasil, tanpa biaya kartu. Dalam satu hari, dompet atau kartu yang sama bisa dipakai beberapa kali, jadi saldo dan limitnya terus berkurang.
 

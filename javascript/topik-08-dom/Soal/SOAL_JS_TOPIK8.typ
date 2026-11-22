@@ -36,7 +36,7 @@ Pembagian kerja empat file:
 Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan toko dan mengapa. Baris *Dalam kode* menunjukkan bagian kode yang menjawab kebutuhan itu. Spesifikasi teknis ada di poin-poin setelahnya.
 
 #perhatian[
-  1. Salin `Soal/starter.js` ke `Jawaban/soal-js8.js`, lalu salin `Soal/toko.js`, `Soal/halaman.js`, dan `Soal/index.html` ke `Jawaban/` dengan nama yang sama.
+  1. Kerjakan di folder `Jawaban/`. `soal-js8.js`, `toko.js`, `halaman.js`, dan `index.html` sudah disiapkan dari `Soal/`.
   2. Lengkapi bagian bertanda `TODO`. Jangan mengubah `index.html`, bagian `DATA`, dan `PEMANGGILAN`.
   3. Tugas *logika*: jalankan `node Jawaban/soal-js8.js`. Output harus sama persis dengan kotak *Output dari*.
   4. Tugas *tampilan*: jalankan `npm run sajikan`, lalu buka alamat yang dicetak di browser. Halaman harus terlihat dan bekerja seperti gambar *Tampilan yang diharapkan*. Membuka `index.html` langsung dari folder (alamat `file://`) tidak bisa, lihat HO.
@@ -46,7 +46,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan toko 
 
 #level("Beginner", "0.3")
 
-+ *Teks menu* (di `toko.js`).
++ *Teks menu* (di `toko.js`). #est(3)
   #kebutuhan[
     Setiap baris menu menampilkan nama roti dan harganya dalam format rupiah, dipisah tanda hubung, supaya pembeli tidak perlu menebak harga.
 
@@ -66,7 +66,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan toko 
   Bolu Pandan - Rp45.000
   ```]
 
-+ *Mengurangi isi keranjang* (di `toko.js`).
++ *Mengurangi isi keranjang* (di `toko.js`). #est(3)
   #kebutuhan[
     Pembeli bisa mengurangi jumlah roti yang sudah masuk keranjang. Jika jumlahnya menjadi nol, roti itu hilang dari keranjang. Toko berencana menambah tombol "Batalkan" yang mengembalikan keranjang ke keadaan sebelumnya, jadi keranjang lama tidak boleh ikut berubah.
 
@@ -88,7 +88,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan toko 
   [{"id":"R01","qty":2},{"id":"R02","qty":1}]
   ```]
 
-+ *Menampilkan menu* (di `halaman.js`, tampilan).
++ *Menampilkan menu* (di `halaman.js`, tampilan). #est(13)
   #kebutuhan[
     Saat halaman dibuka, semua roti muncul di kotak Menu, masing-masing dengan tombol "Tambah". Tombol itu harus tahu roti mana yang diwakilinya, supaya nanti bisa dipakai di Intermediate 4.
 
@@ -107,7 +107,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan toko 
 
 #level("Intermediate", "0.3")
 
-+ *Total belanja* (di `toko.js`).
++ *Total belanja* (di `toko.js`). #est(6)
   #kebutuhan[
     Kasir harus melihat total belanja yang selalu benar. Keranjang hanya menyimpan id dan jumlah, harga diambil dari data produk. Jika ada id yang tidak dikenal (misalnya produk sudah dihapus dari menu), item itu tidak dihitung.
 
@@ -127,7 +127,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan toko 
   0
   ```]
 
-+ *Memeriksa uang yang dibayar* (di `toko.js`).
++ *Memeriksa uang yang dibayar* (di `toko.js`). #est(8)
   #kebutuhan[
     Pembeli mengetik jumlah uang di kotak isian. Isinya bisa kosong, berisi spasi saja, berisi huruf, atau angka negatif karena salah ketik. Kasir ingin pesan yang jelas untuk setiap kesalahan, dan kembalian yang benar jika uangnya cukup.
 
@@ -160,7 +160,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan toko 
   { ok: true, pesan: 'kembalian Rp2.000' }
   ```]
 
-+ *Kode temanmu: `tambahItem(keranjang, id)`* (di `toko.js`).
++ *Kode temanmu: `tambahItem(keranjang, id)`* (di `toko.js`). #est(5)
   #kebutuhan[
     Saat tombol "Tambah" diklik, roti masuk ke keranjang dengan jumlah 1, atau jumlahnya bertambah 1 jika sudah ada. Temanmu menulis fungsinya dan sudah menyalin array dengan spread. Tetapi saat diuji, keranjang lama ikut berubah, dan rencana tombol "Batalkan" tidak bisa jalan.
 
@@ -185,7 +185,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan toko 
   [{"id":"R01","qty":2},{"id":"R02","qty":1}]
   ```]
 
-+ *Keranjang yang hidup* (di `halaman.js`, tampilan).
++ *Keranjang yang hidup* (di `halaman.js`, tampilan). #est(35)
   #kebutuhan[
     Klik "Tambah" di menu memasukkan roti ke keranjang. Setiap baris keranjang punya tombol "Kurangi". Total di bawah keranjang selalu ikut berubah. Jika keranjang kosong, tampilkan tulisan "Keranjang kosong" supaya pembeli tidak mengira halamannya rusak.
 
@@ -209,7 +209,7 @@ Setiap tugas di bawah diawali kotak *Kebutuhan klien*: apa yang diinginkan toko 
 
 Advanced dinilai dari *pendekatannya*. Bagian (a) wajib dan menentukan nilai. Bagian (b) opsional. Kode yang kosong tidak mengurangi nilai.
 
-+ *Membayar* (di `halaman.js`, tampilan).
++ *Membayar* (di `halaman.js`, tampilan). #est(11)
   #kebutuhan[
     Pembeli mengetik jumlah uang lalu menekan "Bayar" (atau Enter). Halaman tidak boleh dimuat ulang, karena keranjang akan hilang. Pesan hasil pemeriksaan muncul di bawah form: hijau jika berhasil, merah jika gagal. Jika berhasil, keranjang dan kotak isian dikosongkan untuk pembeli berikutnya. Begitu pembeli menambah roti lagi, pesan lama hilang.
 

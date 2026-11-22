@@ -72,28 +72,35 @@ interface Transaksi {
 
 // ===== Beginner 1 =====
 // TODO: class ini harus memenuhi MetodeBayar. Tambahkan implements dan field nama.
+// ≈ 6 baris untuk seluruh class
 class Tunai {
   bayar(nominal: number): string {
     // TODO
+    // ≈ 3 baris
     return "";
   }
 }
 
 // ===== Beginner 2 =====
 // TODO: implements MetodeBayar, field nama, field saldo yang private.
+// ≈ 19 baris untuk seluruh class
 class Dompet {
   constructor(nama: string, saldoAwal: number) {
     // TODO
+    // ≈ 4 baris
   }
   get sisa(): number {
     // TODO
+    // ≈ 3 baris
     return 0;
   }
   isiSaldo(nominal: number): void {
     // TODO
+    // ≈ 3 baris
   }
   bayar(nominal: number): string {
     // TODO
+    // ≈ 5 baris
     return "";
   }
 }
@@ -125,6 +132,7 @@ abstract class Kartu implements MetodeBayar {
 class KartuDebit extends Kartu {
   biaya(nominal: number): number {
     // TODO
+    // ≈ 3 baris
     return 0;
   }
 }
@@ -132,10 +140,12 @@ class KartuDebit extends Kartu {
 class KartuKredit extends Kartu {
   biaya(nominal: number): number {
     // TODO
+    // ≈ 3 baris
     return 0;
   }
   sisaLimit(): number {
     // TODO
+    // ≈ 3 baris
     return 0;
   }
 }
@@ -150,6 +160,7 @@ const poinMember: MetodeBayar = {
 // ===== Intermediate 2 =====
 function bayarBertahap(total: number, daftar: MetodeBayar[]): string {
   // TODO
+  // ≈ 7 baris
   return "";
 }
 
@@ -173,6 +184,7 @@ class Voucher implements MetodeBayar {
 //
 function rekapKasir(daftar: Transaksi[]): string {
   // TODO (opsional)
+  // ≈ 15 baris
   return "";
 }
 
