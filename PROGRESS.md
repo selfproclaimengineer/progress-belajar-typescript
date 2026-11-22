@@ -59,4 +59,4 @@ Alur setiap topik:
 | 2026-11-02 | JS-1, JS-2 | 4 jam | JS-1: soal; JS-2: soal, tanya jawab, feedback | begadang, kurang tidur |
 | 2026-11-05 | JS-2, JS-3 | 7 jam | JS-2: feedback; JS-3: soal, tanya jawab, feedback | implementasi callback: urutan chaining, kapan memakai find untuk FK-PK, map, filter |
 | 2026-11-12 | JS-4 | 2 jam | JS-4: soal, tanya jawab, feedback | membayangkan input dan output (console.log di bawah), tidak tahu materi HO mana dipakai di soal mana, energi minim karena belajar malam |
-| 2026-11-22 | JS-5, JS-6 | 4 jam | JS-5: soal, tanya jawab, feedback; JS-6: soal | transfer di Advanced (tarik dan setor ke rekening sendiri), this di method Bank |
+| 2026-11-22 | JS-5 | 4 jam | JS-5: soal, tanya jawab, feedback | transfer di Advanced (tarik dan setor ke rekening sendiri), this di method Bank |
