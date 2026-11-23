@@ -2,7 +2,9 @@
 
 ## Lanjut dari sini
 
-**Berikutnya: JS-6 Modules dan Stdlib.** Coba Sendiri JS-6 sudah dijawab sebagian di `Jawaban/soal-js6.js`. Starter dan file Jawaban punya `// ≈ N baris` di bawah setiap `TODO`. Advanced cukup dikerjakan salah satu, bagian (a) pendekatan atau bagian (b) kode.
+**Berikutnya: TS-1 Dasar TypeScript** (mulai 2026-11-23). Dion melompati JS-7 dan JS-8 dulu; TS-1 sampai TS-6 tidak memakai async atau DOM, hanya TS-7 (opsional) yang butuh JS-7. Advanced cukup dikerjakan salah satu, bagian (a) pendekatan atau bagian (b) kode.
+
+JS-6 dijeda, belum dinilai. Status: Beginner 1–3, Intermediate 1, dan Intermediate 3 jalan. Intermediate 2 hampir benar, output `OK 3` kurang titik dua (`OK: 3`). Penjelasan Beginner 4 dan Intermediate 1 belum lengkap. Advanced dikerjakan jika ada waktu. Detail di `javascript/topik-06-modules-stdlib/Diskusi/DISKUSI.md`.
 
 JS-5 selesai dengan nilai 80. Sisa catatan ada di `javascript/topik-05-oop/Diskusi/FEEDBACK.md`: Beginner 4 bagian kedua hilang dan contoh setter keliru, penjelasan Intermediate 3 salah konsep (`this` hilang di callback), `buka` kurang `dibuka`, dan `transfer` tidak membaca hasil `tarik` sehingga nominal 0 atau negatif dilaporkan berhasil. Macet utama JS-5: membedakan object pengirim dan penerima di `transfer`, dan arti `this` di method `Bank`.
 
@@ -42,7 +44,7 @@ Alur setiap topik:
 | JS-6 Modules dan standard library | [x] | [ ] | [ ] | |
 | JS-7 Async | [ ] | [ ] | [ ] | |
 | JS-8 DOM | [ ] | [x] | [ ] | |
-| TS-1 Dasar | [ ] | [ ] | [ ] | |
+| TS-1 Dasar | [x] | [ ] | [ ] | |
 | TS-2 Object type | [ ] | [ ] | [ ] | |
 | TS-3 OOP | [ ] | [ ] | [ ] | |
 | TS-4 Generics | [ ] | [ ] | [ ] | |
@@ -60,3 +62,4 @@ Alur setiap topik:
 | 2026-11-05 | JS-2, JS-3 | 7 jam | JS-2: feedback; JS-3: soal, tanya jawab, feedback | implementasi callback: urutan chaining, kapan memakai find untuk FK-PK, map, filter |
 | 2026-11-12 | JS-4 | 2 jam | JS-4: soal, tanya jawab, feedback | membayangkan input dan output (console.log di bawah), tidak tahu materi HO mana dipakai di soal mana, energi minim karena belajar malam |
 | 2026-11-22 | JS-5 | 4 jam | JS-5: soal, tanya jawab, feedback | transfer di Advanced (tarik dan setor ke rekening sendiri), this di method Bank |
+| 2026-11-23 | JS-6, TS-1 | - | JS-6: soal, tanya jawab; TS-1: soal, tanya jawab | buatIndex JS-6 (map() vs Map, set di luar loop), try...catch di cobaTambah, membaca tipe dan alasan any di Coba Sendiri TS-1 |

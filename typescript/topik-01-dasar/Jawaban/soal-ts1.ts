@@ -13,11 +13,11 @@
 //           lalu cek dengan mengarahkan kursor ke nama variabel di VS Code.
 // Jalankan bagian ini saja: node Jawaban/soal-ts1.ts coba
 function cobaSendiri() {
-  let a = 10;
-  const b = "qris";
-  let c = [1, 2, 3];
-  const d = c.find((x) => x > 5);
-  let e: any = "x";
+  let a = 10; // number
+  const b = "qris"; // "qris"
+  let c = [1, 2, 3]; // array of number
+  const d = c.find((x) => x > 5) ? c.find((x) => x > 5) : 1; // number or undefined
+  let e: any = "x"; // any (isi bebas semua tipe)
   console.log(a, b, c, d, e);
 
   // Bagian 2: hapus // di depan SATU baris di bawah, jalankan npx tsc --noEmit,
@@ -29,13 +29,18 @@ function cobaSendiri() {
 }
 
 // JAWABAN Coba Sendiri 1:
-//
+// aman semua
 // JAWABAN Coba Sendiri 2:
-//
+// a : Type 'string' is not assignable to type 'number'.
+// c : Argument of type 'string' is not assignable to parameter of type 'number'.
+// d+1 : 'd' is possibly 'undefined'.
+// e.toFixed(2) : TypeError: e.toFixed is not a function
 // JAWABAN Coba Sendiri 3:
-//
+// tsc tidak memperingatkan karena e sudah dicek di awal, sehingga pada saat
+// console dicek, itu sudah pure javascript.
 // JAWABAN Coba Sendiri 4:
-//
+// sudah diperbaiki dengan bantuan ternary untuk menghilangkan nilai undefined
+// dan menggantinya dengan 1
 
 if (process.argv[2] === "coba") {
   cobaSendiri();

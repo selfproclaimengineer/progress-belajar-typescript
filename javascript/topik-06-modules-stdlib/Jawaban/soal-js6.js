@@ -59,23 +59,40 @@ const produk = [
 
 // ===== Beginner 4 (jelaskan) =====
 // JAWABAN Beginner 4 (pesan error, mengapa baris pertama pun tidak tercetak, perbaikan):
-// 
+//
+//console.log("mulai");
+//import { formatRp } from "./kasir.js";
+
+// SyntaxError: The requested module './kasir.js' does not provide an export named 'formatRp'
+// semuanya tidak dijalankan jika gagal import
+// import { formatRupiah } from "./kasir.js"
 
 // ===== Intermediate 1 (jelaskan) =====
 // JAWABAN Intermediate 1:
-// 
+// eksponensial, karena jika pakai find itu perbandingan 1 demi 1 ke semua data
+// kalau cari berkali-kali ya perbandingannya 1 demi 1 ke semua data dilakukan berkali kali
+// kalau map itu karena sudah pakai hashtable, key nya jadi alamat penyimpanan
+// jadi get langsung lompat ke tempatnya.
 
 // ===== Intermediate 2 =====
 // cobaTambah(qty: unknown): string
+
 function cobaTambah(qty) {
   // TODO: panggil validasiQty di dalam try...catch
   // ≈ 8 baris
-  return "";
+  try{
+    validasiQty(qty);
+    return `OK ${qty}`;
+  } catch (e){
+    return `GAGAL: ${e.message}`;
+  }
+  
 }
 
 // ===== Intermediate 3 (jelaskan) =====
 // JAWABAN Intermediate 3:
-// 
+// Bulannya 10 karena dengan getMonth(), startnya itu dari 0, makanya harus ditambah 1
+// sebelum diubah jadi string dan diberi padstart agar bisa 2 digit
 
 // ===== Advanced 1 =====
 // JAWABAN Advanced 1a (langkah, fungsi yang dipakai, di mana throw dan di mana catch):
