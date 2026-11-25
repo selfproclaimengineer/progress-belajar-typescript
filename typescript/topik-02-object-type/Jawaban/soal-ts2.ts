@@ -22,24 +22,36 @@ function cobaSendiri() {
   const solo: Kota = { nama: "Solo" };
 
   const nilai: Record<string, number> = { a: 1 };
-  console.log(t[0] + t[1], solo.penduduk, nilai["b"]);
+  console.log(t[0] + t[1], solo.penduduk, nilai["b"]); // 7, undefined, undefined
 
   // Bagian 2: hapus // di depan SATU baris, jalankan npx tsc --noEmit,
   //           catat hasilnya, lalu pasang lagi // sebelum mencoba baris berikutnya.
   // solo.nama = "Surakarta";
   // const t2: Titik = [3, 4, 5];
+  // soal-ts2.ts:30:9 - error TS2322: Type '[number, number, number]' is not assignable to type 'Titik'.
+  // Source has 3 element(s) but target allows only 2.
+  // 30   const t2: Titik = [3, 4, 5];
+
   // const solo2: Kota = { nama: "Solo", provinsi: "Jawa Tengah" };
+  // 34:39 - error TS2353: Object literal may only specify known properties, and 'provinsi' does not exist in type 'Kota'.
+  // 34   const solo2: Kota = { nama: "Solo", provinsi: "Jawa Tengah" };
+
   // console.log(solo.penduduk + 1);
+  // soal-ts2.ts:39:15 - error TS18048: 'solo.penduduk' is possibly 'undefined'.
+  // 39   console.log(solo.penduduk + 1);
+
 }
 
 // JAWABAN Coba Sendiri 1:
-//
+// tidak ada, benar semua
 // JAWABAN Coba Sendiri 2:
-//
+// Sudah di atas
 // JAWABAN Coba Sendiri 3:
-//
+// Karena pada record, ada 2 parameter yaitu string dan number
 // JAWABAN Coba Sendiri 4:
-//
+// Tidak bisa, karena keunggulan tipe adalah union dan literal
+// sementara keunggulan interface adalah menciptakan deskripsi
+// bentuk object
 
 if (process.argv[2] === "coba") {
   cobaSendiri();
@@ -50,18 +62,33 @@ if (process.argv[2] === "coba") {
 const rupiah = (n: number): string => `Rp${new Intl.NumberFormat("id-ID").format(n)}`;
 
 // ===== TIPE (Beginner 1, Beginner 2, Intermediate 2) =====
-// TODO Beginner 1: id (tidak boleh diubah), nama, kategori, harga, stok, diskonPersen (boleh tidak ada)
+// Beginner 1: id (tidak boleh diubah), nama,
+// kategori, harga, stok, diskonPersen (boleh tidak ada)
 // ≈ 8 baris
-interface Produk {}
+interface Produk {
+  readonly id: string;
+  nama: string;
+  kategori: string;
+  harga: number;
+  stok: number;
+  diskonPersen?: number;
+}
 
-// TODO Beginner 2: pasangan [id, qty]
+// Beginner 2: pasangan [id, qty]
 // ≈ 1 baris
-type BarisKeranjang = unknown;
+type BarisKeranjang = [id:string,qty:number];
 
-// TODO Intermediate 2: type Alamat (kota, kodePos) dan interface Pembeli (nama, alamat boleh tidak ada)
+// : type Alamat (kota, kodePos) dan interface Pembeli
+// (nama, alamat boleh tidak ada)
 // ≈ 5 baris
-type Alamat = {};
-interface Pembeli {}
+type Alamat = {
+  kota:string;
+  kodePos:string;
+};
+interface Pembeli {
+  nama:string;
+  alamat?:Alamat;
+}
 
 // Sudah jadi, dipakai Advanced 1.
 interface Ringkasan {
@@ -89,41 +116,67 @@ const daftarPembeli: Pembeli[] = [
 
 // ===== Beginner 1 =====
 function hargaAkhir(p: Produk): number {
-  // TODO
+  
   // ≈ 3 baris
-  return 0;
+  let potongan = Math.floor(p.harga * (p.diskonPersen ?? 0)/100);
+  return p.harga-potongan;
 }
 
 // ===== Beginner 2 =====
 function jumlahBarang(keranjang: BarisKeranjang[]): number {
-  // TODO
+  
   // ≈ 3 baris
-  return 0;
+  let jumlah:number=0;
+  for (const [kode,qty] of keranjang){
+    jumlah += qty
+  }
+  return jumlah;
 }
 
 // ===== Beginner 3 (jelaskan) =====
 // JAWABAN Beginner 3 (pesan error tsc, mengapa ditolak, apa yang diubah agar warna bisa disimpan):
-//
+// 
+// const baru: Produk = { id: "P06", nama: "Topi", kategori: "pakaian", harga: 35000, stok: 4, warna: "hitam" };
+// Object literal may only specify known properties, and 'warna' does not exist in type 'Produk'.
+
+// Karena di Interface Produk, tidak ada attribut warna, sama seperti
+// hrga tidak ada di attribut Produk, jadi tidak bisa menambah sembarangan
+// variabel ke interface.
+// kalau ingin opsional pakai
+// warna?: string
+
 
 // ===== Intermediate 1 =====
 function stokPerKategori(daftar: readonly Produk[]): Record<string, number> {
-  // TODO
-  // ≈ 7 baris
-  return {};
+  const stok: Record<string,number> = {};
+  for (const p of daftar){
+    stok[p.kategori] = (stok[p.kategori] ?? 0) + p.stok
+  }
+  return stok;
 }
 
 // ===== Intermediate 2 =====
 function labelPengiriman(p: Pembeli): string {
-  // TODO
-  // ≈ 4 baris
-  return "";
+  
+  if(p.alamat !== undefined){
+    return `${p.nama} - ${p.alamat?.kota} ${p.alamat?.kodePos}`;
+  } else{
+    return `${p.nama} - alamat belum diisi`
+  }
+  
 }
 
 // ===== Intermediate 3 (kode temanmu, perbaiki) =====
 // JAWABAN Intermediate 3:
-//
-function urutTermurah(daftar: Produk[]): string[] {
-  return daftar.sort((a, b) => hargaAkhir(a) - hargaAkhir(b)).map((p) => p.nama);
+// error TS2339: Property 'sort' does not exist on type 'readonly Produk[]'
+// tsc tidak menolak karena tidak ada readonly pada Produk sehingga
+// program menganggap datanya boleh diubah
+// error itu justru membantu menemukan logic error yang sulit ditemukan
+// di javascript seperti kasus ini di mana arraynya sebenarnya tidak boleh
+// diubah di function ini. Jadi untuk debuggingnya lebih mudah.
+
+function urutTermurah(daftar: readonly Produk[]): string[] {
+  return daftar.map((p)=>p).sort((a, b) => hargaAkhir(a) - hargaAkhir(b)).map((p) => p.nama);
 }
 
 // ===== Advanced 1 =====

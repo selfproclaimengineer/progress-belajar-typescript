@@ -57,62 +57,90 @@ const daftarHarga = new Map([
 
 // ===== Beginner 1 (kode lama, beri tipe tanpa mengubah isinya) =====
 // subtotal(harga: number, qty: number): number
-function subtotal(harga, qty) {
+function subtotal(harga: number, qty: number): number {
   return harga * qty;
 }
 
 // formatRupiah(n: number): string
-function formatRupiah(n) {
+function formatRupiah(n: number):string {
   return `Rp${new Intl.NumberFormat("id-ID").format(n)}`;
 }
 
 // ===== Beginner 2 =====
-// TODO: ganti string dengan literal union tiga metode bayar
+
 // ≈ 1 baris
-type MetodeBayar = string;
+type MetodeBayar = "tunai" | "debit" | "qris";
 
 // biayaAdmin(metode: MetodeBayar, total: number): number
-function biayaAdmin(metode, total) {
-  // TODO
+function biayaAdmin(metode: MetodeBayar, total: number): number {
+  
   // ≈ 5 baris
-  return 0;
+  if(metode === "debit") return 2500;
+  if(metode === "qris") return Math.ceil(total*0.7/100);
+  if(metode === "tunai") return 0;
+  else throw Error("Invalid metode bayar");
 }
+
 
 // ===== Beginner 3 (jelaskan) =====
 // JAWABAN Beginner 3 (output node, pesan error tsc, mengapa node tetap jalan, kapan tsc dijalankan):
-//
+// coba-b3.ts:1:7 - error TS2322: Type 'string' is not assignable to type 'number'.
+// 1 const harga: number = "15000";
+// Karena jika memakai node, maka kode typescript akan langsung
+// dijalankan sebagai javascript, tidak dicompile dulu
+// seperti dengan npx tsc
+
+// tsc harus dijalankan ketika toko sudah tutup sehingga
+// tidak mengganggu operasional toko
+// jika harus menunggu komplain pembeli, sudah jelas
+// pembeli tidak suka serta jika celahnya justru
+// bisa dieksploitasi malah bisa bikin rugi owner
 
 // ===== Intermediate 1 =====
 // hargaObat(kode: string): string
-function hargaObat(kode) {
-  // TODO
+function hargaObat(kode: string): string{
   // ≈ 5 baris
-  return "";
+  if (daftarHarga.get(kode) === undefined){
+    return "tidak terdaftar"
+  } else return `${kode}: Rp${daftarHarga.get(kode)}`;
 }
 
 // ===== Intermediate 2 =====
-// TODO: tulis type AturanDiskon
+type AturanDiskon = (total:number)=>number;
 // ≈ 1 baris
 
 // TODO: beri tipe AturanDiskon dan isi aturannya
 // ≈ 2 baris
-const diskonMember = (total) => total;
-const voucher10rb = (total) => total;
+const diskonMember : AturanDiskon = (total) => Math.floor(total * 95/100);
+  const voucher10rb : AturanDiskon = (total) => total>=100000 ? total-10000 : total;
 
 // terapkanDiskon(total: number, daftarAturan: AturanDiskon[]): number
-function terapkanDiskon(total, daftarAturan) {
+function terapkanDiskon(total : number, daftarAturan : number[]): number {
   // TODO
   // ≈ 3 baris
+
+  // daftarAturan = [diskonMember,voucher10rb];
+
+  for (const diskon of daftarAturan){
+    total = diskon(total);
+  }
   return total;
 }
 
 // ===== Intermediate 3 (kode temanmu, perbaiki) =====
 // JAWABAN Intermediate 3:
-//
+// 
 // tambahStok(stok: number, teksInput: string): number
 function tambahStok(stok: number, teksInput: string): number {
   const tambahan = JSON.parse(teksInput);
+  if(typeof tambahan !=="number"){
+    throw new Error("input stok harus angka");
+  }
+  //  catch(err){
+  //   console.log("GAGAL: ", err.message)
+  // }
   return stok + tambahan;
+  
 }
 
 // Sudah jadi, jangan diubah. e bertipe unknown, jadi dicek dulu dengan instanceof (dibahas di TS-5).

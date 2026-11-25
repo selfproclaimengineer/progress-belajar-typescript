@@ -44,8 +44,8 @@ Alur setiap topik:
 | JS-6 Modules dan standard library | [x] | [ ] | [ ] | |
 | JS-7 Async | [ ] | [ ] | [ ] | |
 | JS-8 DOM | [ ] | [x] | [ ] | |
-| TS-1 Dasar | [x] | [ ] | [ ] | |
-| TS-2 Object type | [ ] | [ ] | [ ] | |
+| TS-1 Dasar | [x] | [ ] | [x] | 70 |
+| TS-2 Object type | [x] | [ ] | [x] | 96 |
 | TS-3 OOP | [ ] | [ ] | [ ] | |
 | TS-4 Generics | [ ] | [ ] | [ ] | |
 | TS-5 Narrowing dan error handling | [ ] | [ ] | [ ] | |
@@ -63,3 +63,4 @@ Alur setiap topik:
 | 2026-11-12 | JS-4 | 2 jam | JS-4: soal, tanya jawab, feedback | membayangkan input dan output (console.log di bawah), tidak tahu materi HO mana dipakai di soal mana, energi minim karena belajar malam |
 | 2026-11-22 | JS-5 | 4 jam | JS-5: soal, tanya jawab, feedback | transfer di Advanced (tarik dan setor ke rekening sendiri), this di method Bank |
 | 2026-11-23 | JS-6, TS-1 | - | JS-6: soal, tanya jawab; TS-1: soal, tanya jawab | buatIndex JS-6 (map() vs Map, set di luar loop), try...catch di cobaTambah, membaca tipe dan alasan any di Coba Sendiri TS-1 |
+| 2026-11-25 | TS-1, TS-2 | - | TS-1: soal, feedback; TS-2: soal, tanya jawab, feedback | - |

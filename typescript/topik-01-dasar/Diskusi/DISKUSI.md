@@ -14,3 +14,8 @@
 **Pertanyaan:** Minta cek Coba Sendiri TS-1.
 **Level hint:** 2
 **Jawaban asisten:** Tebakan tipe akhir benar (`number`, `"qris"`, `number[]`, `number | undefined`, `any`) dan tiga pesan error Bagian 2 benar. Catatan: (1) nomor 1 menanyakan tebakan awal mana yang salah dan mengapa, misalnya `b` bertipe literal `"qris"` karena `const`, `d` bisa `undefined` karena `find` bisa tidak menemukan apa pun, `e` mengikuti anotasi; (2) nomor error (`TS2322`, `TS2345`, `TS18048`) belum ditulis; (3) alasan nomor 3 salah konsep: `tsc` diam karena `e` bertipe `any`, yang mematikan pengecekan, bukan karena "sudah dicek di awal", dan hasil runtime `TypeError: e.toFixed is not a function` karena isi `e` string; (4) nomor 4 mengubah baris deklarasi `d` (kode Bagian 1), bukan baris `console.log(d + 1)`. Diuji: `console.log(d + 1)` tetap `TS18048`, karena `tsc` tidak menyimpulkan bahwa dua panggilan `find` menghasilkan nilai yang sama. Diarahkan ke HO "null, undefined, dan strictNullChecks" Cara 2.
+
+### 2026-11-24 — Intermediate 1 (pakai Map atau tidak)
+**Pertanyaan:** Intermediate 1 memakai Map atau tidak?
+**Level hint:** 2
+**Jawaban asisten:** Ya, tetapi Map-nya sudah ada: `daftarHarga` dibuat di starter, jadi tidak perlu `new Map` lagi (beda dengan `buatIndex` JS-6, yang membangun Map). Tugasnya hanya membaca dengan `daftarHarga.get(kode)`, lalu memeriksa `undefined` sebelum memakai hasilnya. `const m:new Map` juga salah sintaks: setelah `:` ditulis tipe, nilai ditulis setelah `=`. Tipe kembalian sebaiknya kembali ke `string`, karena fungsi selalu mengembalikan teks (`tidak terdaftar` juga string).
